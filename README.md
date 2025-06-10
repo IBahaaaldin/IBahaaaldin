@@ -20,10 +20,7 @@
 
 ---
 
-### 🌐 Connect with me:
-
-[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?logo=linkedin&logoColor=white&style=flat-square)](https://www.linkedin.com/in/bahaa-mohammed-371259369)
-[![Instagram](https://img.shields.io/badge/-Instagram-E4405F?logo=instagram&logoColor=white&style=flat-square)](https://www.instagram.com/ibahaaaldin)
+### 🌐 Connect with me:  [![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?logo=linkedin&logoColor=white&style=flat-square)](https://www.linkedin.com/in/bahaa-mohammed-371259369)  [![Instagram](https://img.shields.io/badge/-Instagram-E4405F?logo=instagram&logoColor=white&style=flat-square)](https://www.instagram.com/ibahaaaldin)
 
 ---
 
@@ -34,11 +31,5 @@
 ![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=flat-square&logo=html5)
 ![CSS3](https://img.shields.io/badge/-CSS3-1572B6?style=flat-square&logo=css3)
 ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-
----
-
-### 📊 GitHub Stats:
-
-![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=ibahaaaldin&theme=radical)
 
 ---
