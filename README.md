@@ -22,7 +22,7 @@
 
 ### 🌐 Connect with me:  
 
-[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?logo=linkedin&logoColor=white&style=flat-square)](https://www.linkedin.com/in/bahaa-mohammed-371259369)  [![Instagram](https://img.shields.io/badge/-Instagram-E4405F?logo=instagram&logoColor=white&style=flat-square)](https://www.instagram.com/ibahaaaldin)
+[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?logo=linkedin&logoColor=white&style=flat-square)](https://www.linkedin.com/in/bahaa-mohammed-371259369)  ||  [![Instagram](https://img.shields.io/badge/-Instagram-E4405F?logo=instagram&logoColor=white&style=flat-square)](https://www.instagram.com/ibahaaaldin)
 
 ---
 
