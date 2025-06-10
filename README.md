@@ -39,6 +39,6 @@
 
 ### 📊 GitHub Stats:
 
-<align="center">![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=ibahaaaldin&theme=radical)</>
+![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=ibahaaaldin&theme=radical)
 
 ---
