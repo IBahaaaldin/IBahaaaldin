@@ -28,7 +28,7 @@
 
 ### 💻 Tech Stack:
 
-![Python](https://img.shields.io/badge/-Python-FFFFFF?style=flat-square&logo=python&logoColor=purple)
+![Python](https://img.shields.io/badge/-Python-FFFFFF?style=flat-square&logo=python&logoColor=blue)
 ![Java](https://img.shields.io/badge/-Java-FFFFFF?style=flat-square&logo=java&logoColor=green)
 ![HTML5](https://img.shields.io/badge/-HTML5-FFFFFF?style=flat-square&logo=html5&logoColor=orange)
 ![CSS3](https://img.shields.io/badge/-CSS3-FFFFFF?style=flat-square&logo=css3&logoColor=blue)
