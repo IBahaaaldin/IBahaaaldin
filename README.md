@@ -28,10 +28,10 @@
 
 ### 💻 Tech Stack:
 
-![Python](https://img.shields.io/badge/-Python-F7DF1E?style=flat-square&logo=python)
-![Java](https://img.shields.io/badge/-Java-F7DF1E?style=flat-square&logo=java)
-![HTML5](https://img.shields.io/badge/-HTML5-F7DF1E?style=flat-square&logo=html5)
-![CSS3](https://img.shields.io/badge/-CSS3-F7DF1E?style=flat-square&logo=css3)
-![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat-square&logo=javascript)
+![Python](https://img.shields.io/badge/-Python-F7DF1E?style=flat-square&logo=python&logoColor=purple)
+![Java](https://img.shields.io/badge/-Java-F7DF1E?style=flat-square&logo=java&logoColor=green)
+![HTML5](https://img.shields.io/badge/-HTML5-F7DF1E?style=flat-square&logo=html5&logoColor=orange)
+![CSS3](https://img.shields.io/badge/-CSS3-F7DF1E?style=flat-square&logo=css3&logoColor=blue)
+![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 
 ---
