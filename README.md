@@ -16,7 +16,7 @@
 - 🔭 I’m currently working on academic productivity tools and intelligent apps.
 - 🖥️ Debugging is a fun challenge I enjoy solving.
 - 🌐 Always happy to collaborate on open-source!
-- 📄 [Resume](#) • [Portfolio](#)
+- 📄 [Resume](https://drive.google.com/file/d/1f_XhDs17LFhkINwonIK8RBt2viX1CPHO/view?usp=sharing) • [Portfolio](https://ibahaaaldin.github.io)
 
 ---
 
