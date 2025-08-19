@@ -2,7 +2,7 @@
 <h3 align="center">Computer Science – AI Student | Python • Java • Web Development</h3>
 <p align="center">
   <strong>Passionate about AI Solutions and System Building</strong><br/>
-  Second-year CS student at the British University in Dubai 🇦🇪<br/>
+  Third-year CS student at the British University in Dubai 🇦🇪<br/>
   Building creative tools to improve academic & personal productivity.
 </p>
 
