@@ -263,6 +263,157 @@ const items = [
                     inset 0 1px 0 0 rgba(255, 255, 255, 0.25);
       }
     `
+  },
+  {
+    id: '05',
+    folder: '05-studio-media-navbar',
+    repo: 'navbar-studio-media',
+    title: 'Studio Media Dock',
+    subtitle: 'Integrated ambient music player with live equalizer, spinning vinyl & Dubai time',
+    badge: 'UI COMPONENT #05',
+    episode: 'REEL 05',
+    accentColor: '#f59e0b',
+    accentGradient: 'from-amber-400 via-orange-500 to-rose-500',
+    glowGradient: 'radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.45) 0%, rgba(244, 63, 94, 0.22) 45%, transparent 75%)',
+    tags: ['Music Player', 'Equalizer Bars', 'Spinning Vinyl', 'Dark / Light'],
+    renderNavbar: `
+      <nav class="studio-dock rounded-full px-5 py-3 flex items-center gap-4 shadow-2xl relative select-none">
+        <div class="flex items-center gap-2.5 pl-1 pr-2 py-0.5 rounded-full">
+          <div class="relative w-9 h-9 rounded-full bg-gradient-to-tr from-amber-500 via-orange-500 to-rose-500 p-[1.5px] flex items-center justify-center shadow-lg shadow-amber-500/25 flex-shrink-0">
+            <div class="w-full h-full bg-neutral-900 rounded-full flex items-center justify-center text-xs font-bold text-white">
+              BM
+            </div>
+            <span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-500 ring-2 ring-black"></span>
+          </div>
+          <div class="flex flex-col text-left leading-tight">
+            <span class="text-xs font-semibold text-white tracking-tight whitespace-nowrap">Bahaa Mohammed</span>
+            <span class="text-[10px] text-neutral-400 font-medium whitespace-nowrap">Creative Software Engineer</span>
+          </div>
+        </div>
+
+        <div class="h-6 w-[1px] bg-neutral-800 flex-shrink-0"></div>
+
+        <div class="flex items-center gap-1">
+          <span class="px-3 py-1.5 rounded-full text-xs font-medium text-white bg-white/[0.12] whitespace-nowrap">Work</span>
+          <span class="px-3 py-1.5 rounded-full text-xs font-medium text-neutral-300 hover:text-white whitespace-nowrap">Projects</span>
+          <span class="px-3 py-1.5 rounded-full text-xs font-medium text-neutral-300 hover:text-white whitespace-nowrap">Stack</span>
+          <span class="px-3 py-1.5 rounded-full text-xs font-medium text-neutral-300 hover:text-white whitespace-nowrap">About</span>
+        </div>
+
+        <div class="h-6 w-[1px] bg-neutral-800 flex-shrink-0"></div>
+
+        <div class="flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/[0.08] border border-white/10 whitespace-nowrap">
+          <div class="w-6 h-6 rounded-full bg-neutral-900 border border-neutral-700 flex items-center justify-center flex-shrink-0">
+            <div class="w-2 h-2 rounded-full bg-amber-400"></div>
+          </div>
+          <div class="flex flex-col text-left leading-tight">
+            <span class="text-[11px] font-mono font-bold text-white whitespace-nowrap">Lofi Code Beats</span>
+            <span class="text-[9px] font-mono text-amber-400 whitespace-nowrap">128 BPM • DUBAI FM</span>
+          </div>
+          <div class="flex items-end gap-[2px] h-3.5 px-0.5">
+            <span class="w-[2.5px] h-3 bg-amber-400 rounded-full"></span>
+            <span class="w-[2.5px] h-2 bg-orange-400 rounded-full"></span>
+            <span class="w-[2.5px] h-3.5 bg-rose-400 rounded-full"></span>
+            <span class="w-[2.5px] h-2.5 bg-amber-300 rounded-full"></span>
+          </div>
+        </div>
+
+        <div class="h-6 w-[1px] bg-neutral-800 flex-shrink-0"></div>
+
+        <div class="flex items-center gap-2 flex-shrink-0">
+          <div class="w-8 h-8 rounded-full flex items-center justify-center text-neutral-300 bg-white/[0.06] border border-white/10">
+            <svg class="w-4 h-4 fill-none stroke-current stroke-2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          </div>
+          <div class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold text-white bg-gradient-to-r from-amber-500 to-rose-600 shadow-lg shadow-amber-500/25 whitespace-nowrap">
+            <span>Let's Talk</span>
+            <svg class="w-3.5 h-3.5 stroke-current stroke-2 fill-none" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </nav>
+    `,
+    extraStyles: `
+      .studio-dock {
+        background: rgba(12, 14, 20, 0.94);
+        backdrop-filter: blur(28px) saturate(190%);
+        -webkit-backdrop-filter: blur(28px) saturate(190%);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        box-shadow: 0 35px 90px -20px rgba(0, 0, 0, 0.95),
+                    0 0 30px -5px rgba(245, 158, 11, 0.3),
+                    inset 0 1px 0 0 rgba(255, 255, 255, 0.25);
+      }
+    `
+  },
+  {
+    id: '06',
+    folder: '06-dev-toolbar-navbar',
+    repo: 'navbar-dev-toolbar',
+    title: 'Developer Toolbar',
+    subtitle: 'Vercel-inspired engineering toolbar with interactive Git branch switcher & 98ms status',
+    badge: 'UI COMPONENT #06',
+    episode: 'REEL 06',
+    accentColor: '#06b6d4',
+    accentGradient: 'from-cyan-400 via-teal-500 to-indigo-500',
+    glowGradient: 'radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.45) 0%, rgba(99, 102, 241, 0.22) 45%, transparent 75%)',
+    tags: ['Vercel Toolbar', 'Git Branch Switcher', 'Live Deployment', 'Copy Email'],
+    renderNavbar: `
+      <nav class="dev-toolbar rounded-2xl px-5 py-3 flex items-center gap-4 shadow-2xl relative select-none font-mono">
+        <div class="flex items-center gap-2 pl-1 pr-2.5 py-1 rounded-xl bg-white/[0.06] border border-white/10 text-xs">
+          <div class="w-5 h-5 rounded-lg bg-gradient-to-br from-cyan-400 to-indigo-600 flex items-center justify-center text-[10px] font-bold text-white shadow-sm flex-shrink-0">
+            BM
+          </div>
+          <span class="font-bold text-white whitespace-nowrap">bahaa.dev</span>
+          <span class="text-neutral-500">/</span>
+          <span class="text-neutral-300">ready-uis</span>
+        </div>
+
+        <div class="h-6 w-[1px] bg-neutral-800 flex-shrink-0"></div>
+
+        <div class="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white/[0.08] border border-white/10 text-xs text-neutral-200 whitespace-nowrap">
+          <svg class="w-3.5 h-3.5 text-cyan-400 stroke-current stroke-2 fill-none" viewBox="0 0 24 24"><line x1="6" y1="3" x2="6" y2="15"></line><circle cx="18" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><path d="M18 9a9 9 0 0 1-9 9"></path></svg>
+          <span class="font-semibold text-white">main</span>
+          <svg class="w-3 h-3 text-neutral-400 stroke-current stroke-2 fill-none" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg>
+        </div>
+
+        <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/[0.08] border border-white/10 text-xs whitespace-nowrap">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span class="font-bold text-white">Ready</span>
+          <span class="text-neutral-500">•</span>
+          <span class="text-emerald-400 font-semibold">98ms</span>
+        </div>
+
+        <div class="h-6 w-[1px] bg-neutral-800 flex-shrink-0"></div>
+
+        <div class="flex items-center gap-1 font-sans">
+          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold text-white bg-white/[0.12] whitespace-nowrap">Work</span>
+          <span class="px-3 py-1.5 rounded-xl text-xs font-medium text-neutral-300 hover:text-white whitespace-nowrap">Projects</span>
+          <span class="px-3 py-1.5 rounded-xl text-xs font-medium text-neutral-300 hover:text-white whitespace-nowrap">Stack</span>
+          <span class="px-3 py-1.5 rounded-xl text-xs font-medium text-neutral-300 hover:text-white whitespace-nowrap">About</span>
+        </div>
+
+        <div class="h-6 w-[1px] bg-neutral-800 flex-shrink-0"></div>
+
+        <div class="flex items-center gap-2 flex-shrink-0 font-sans">
+          <div class="w-8 h-8 rounded-xl flex items-center justify-center text-neutral-300 bg-white/[0.06] border border-white/10">
+            <svg class="w-4 h-4 fill-none stroke-current stroke-2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          </div>
+          <div class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-bold text-neutral-900 bg-white shadow-md whitespace-nowrap">
+            <span>Get in Touch</span>
+            <svg class="w-3.5 h-3.5 stroke-current stroke-2 fill-none" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"></path></svg>
+          </div>
+        </div>
+      </nav>
+    `,
+    extraStyles: `
+      .dev-toolbar {
+        background: rgba(10, 12, 16, 0.94);
+        backdrop-filter: blur(28px) saturate(190%);
+        -webkit-backdrop-filter: blur(28px) saturate(190%);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        box-shadow: 0 35px 90px -20px rgba(0, 0, 0, 0.95),
+                    0 0 30px -5px rgba(6, 182, 212, 0.3),
+                    inset 0 1px 0 0 rgba(255, 255, 255, 0.25);
+      }
+    `
   }
 ];
 
