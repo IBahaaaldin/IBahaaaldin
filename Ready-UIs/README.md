@@ -10,7 +10,7 @@ Created & maintained by **Bahaa Mohammed** ([@ibahaaaldincoding](https://www.ins
 
 Components are grouped into category folders (e.g. `navbars/`, `cards/`, `modals/`). Each component contains:
 1. **Implementation files** (`index.html`) — clean, self-contained, and copy-pasteable.
-2. **Cover Images** (`cover.png`, `cover-instagram.png`) — high-resolution banners (1280x640 widescreen and 1080x1080 Instagram square).
+2. **Cover Images** (`cover.png`, `cover-instagram.png`, `cover-reel.png`) — high-resolution banners (1280x640 widescreen, 1080x1080 Instagram square post, and 1080x1920 Instagram 9:16 vertical Reel).
 3. **Screenshots (Desktop & Mobile)** (`screenshot-desktop.png`, `screenshot-mobile.png`) — high-resolution visual previews.
 4. **Videos (Desktop & Mobile)** (`video-desktop.mp4`, `video-mobile.mp4`) — automated video recordings showcasing animations, micro-interactions, responsive menus, and theme switching.
 5. **`README.md`** — setup notes, customization guide, and features.
@@ -23,6 +23,7 @@ Ready-UIs/
 │   │   ├── index.html
 │   │   ├── cover.png
 │   │   ├── cover-instagram.png
+│   │   ├── cover-reel.png
 │   │   ├── screenshot-desktop.png
 │   │   ├── video-desktop.mp4
 │   │   ├── screenshot-mobile.png
@@ -34,6 +35,7 @@ Ready-UIs/
 │   │   ├── index.html
 │   │   ├── cover.png
 │   │   ├── cover-instagram.png
+│   │   ├── cover-reel.png
 │   │   ├── screenshot-desktop.png
 │   │   ├── video-desktop.mp4
 │   │   ├── screenshot-mobile.png
@@ -45,6 +47,7 @@ Ready-UIs/
 │   │   ├── index.html
 │   │   ├── cover.png
 │   │   ├── cover-instagram.png
+│   │   ├── cover-reel.png
 │   │   ├── screenshot-desktop.png
 │   │   ├── video-desktop.mp4
 │   │   ├── screenshot-mobile.png
@@ -56,6 +59,7 @@ Ready-UIs/
 │       ├── index.html
 │       ├── cover.png
 │       ├── cover-instagram.png
+│       ├── cover-reel.png
 │       ├── screenshot-desktop.png
 │       ├── video-desktop.mp4
 │       ├── screenshot-mobile.png
