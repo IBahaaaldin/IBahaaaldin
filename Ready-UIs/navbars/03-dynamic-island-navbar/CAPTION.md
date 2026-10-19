@@ -5,7 +5,7 @@ Watch the video to see the fluid morphing physics! An Apple iOS Dynamic Island r
 🔥 Micro-interactions & details:
 • Fluid spring physics expanding from a compact resting pill into a full activity card
 • Live animated equalizer waveform showing current project activity (Building: Air Canvas ⚡)
-• Seamless top-anchored responsiveness for mobile & desktop
+• Seamless dead-center responsiveness for mobile & desktop
 • One-click Dark 🌙 / Light ☀️ canvas switcher
 • Monogram avatar with animated green pulse status dot
 • 100% self-contained code (HTML + Tailwind + inline SVGs)

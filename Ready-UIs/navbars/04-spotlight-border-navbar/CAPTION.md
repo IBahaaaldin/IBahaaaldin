@@ -6,7 +6,7 @@ Watch the video to see the cursor tracking glow in action! A luxury dark glass n
 • Real-time cursor-tracking radial spotlight glow (`--mouse-x`, `--mouse-y`)
 • Iridescent chromatic border reflection (Sky blue to Violet gradient)
 • Animated shimmer badge for live project availability
-• Clean top-anchored responsiveness for mobile & desktop
+• Clean dead-center responsiveness for mobile & desktop
 • One-click Dark 🌙 / Light ☀️ canvas switcher
 • Monogram geometric badge with vibrant gradient frame
 • 100% self-contained code (HTML + Tailwind + inline SVGs)
