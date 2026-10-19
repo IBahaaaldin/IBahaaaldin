@@ -72,19 +72,17 @@ function injectCursor(page) {
   await dPage.mouse.move(600, 300);
   await dPage.waitForTimeout(400);
 
-  // Hover tabs with sliding indicator
-  const tabs = await dPage.$$('.nav-tab');
-  for (const tab of tabs) {
-    const box = await tab.boundingBox();
-    if (box) {
-      await dPage.mouse.move(box.x + box.width / 2, box.y + box.height / 2, { steps: 16 });
-      await dPage.waitForTimeout(350);
-    }
+  // 1. Hover Creator Brand
+  const brandLink = await dPage.$('a[href*="github.com"]');
+  const brandBox = await brandLink?.boundingBox();
+  if (brandBox) {
+    await dPage.mouse.move(brandBox.x + brandBox.width / 2, brandBox.y + brandBox.height / 2, { steps: 16 });
+    await dPage.waitForTimeout(400);
   }
 
-  // Click Play/Pause toggle
+  // 2. Click Play/Pause toggle
   const playBtn = await dPage.$('#playPauseBtn');
-  const playBox = await playBtn.boundingBox();
+  const playBox = await playBtn?.boundingBox();
   if (playBox) {
     await dPage.mouse.move(playBox.x + playBox.width / 2, playBox.y + playBox.height / 2, { steps: 16 });
     await dPage.waitForTimeout(300);
@@ -94,9 +92,9 @@ function injectCursor(page) {
     await dPage.waitForTimeout(700); // Equalizer paused
   }
 
-  // Click Next Track
+  // 3. Click Next Track
   const nextBtn = await dPage.$('#nextTrackBtn');
-  const nextBox = await nextBtn.boundingBox();
+  const nextBox = await nextBtn?.boundingBox();
   if (nextBox) {
     await dPage.mouse.move(nextBox.x + nextBox.width / 2, nextBox.y + nextBox.height / 2, { steps: 14 });
     await dPage.waitForTimeout(200);
@@ -106,9 +104,17 @@ function injectCursor(page) {
     await dPage.waitForTimeout(700); // Song switched and playing
   }
 
-  // Click Theme Switcher (toggle to light)
+  // 4. Hover Dubai Live Clock
+  const liveClock = await dPage.$('#liveClock');
+  const clockBox = await liveClock?.boundingBox();
+  if (clockBox) {
+    await dPage.mouse.move(clockBox.x + clockBox.width / 2, clockBox.y + clockBox.height / 2, { steps: 14 });
+    await dPage.waitForTimeout(400);
+  }
+
+  // 5. Click Theme Switcher (toggle to light)
   const themeBtn = await dPage.$('#themeToggle');
-  const themeBox = await themeBtn.boundingBox();
+  const themeBox = await themeBtn?.boundingBox();
   if (themeBox) {
     await dPage.mouse.move(themeBox.x + themeBox.width / 2, themeBox.y + themeBox.height / 2, { steps: 16 });
     await dPage.waitForTimeout(250);
@@ -118,16 +124,15 @@ function injectCursor(page) {
     await dPage.waitForTimeout(800); // White canvas
   }
 
-  // Hover tabs in light mode
-  for (let i = tabs.length - 1; i >= 0; i--) {
-    const box = await tabs[i].boundingBox();
-    if (box) {
-      await dPage.mouse.move(box.x + box.width / 2, box.y + box.height / 2, { steps: 14 });
-      await dPage.waitForTimeout(280);
-    }
+  // 6. Hover CTA "Let's Talk" button in light mode
+  const ctaBtn = await dPage.$('a[href^="mailto:"]');
+  const ctaBox = await ctaBtn?.boundingBox();
+  if (ctaBox) {
+    await dPage.mouse.move(ctaBox.x + ctaBox.width / 2, ctaBox.y + ctaBox.height / 2, { steps: 14 });
+    await dPage.waitForTimeout(500);
   }
 
-  // Toggle theme back to Dark
+  // 7. Toggle theme back to Dark
   if (themeBox) {
     await dPage.mouse.move(themeBox.x + themeBox.width / 2, themeBox.y + themeBox.height / 2, { steps: 14 });
     await dPage.waitForTimeout(200);

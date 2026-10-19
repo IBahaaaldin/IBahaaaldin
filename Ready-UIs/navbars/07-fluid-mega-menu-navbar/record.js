@@ -62,24 +62,16 @@ function injectCursor(page) {
 
   const dPage = await desktopContext.newPage();
   await dPage.goto(fileUrl, { waitUntil: 'load' });
-  await dPage.waitForTimeout(600);
-
-  // Take screenshot with Products dropdown open for highest visual impact
-  const productsTab = await dPage.$('button[data-tab="products"]');
-  const pBox = await productsTab.boundingBox();
-  if (pBox) {
-    await dPage.mouse.move(pBox.x + pBox.width / 2, pBox.y + pBox.height / 2);
-    await dPage.waitForTimeout(400); // Allow morph to settle
-  }
+  // Desktop Screenshot (Clean centered idle state matching 01-04)
   await dPage.screenshot({ path: path.join(dir, 'screenshot-desktop.png') });
   console.log('Saved screenshot-desktop.png');
 
-  // Close dropdown initially to record complete interactive sequence
-  await dPage.mouse.move(600, 200);
-  await dPage.waitForTimeout(300);
-
   await injectCursor(dPage);
+  await dPage.mouse.move(600, 200);
   await dPage.waitForTimeout(400);
+
+  const productsTab = await dPage.$('button[data-tab="products"]');
+  const pBox = await productsTab?.boundingBox();
 
   // 1. Glide to "Products" tab -> morphs container
   if (pBox) {

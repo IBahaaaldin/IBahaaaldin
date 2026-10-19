@@ -289,15 +289,6 @@ const items = [
 
         <div class="h-6 w-[1px] bg-neutral-800 flex-shrink-0"></div>
 
-        <div class="flex items-center gap-1">
-          <span class="px-3 py-1.5 rounded-full text-xs font-medium text-white bg-white/[0.1] whitespace-nowrap">Work</span>
-          <span class="px-3 py-1.5 rounded-full text-xs font-medium text-neutral-300 hover:text-white whitespace-nowrap">Projects</span>
-          <span class="px-3 py-1.5 rounded-full text-xs font-medium text-neutral-300 hover:text-white whitespace-nowrap">Stack</span>
-          <span class="px-3 py-1.5 rounded-full text-xs font-medium text-neutral-300 hover:text-white whitespace-nowrap">About</span>
-        </div>
-
-        <div class="h-6 w-[1px] bg-neutral-800 flex-shrink-0"></div>
-
         <div class="flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-white/[0.06] border border-white/10 whitespace-nowrap">
           <div class="w-6 h-6 rounded-full bg-neutral-900 border border-neutral-700 flex items-center justify-center flex-shrink-0">
             <div class="w-2 h-2 rounded-full bg-amber-400"></div>
@@ -312,6 +303,11 @@ const items = [
             <span class="w-[2.5px] h-3.5 bg-rose-400 rounded-full"></span>
             <span class="w-[2.5px] h-2.5 bg-amber-300 rounded-full"></span>
           </div>
+        </div>
+
+        <div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.06] border border-white/10 text-neutral-200 text-[11px] font-mono whitespace-nowrap">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>DXB 04:45 PM</span>
         </div>
 
         <div class="h-6 w-[1px] bg-neutral-800 flex-shrink-0"></div>
@@ -350,7 +346,7 @@ const items = [
     glowGradient: 'radial-gradient(circle at 50% 55%, rgba(6, 182, 212, 0.35) 0%, rgba(99, 102, 241, 0.15) 45%, transparent 75%)',
     tags: ['Vercel Toolbar', 'Git Branch Switcher', 'Live Deployment', 'Copy Email'],
     renderNavbar: `
-      <nav class="dev-toolbar rounded-2xl px-4 py-2.5 flex items-center gap-3.5 shadow-2xl relative select-none font-mono">
+      <nav class="dev-toolbar rounded-2xl px-3.5 py-2 flex items-center gap-2.5 shadow-2xl relative select-none font-mono">
         <div class="flex items-center gap-2 pl-1 pr-2 py-0.5 rounded-xl bg-white/[0.05] border border-white/10 text-xs">
           <div class="w-5 h-5 rounded-lg bg-gradient-to-br from-cyan-400 to-indigo-600 flex items-center justify-center text-[10px] font-bold text-white shadow-sm flex-shrink-0">
             BM
@@ -377,14 +373,10 @@ const items = [
 
         <div class="h-6 w-[1px] bg-neutral-800 flex-shrink-0"></div>
 
-        <div class="flex items-center gap-1 font-sans">
-          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold text-white bg-white/[0.1] whitespace-nowrap">Work</span>
-          <span class="px-3 py-1.5 rounded-xl text-xs font-medium text-neutral-300 hover:text-white whitespace-nowrap">Projects</span>
-          <span class="px-3 py-1.5 rounded-xl text-xs font-medium text-neutral-300 hover:text-white whitespace-nowrap">Stack</span>
-          <span class="px-3 py-1.5 rounded-xl text-xs font-medium text-neutral-300 hover:text-white whitespace-nowrap">About</span>
+        <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/[0.06] border border-white/10 text-xs text-neutral-200 whitespace-nowrap">
+          <svg class="w-3.5 h-3.5 stroke-current stroke-2 fill-none" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="whitespace-nowrap">bahaam.coding</span>
         </div>
-
-        <div class="h-6 w-[1px] bg-neutral-800 flex-shrink-0"></div>
 
         <div class="flex items-center gap-2 flex-shrink-0 font-sans">
           <div class="w-8 h-8 rounded-xl flex items-center justify-center text-neutral-300 bg-white/[0.06] border border-white/10">
