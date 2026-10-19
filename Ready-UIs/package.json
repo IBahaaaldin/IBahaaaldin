@@ -1,0 +1,16 @@
+{
+  "name": "ready-uis",
+  "version": "1.0.0",
+  "description": "A curated collection of production-ready, highly aesthetic frontend UI components and patterns. Built with zero friction, modern design standards (Linear, Apple, Vercel vibes), and ready to drop straight into your web projects.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "playwright": "^1.64.1"
+  }
+}
