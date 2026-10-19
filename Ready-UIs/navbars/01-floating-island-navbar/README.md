@@ -1,34 +1,48 @@
-# 🏝️ 01 — Floating Island Navbar
+# 🏝️ Liquid Glass Floating Island Navbar
 
-A standalone, floating glassmorphism navbar on a clean canvas with built-in **Dark/Light Theme Switcher** and **Magnetic Sliding Pill Hover Animation**.
+> Ultra-refined, distraction-free floating island dock on a minimal canvas with real-time Dubai clock, magnetic sliding tab capsule, and dark/light mode.
 
-![Desktop Preview](screenshot-desktop.png)
+![Cover Preview](cover.png)
 
-*(Includes 4 responsive assets: `screenshot-desktop.png`, `video-desktop.mp4`, `screenshot-mobile.png`, and `video-mobile.mp4`)*
-
----
-
-## ✨ Features & Tricks
-
-- **Clean Minimal Canvas**: Pure black (`#000000`) or pure crisp white (`#ffffff`) empty canvas with zero clutter.
-- **Fluid Theme Switcher**: Sun ☀️ / Moon 🌙 button built directly into the navbar that dynamically toggles dark/light mode across the entire page.
-- **Magnetic Sliding Pill**: A smooth, physics-based hover pill that slides and morphs behind whichever nav item the cursor hovers over.
-- **Brand & Live Status**: Monogram avatar with an animated green pulse indicator (`Available for projects` 🟢).
-- **Responsive Mobile Drawer**: Seamless transitions between full desktop floating dock and mobile hamburger with slide-down menu.
-- **Socials & Instant CTA**: Direct GitHub, LinkedIn, and Instagram profile icons with a high-contrast gradient "Let's Talk" button.
-- **Zero-Dependency**: 100% self-contained HTML5 + Tailwind CSS + inline SVGs. Copy and paste straight into any project.
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Visit_Website-0066cc?style=for-the-badge&logo=googlechrome&logoColor=white)](https://IBahaaaldin.github.io/navbar-floating-island/)
+[![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-Active-success?style=for-the-badge&logo=github)](https://IBahaaaldin.github.io/navbar-floating-island/)
 
 ---
 
-## 📁 File Structure
+## 🌐 Visual Previews
+
+| Desktop Showcase (1200x900) | Mobile Showcase (390x844) | Instagram Cover (1080x1080) |
+| :---: | :---: | :---: |
+| ![Desktop Preview](screenshot-desktop.png) | <img src="screenshot-mobile.png" width="220" alt="Mobile Preview" /> | <img src="cover-instagram.png" width="220" alt="Instagram Cover" /> |
+
+*(Includes full interaction videos: `video-desktop.mp4` and `video-mobile.mp4`)*
+
+---
+
+## ✨ Features & Micro-Interactions
+
+- **Clean Minimal Canvas**: Pure black (`#000000`) or pure crisp white (`#ffffff`) canvas with zero clutter.
+- **Dead-Center Ergonomics**: Placed dead-center both horizontally and vertically across desktop and mobile screens.
+- **Specular Liquid Glass**: Dual-layer backdrop blur with 190% saturation and inset specular highlights.
+- **Magnetic Sliding Capsule**: Physics-based hover pill that smoothly glides behind navigation tabs.
+- **Live Dubai Clock**: Real-time ticking Dubai time pill (`DXB 10:15 AM`) with pulsing green status dot.
+- **Zero Text Wrapping**: Strict `whitespace-nowrap` guarantees titles, names, and buttons stay unbroken.
+- **Instant Theme Switcher**: Sun ☀️ / Moon 🌙 button built directly into the navbar to toggle dark/light theme.
+- **Responsive Mobile Drawer**: Native slide-down menu with icons, live time, social links, and CTA button.
+- **Zero Build Step**: 100% self-contained HTML5 + Tailwind CSS CDN + inline SVGs.
+
+---
+
+## 📁 Repository Structure
 
 ```text
-01-floating-island-navbar/
-├── index.html              # Clean component & empty canvas page
-├── screenshot-desktop.png  # Desktop visual preview (1440x900)
-├── video-desktop.mp4       # Desktop interaction recording
+├── index.html              # Standalone production navbar component
+├── cover.png               # Widescreen cover banner (1280x640)
+├── cover-instagram.png     # Square cover for Instagram (@ibahaaaldincoding) (1080x1080)
+├── screenshot-desktop.png  # Desktop visual preview (1200x900)
+├── video-desktop.mp4       # Desktop interaction recording (MP4)
 ├── screenshot-mobile.png   # Mobile visual preview (390x844)
-├── video-mobile.mp4        # Mobile interaction recording
+├── video-mobile.mp4        # Mobile interaction recording (MP4)
 ├── record.js               # Playwright automation script used to record all 4 assets
 ├── README.md               # Documentation & setup notes
 └── CAPTION.md              # Ready-to-copy Instagram caption for @ibahaaaldincoding
@@ -36,28 +50,31 @@ A standalone, floating glassmorphism navbar on a clean canvas with built-in **Da
 
 ---
 
-## 🚀 How to Run
+## 🚀 Quick Start
 
-### 1. View in Browser
+### 1. View Locally
 Simply open `index.html` in your browser:
 ```bash
 open index.html
 ```
 
-### 2. Record New Video / GIF
-If you want to re-record the interaction video after making customizations:
+### 2. Re-record Assets
+To re-record desktop & mobile screenshots and videos:
 ```bash
 node record.js
 ```
-This will automatically generate new `screenshot.png`, `preview.mp4`, and `preview.gif` files!
 
 ---
 
-## 🎨 Customization
+## 👤 Author & Connect
 
-| Feature | Where to edit in `index.html` |
-| :--- | :--- |
-| **Monogram** | Change `IB` to your own initials |
-| **Links** | Edit `<div id="navPills">` links |
-| **Socials** | Update GitHub, LinkedIn, and Instagram `href` attributes |
-| **Colors** | Tailwind classes: `bg-indigo-500`, `dark:bg-[#08090d]`, etc. |
+**Bahaa Mohammed**
+Creative Developer & Software Engineer
+- 📸 **Instagram**: [@ibahaaaldincoding](https://www.instagram.com/ibahaaaldincoding)
+- 🐙 **GitHub**: [@IBahaaaldin](https://github.com/IBahaaaldin)
+- 💼 **LinkedIn**: [Bahaa Mohammed](https://www.linkedin.com/in/bahaa-mohammed-371259369)
+- 📧 **Email**: bahaam.coding@gmail.com
+
+---
+
+Part of the **[Ready-UIs](https://github.com/IBahaaaldin/IBahaaaldin/tree/main/Ready-UIs)** design collection.
