@@ -228,7 +228,7 @@ function injectCursor(page) {
   await mPage.mouse.move(195, 300);
   await mPage.waitForTimeout(400);
 
-  // Tap Hamburger Menu button
+  // Tap Hamburger Menu button to open sidebar
   const mMenuBtn = await mPage.$('#mobileMenuBtn');
   const mBox = await mMenuBtn.boundingBox();
   if (mBox) {
@@ -237,7 +237,19 @@ function injectCursor(page) {
     await mPage.mouse.down();
     await mPage.waitForTimeout(100);
     await mPage.mouse.up();
-    await mPage.waitForTimeout(700); // Mobile drawer opened
+    await mPage.waitForTimeout(800); // Mobile sidebar sheet opened
+  }
+
+  // Tap close button in sidebar
+  const closeBtn = await mPage.$('#closeSidebarBtn');
+  const closeBox = closeBtn ? await closeBtn.boundingBox() : null;
+  if (closeBox) {
+    await mPage.mouse.move(closeBox.x + closeBox.width / 2, closeBox.y + closeBox.height / 2, { steps: 14 });
+    await mPage.waitForTimeout(200);
+    await mPage.mouse.down();
+    await mPage.waitForTimeout(100);
+    await mPage.mouse.up();
+    await mPage.waitForTimeout(700); // Mobile sidebar closed
   }
 
   // Tap Theme toggle on mobile
@@ -252,15 +264,6 @@ function injectCursor(page) {
     await mPage.waitForTimeout(800); // Light mode
 
     // Toggle back to Dark
-    await mPage.mouse.down();
-    await mPage.waitForTimeout(100);
-    await mPage.mouse.up();
-    await mPage.waitForTimeout(600);
-  }
-
-  // Tap close button
-  if (mBox) {
-    await mPage.mouse.move(mBox.x + mBox.width / 2, mBox.y + mBox.height / 2, { steps: 14 });
     await mPage.mouse.down();
     await mPage.waitForTimeout(100);
     await mPage.mouse.up();

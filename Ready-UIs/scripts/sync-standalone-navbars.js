@@ -3,6 +3,9 @@ const path = require('path');
 const { execSync } = require('child_process');
 
 const repos = [
+  { folder: '05-studio-media-navbar', name: 'navbar-studio-media' },
+  { folder: '06-dev-toolbar-navbar', name: 'navbar-dev-toolbar' },
+  { folder: '07-fluid-mega-menu-navbar', name: 'navbar-fluid-mega-menu' },
   { folder: '08-visionos-glass-navbar', name: 'navbar-visionos-glass' }
 ];
 

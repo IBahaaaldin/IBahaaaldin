@@ -287,49 +287,84 @@
         </button>
       </div>
     </header>
+  </div>
 
-    <!-- MOBILE EXPANDABLE GLASS DRAWER -->
-    <div id="mobileDrawer" class="md:hidden fixed inset-x-4 top-24 z-40 p-5 rounded-3xl vision-glass transition-all duration-300 opacity-0 pointer-events-none translate-y-3">
-      <div class="space-y-4">
-        <!-- Navigation Links -->
-        <div class="space-y-1">
-          <a href="#spatial" class="flex items-center justify-between p-2 rounded-xl bg-white/10 dark:bg-white/5 text-xs font-semibold text-neutral-900 dark:text-white">
-            <span class="flex items-center gap-2">
-              <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
-              Spatial 3D
+  <!-- MOBILE BACKDROP OVERLAY -->
+  <div id="mobileBackdrop" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+
+  <!-- MOBILE VISIONOS SLIDE-IN SIDEBAR SHEET -->
+  <aside id="mobileSidebar" class="fixed inset-y-0 right-0 w-80 max-w-[85vw] vision-glass border-l border-white/20 shadow-2xl z-50 flex flex-col justify-between p-6 transform translate-x-full transition-transform duration-300 ease-out overflow-y-auto">
+    <div>
+      <!-- Sidebar Header -->
+      <div class="flex items-center justify-between pb-5 border-b border-white/10">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-white/10 p-[1.5px] border border-white/20 flex items-center justify-center shadow-lg flex-shrink-0">
+            <span class="text-xs font-bold text-white">BM</span>
+          </div>
+          <div class="flex flex-col text-left leading-tight">
+            <span class="text-xs font-semibold text-white whitespace-nowrap">Bahaa Mohammed</span>
+            <span class="text-[10px] text-cyan-400 font-mono whitespace-nowrap">visionOS Spatial UI</span>
+          </div>
+        </div>
+        <!-- Close Button -->
+        <button id="closeSidebarBtn" class="p-2 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 active:scale-95 transition-all" aria-label="Close Sidebar">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Sidebar Navigation Sections -->
+      <div class="mt-6 space-y-4">
+        <div class="text-[11px] font-mono uppercase tracking-wider text-cyan-400/80 mb-2">
+          Spatial Navigation
+        </div>
+        <div class="space-y-1.5">
+          <a href="#spatial" class="sidebar-link flex items-center justify-between p-3 rounded-2xl bg-white/10 text-xs font-semibold text-white border border-white/10">
+            <span class="flex items-center gap-2.5">
+              <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+              Spatial 3D Canvas
             </span>
-            <span class="text-[10px] text-neutral-400 font-mono">visionOS</span>
+            <span class="text-[10px] text-neutral-400 font-mono">Active</span>
           </a>
-          <a href="#canvas" class="block p-2 rounded-xl text-xs font-medium text-neutral-700 dark:text-neutral-300 hover:text-neutral-950 dark:hover:text-white">
+          <a href="#canvas" class="sidebar-link block p-3 rounded-2xl text-xs font-medium text-neutral-300 hover:text-white hover:bg-white/5 border border-transparent hover:border-white/10 transition-colors">
             Infinite Canvas
           </a>
-          <a href="#studio" class="block p-2 rounded-xl text-xs font-medium text-neutral-700 dark:text-neutral-300 hover:text-neutral-950 dark:hover:text-white">
+          <a href="#studio" class="sidebar-link block p-3 rounded-2xl text-xs font-medium text-neutral-300 hover:text-white hover:bg-white/5 border border-transparent hover:border-white/10 transition-colors">
             Design Studio
           </a>
-          <a href="#experiments" class="block p-2 rounded-xl text-xs font-medium text-neutral-700 dark:text-neutral-300 hover:text-neutral-950 dark:hover:text-white">
+          <a href="#experiments" class="sidebar-link block p-3 rounded-2xl text-xs font-medium text-neutral-300 hover:text-white hover:bg-white/5 border border-transparent hover:border-white/10 transition-colors">
             WebGL Experiments
           </a>
         </div>
 
-        <!-- Telemetry Card -->
-        <div class="p-3 rounded-2xl bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/10 flex items-center justify-between text-xs">
-          <span class="text-neutral-600 dark:text-neutral-400">Spatial Audio</span>
-          <span class="text-cyan-500 dark:text-cyan-400 font-semibold">Active • 94%</span>
-        </div>
-
-        <!-- Mobile Actions -->
-        <div class="pt-2 flex flex-col gap-2">
-          <a href="mailto:bahaam.coding@gmail.com" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 text-center text-xs font-semibold text-white shadow-lg shadow-cyan-500/25">
-            Contact Bahaa
-          </a>
-          <a href="https://github.com/IBahaaaldin" target="_blank" class="w-full py-2 rounded-xl border border-black/10 dark:border-white/15 text-center text-xs font-medium text-neutral-700 dark:text-neutral-300 hover:text-neutral-950 dark:hover:text-white">
-            GitHub @IBahaaaldin
-          </a>
+        <!-- Spatial Telemetry Card -->
+        <div class="mt-6 p-4 rounded-2xl bg-black/40 border border-white/10 space-y-3">
+          <div class="flex items-center justify-between text-xs">
+            <span class="text-neutral-400 font-medium">Spatial Telemetry</span>
+            <span class="text-cyan-400 font-semibold font-mono">94% Dynamic</span>
+          </div>
+          <div class="h-1.5 w-full bg-neutral-800 rounded-full overflow-hidden">
+            <div class="h-full bg-gradient-to-r from-cyan-400 to-indigo-500 w-[94%]"></div>
+          </div>
+          <div class="flex items-center justify-between text-[11px] text-neutral-400">
+            <span>Immersion Field</span>
+            <span class="text-white font-mono">360&deg; Spatial</span>
+          </div>
         </div>
       </div>
     </div>
 
-  </div>
+    <!-- Sidebar Footer -->
+    <div class="pt-6 border-t border-white/10 space-y-3">
+      <a href="mailto:bahaam.coding@gmail.com" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 text-center text-xs font-semibold text-white shadow-lg shadow-cyan-500/25 block">
+        Connect with Bahaa
+      </a>
+      <a href="https://github.com/IBahaaaldin" target="_blank" class="w-full py-2 rounded-xl border border-white/10 text-center text-xs font-medium text-neutral-300 hover:text-white block">
+        GitHub @IBahaaaldin
+      </a>
+    </div>
+  </aside>
 
   <!-- INTERACTIVE LOGIC: 3D TILT, SPECULAR GLOW, MAGNETIC TABS, THEME -->
   <script>
@@ -498,28 +533,34 @@
     mobileThemeToggle?.addEventListener('click', () => applyTheme(!isDark));
 
     // ==========================================
-    // MOBILE DRAWER
+    // MOBILE VISIONOS SLIDE-IN SIDEBAR
     // ==========================================
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileDrawer = document.getElementById('mobileDrawer');
-    const hamburgerIcon = document.getElementById('hamburgerIcon');
-    const closeIcon = document.getElementById('closeIcon');
-    let mobileOpen = false;
+    const closeSidebarBtn = document.getElementById('closeSidebarBtn');
+    const mobileBackdrop = document.getElementById('mobileBackdrop');
+    const mobileSidebar = document.getElementById('mobileSidebar');
+    const sidebarLinks = document.querySelectorAll('.sidebar-link');
 
-    mobileMenuBtn?.addEventListener('click', () => {
-      mobileOpen = !mobileOpen;
-      if (mobileOpen) {
-        mobileDrawer.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-3');
-        mobileDrawer.classList.add('opacity-100', 'translate-y-0');
-        hamburgerIcon.classList.add('hidden');
-        closeIcon.classList.remove('hidden');
-      } else {
-        mobileDrawer.classList.add('opacity-0', 'pointer-events-none', 'translate-y-3');
-        mobileDrawer.classList.remove('opacity-100', 'translate-y-0');
-        hamburgerIcon.classList.remove('hidden');
-        closeIcon.classList.add('hidden');
-      }
-    });
+    function openMobileSidebar() {
+      mobileBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+      mobileBackdrop.classList.add('opacity-100', 'pointer-events-auto');
+      mobileSidebar.classList.remove('translate-x-full');
+      mobileSidebar.classList.add('translate-x-0');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileSidebar() {
+      mobileBackdrop.classList.add('opacity-0', 'pointer-events-none');
+      mobileBackdrop.classList.remove('opacity-100', 'pointer-events-auto');
+      mobileSidebar.classList.add('translate-x-full');
+      mobileSidebar.classList.remove('translate-x-0');
+      document.body.style.overflow = '';
+    }
+
+    mobileMenuBtn?.addEventListener('click', openMobileSidebar);
+    closeSidebarBtn?.addEventListener('click', closeMobileSidebar);
+    mobileBackdrop?.addEventListener('click', closeMobileSidebar);
+    sidebarLinks.forEach(link => link.addEventListener('click', closeMobileSidebar));
   </script>
 </body>
 </html>

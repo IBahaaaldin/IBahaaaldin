@@ -243,49 +243,81 @@
         </div>
       </div>
 
-      <!-- Mobile Dropdown Drawer -->
-      <div id="mobileDrawer" class="hidden w-full mt-2 dev-toolbar rounded-2xl p-4 flex-col gap-3 shadow-2xl transition-all">
-        <!-- Git Status Info -->
+    </div>
+  </header>
+
+  <!-- MOBILE BACKDROP OVERLAY -->
+  <div id="mobileBackdrop" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+
+  <!-- MOBILE DEV TOOLBAR SLIDE-IN SIDEBAR SHEET -->
+  <aside id="mobileSidebar" class="fixed inset-y-0 right-0 w-80 max-w-[85vw] dev-toolbar border-l border-black/10 dark:border-white/10 shadow-2xl z-50 flex flex-col justify-between p-6 transform translate-x-full transition-transform duration-300 ease-out overflow-y-auto">
+    <div>
+      <!-- Sidebar Header -->
+      <div class="flex items-center justify-between pb-5 border-b border-black/10 dark:border-white/10">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 flex items-center justify-center font-bold text-xs font-mono shadow-md flex-shrink-0">
+            BM
+          </div>
+          <div class="flex flex-col text-left leading-tight">
+            <span class="text-xs font-bold text-neutral-900 dark:text-white whitespace-nowrap">bahaa.dev</span>
+            <span class="text-[9px] font-mono text-emerald-500 whitespace-nowrap">● READY • 98ms</span>
+          </div>
+        </div>
+        <!-- Close Button -->
+        <button id="closeSidebarBtn" class="p-2 rounded-xl text-neutral-500 hover:text-neutral-900 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/10 active:scale-95 transition-all" aria-label="Close Sidebar">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Sidebar Body -->
+      <div class="mt-6 space-y-4">
+        <!-- Git Status Card -->
         <div class="flex items-center justify-between p-3 rounded-xl bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/10 font-mono text-xs">
           <div class="flex items-center gap-2">
             <svg class="w-3.5 h-3.5 text-cyan-500 stroke-current stroke-2 fill-none" viewBox="0 0 24 24"><line x1="6" y1="3" x2="6" y2="15"></line><circle cx="18" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><path d="M18 9a9 9 0 0 1-9 9"></path></svg>
             <span class="text-neutral-900 dark:text-white font-semibold">branch: main</span>
           </div>
-          <span class="text-[10px] text-emerald-400 font-semibold">98ms latency</span>
+          <span class="text-[10px] text-emerald-400 font-semibold">All checks passed</span>
         </div>
 
         <!-- Links -->
-        <div class="flex flex-col gap-1 text-sm font-semibold">
-          <a href="#work" class="px-3 py-2 rounded-xl hover:bg-black/5 dark:hover:bg-white/5 text-neutral-900 dark:text-white flex items-center justify-between">
+        <div class="space-y-1 pt-2">
+          <a href="#work" class="sidebar-link px-3 py-2.5 rounded-xl hover:bg-black/5 dark:hover:bg-white/5 text-neutral-900 dark:text-white flex items-center justify-between font-semibold text-xs">
             <span>Work</span>
             <span class="text-xs font-mono text-neutral-400">01</span>
           </a>
-          <a href="#projects" class="px-3 py-2 rounded-xl hover:bg-black/5 dark:hover:bg-white/5 text-neutral-900 dark:text-white flex items-center justify-between">
+          <a href="#projects" class="sidebar-link px-3 py-2.5 rounded-xl hover:bg-black/5 dark:hover:bg-white/5 text-neutral-900 dark:text-white flex items-center justify-between font-semibold text-xs">
             <span>Projects</span>
             <span class="text-xs font-mono text-neutral-400">02</span>
           </a>
-          <a href="#stack" class="px-3 py-2 rounded-xl hover:bg-black/5 dark:hover:bg-white/5 text-neutral-900 dark:text-white flex items-center justify-between">
+          <a href="#stack" class="sidebar-link px-3 py-2.5 rounded-xl hover:bg-black/5 dark:hover:bg-white/5 text-neutral-900 dark:text-white flex items-center justify-between font-semibold text-xs">
             <span>Stack</span>
             <span class="text-xs font-mono text-neutral-400">03</span>
           </a>
-          <a href="#about" class="px-3 py-2 rounded-xl hover:bg-black/5 dark:hover:bg-white/5 text-neutral-900 dark:text-white flex items-center justify-between">
+          <a href="#about" class="sidebar-link px-3 py-2.5 rounded-xl hover:bg-black/5 dark:hover:bg-white/5 text-neutral-900 dark:text-white flex items-center justify-between font-semibold text-xs">
             <span>About</span>
             <span class="text-xs font-mono text-neutral-400">04</span>
           </a>
         </div>
-
-        <!-- Mobile CTA -->
-        <div class="pt-2 border-t border-black/5 dark:border-white/10 flex items-center justify-between">
-          <span class="text-xs font-mono text-neutral-500">DXB • GMT+4</span>
-          <a href="mailto:bahaam.coding@gmail.com" class="px-4 py-1.5 rounded-xl text-xs font-bold text-white bg-neutral-900 dark:bg-white dark:text-neutral-900 shadow-md">
-            Get in Touch ↗
-          </a>
-        </div>
       </div>
-
     </div>
 
-  </header>
+    <!-- Sidebar Footer -->
+    <div class="pt-6 border-t border-black/10 dark:border-white/10 space-y-3">
+      <div class="flex items-center justify-between text-xs font-mono text-neutral-500 px-1">
+        <span>Location</span>
+        <span class="font-semibold text-neutral-900 dark:text-white">DXB • GMT+4</span>
+      </div>
+      <a href="mailto:bahaam.coding@gmail.com" class="w-full py-2.5 rounded-xl bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 text-center text-xs font-bold shadow-md block">
+        Get in Touch ↗
+      </a>
+      <a href="https://github.com/IBahaaaldin" target="_blank" class="w-full py-2 rounded-xl border border-black/10 dark:border-white/10 text-center text-xs font-medium text-neutral-700 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white block">
+        GitHub @IBahaaaldin
+      </a>
+    </div>
+  </aside>
 
 
   <!-- ============================================================ -->
@@ -389,26 +421,33 @@
       }, 1600);
     });
 
-    // 4. MOBILE DRAWER TOGGLE
+    // 4. MOBILE SLIDE-IN SIDEBAR
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileDrawer = document.getElementById('mobileDrawer');
-    const menuBarsIcon = document.getElementById('menuBarsIcon');
-    const menuCloseIcon = document.getElementById('menuCloseIcon');
+    const closeSidebarBtn = document.getElementById('closeSidebarBtn');
+    const mobileBackdrop = document.getElementById('mobileBackdrop');
+    const mobileSidebar = document.getElementById('mobileSidebar');
+    const sidebarLinks = document.querySelectorAll('.sidebar-link');
 
-    mobileMenuBtn?.addEventListener('click', () => {
-      const isClosed = mobileDrawer.classList.contains('hidden');
-      if (isClosed) {
-        mobileDrawer.classList.remove('hidden');
-        mobileDrawer.classList.add('flex');
-        menuBarsIcon.classList.add('hidden');
-        menuCloseIcon.classList.remove('hidden');
-      } else {
-        mobileDrawer.classList.add('hidden');
-        mobileDrawer.classList.remove('flex');
-        menuBarsIcon.classList.remove('hidden');
-        menuCloseIcon.classList.add('hidden');
-      }
-    });
+    function openMobileSidebar() {
+      mobileBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+      mobileBackdrop.classList.add('opacity-100', 'pointer-events-auto');
+      mobileSidebar.classList.remove('translate-x-full');
+      mobileSidebar.classList.add('translate-x-0');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileSidebar() {
+      mobileBackdrop.classList.add('opacity-0', 'pointer-events-none');
+      mobileBackdrop.classList.remove('opacity-100', 'pointer-events-auto');
+      mobileSidebar.classList.add('translate-x-full');
+      mobileSidebar.classList.remove('translate-x-0');
+      document.body.style.overflow = '';
+    }
+
+    mobileMenuBtn?.addEventListener('click', openMobileSidebar);
+    closeSidebarBtn?.addEventListener('click', closeMobileSidebar);
+    mobileBackdrop?.addEventListener('click', closeMobileSidebar);
+    sidebarLinks.forEach(link => link.addEventListener('click', closeMobileSidebar));
   </script>
 </body>
 </html>
