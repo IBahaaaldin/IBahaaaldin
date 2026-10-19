@@ -79,7 +79,31 @@ Ready-UIs/
 │   │   ├── record.js
 │   │   ├── README.md
 │   │   └── CAPTION.md
-│   └── 06-dev-toolbar-navbar/
+│   ├── 06-dev-toolbar-navbar/
+│   │   ├── index.html
+│   │   ├── cover.png
+│   │   ├── cover-instagram.png
+│   │   ├── cover-reel.png
+│   │   ├── screenshot-desktop.png
+│   │   ├── video-desktop.mp4
+│   │   ├── screenshot-mobile.png
+│   │   ├── video-mobile.mp4
+│   │   ├── record.js
+│   │   ├── README.md
+│   │   └── CAPTION.md
+│   ├── 07-fluid-mega-menu-navbar/
+│   │   ├── index.html
+│   │   ├── cover.png
+│   │   ├── cover-instagram.png
+│   │   ├── cover-reel.png
+│   │   ├── screenshot-desktop.png
+│   │   ├── video-desktop.mp4
+│   │   ├── screenshot-mobile.png
+│   │   ├── video-mobile.mp4
+│   │   ├── record.js
+│   │   ├── README.md
+│   │   └── CAPTION.md
+│   └── 08-visionos-glass-navbar/
 │       ├── index.html
 │       ├── cover.png
 │       ├── cover-instagram.png
@@ -101,13 +125,15 @@ Ready-UIs/
 ### 🧭 Navbars
 
 | # | Component Name | Cover Preview | Standalone Repository | Live Demo | Highlights |
-| :-: | :--- | :---: | :---: | :---: | :--- |
+| :-: | :--- | :--- | :--- | :--- | :--- |
 | **01** | [**Floating Island Navbar**](navbars/01-floating-island-navbar/) | [![Cover](navbars/01-floating-island-navbar/cover.png)](navbars/01-floating-island-navbar/) | [GitHub Repo](https://github.com/IBahaaaldin/navbar-floating-island) | [Live Demo](https://IBahaaaldin.github.io/navbar-floating-island/) | `Apple macOS Dock`, `Sliding Capsule`, `Dubai Clock`, `Dark/Light Switch` |
 | **02** | [**Linear Command Navbar**](navbars/02-linear-command-navbar/) | [![Cover](navbars/02-linear-command-navbar/cover.png)](navbars/02-linear-command-navbar/) | [GitHub Repo](https://github.com/IBahaaaldin/navbar-linear-command) | [Live Demo](https://IBahaaaldin.github.io/navbar-linear-command/) | `Linear Command Bar`, `Projects Dropdown`, `⌘K Search`, `Dark/Light Switch` |
 | **03** | [**Dynamic Island Navbar**](navbars/03-dynamic-island-navbar/) | [![Cover](navbars/03-dynamic-island-navbar/cover.png)](navbars/03-dynamic-island-navbar/) | [GitHub Repo](https://github.com/IBahaaaldin/navbar-dynamic-island) | [Live Demo](https://IBahaaaldin.github.io/navbar-dynamic-island/) | `Apple Dynamic Island`, `Soundwave Activity`, `Fluid Expansion`, `Dark/Light Switch` |
 | **04** | [**Spotlight Border Navbar**](navbars/04-spotlight-border-navbar/) | [![Cover](navbars/04-spotlight-border-navbar/cover.png)](navbars/04-spotlight-border-navbar/) | [GitHub Repo](https://github.com/IBahaaaldin/navbar-spotlight-border) | [Live Demo](https://IBahaaaldin.github.io/navbar-spotlight-border/) | `Cursor Spotlight Glow`, `Shimmer Badge`, `Iridescent Border`, `Dark/Light Switch` |
 | **05** | [**Studio Media Navbar**](navbars/05-studio-media-navbar/) | [![Cover](navbars/05-studio-media-navbar/cover.png)](navbars/05-studio-media-navbar/) | [GitHub Repo](https://github.com/IBahaaaldin/navbar-studio-media) | [Live Demo](https://IBahaaaldin.github.io/navbar-studio-media/) | `Audio Player`, `Dancing Equalizer`, `Spinning Vinyl`, `Dark/Light Switch` |
 | **06** | [**Developer Toolbar Navbar**](navbars/06-dev-toolbar-navbar/) | [![Cover](navbars/06-dev-toolbar-navbar/cover.png)](navbars/06-dev-toolbar-navbar/) | [GitHub Repo](https://github.com/IBahaaaldin/navbar-dev-toolbar) | [Live Demo](https://IBahaaaldin.github.io/navbar-dev-toolbar/) | `Vercel Toolbar`, `Git Branch Switcher`, `Live 98ms Metric`, `Copy Email` |
+| **07** | [**Fluid Morphing Mega-Menu**](navbars/07-fluid-mega-menu-navbar/) | [![Cover](navbars/07-fluid-mega-menu-navbar/cover.png)](navbars/07-fluid-mega-menu-navbar/) | [GitHub Repo](https://github.com/IBahaaaldin/navbar-fluid-mega-menu) | [Live Demo](https://IBahaaaldin.github.io/navbar-fluid-mega-menu/) | `Stripe Mega-Menu`, `Morphing Container`, `Sliding Arrow`, `Spring Physics` |
+| **08** | [**VisionOS Spatial Glass Dock**](navbars/08-visionos-glass-navbar/) | [![Cover](navbars/08-visionos-glass-navbar/cover.png)](navbars/08-visionos-glass-navbar/) | [GitHub Repo](https://github.com/IBahaaaldin/navbar-visionos-glass) | [Live Demo](https://IBahaaaldin.github.io/navbar-visionos-glass/) | `VisionOS Glass`, `3D Perspective Tilt`, `Specular Refraction`, `Control Center` |
 
 ---
 

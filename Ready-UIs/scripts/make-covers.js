@@ -408,6 +408,102 @@ const items = [
                     inset 0 1px 0 0 rgba(255, 255, 255, 0.25);
       }
     `
+  },
+  {
+    id: '07',
+    folder: '07-fluid-mega-menu-navbar',
+    repo: 'navbar-fluid-mega-menu',
+    title: 'Fluid Morphing Mega-Menu',
+    tagline: 'Spring-animated morphing dropdown container with sliding indicator arrow',
+    badge: 'READY UI #07',
+    accentColor: '#6366f1',
+    glowGradient: 'radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.45) 0%, rgba(168, 85, 247, 0.2) 45%, transparent 75%)',
+    tags: ['Tailwind CSS', 'Fluid Morph', 'Spring Physics', 'Mega-Menu', 'Dark / Light'],
+    renderNavbar: `
+      <div class="relative flex flex-col items-center">
+        <nav class="flex items-center gap-1.5 px-3 py-2 rounded-full border border-white/10 bg-neutral-950/80 backdrop-blur-2xl shadow-2xl">
+          <div class="flex items-center gap-2 pl-2 pr-3 py-1.5 rounded-full whitespace-nowrap">
+            <div class="w-7 h-7 rounded-full bg-gradient-to-tr from-indigo-500 to-purple-500 p-[1.5px]">
+              <div class="w-full h-full rounded-full bg-neutral-950 flex items-center justify-center text-[10px] font-bold text-white">BM</div>
+            </div>
+            <div class="flex flex-col text-left">
+              <span class="text-xs font-semibold text-white whitespace-nowrap">Bahaa Mohammed</span>
+              <span class="text-[9px] text-neutral-400 whitespace-nowrap">Senior Frontend</span>
+            </div>
+          </div>
+          <div class="h-4 w-px bg-white/10 mx-1"></div>
+          <div class="flex items-center gap-1">
+            <span class="px-3 py-1.5 rounded-full text-xs font-semibold text-white bg-white/10">Products</span>
+            <span class="px-3 py-1.5 rounded-full text-xs font-medium text-neutral-400">Solutions</span>
+            <span class="px-3 py-1.5 rounded-full text-xs font-medium text-neutral-400">Resources</span>
+            <span class="px-3 py-1.5 rounded-full text-xs font-medium text-neutral-400">Pricing</span>
+          </div>
+          <div class="h-4 w-px bg-white/10 mx-1"></div>
+          <div class="flex items-center gap-2 pl-1 pr-1">
+            <span class="px-3 py-1 text-xs font-medium text-neutral-300">Sign In</span>
+            <span class="px-3.5 py-1.5 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 text-xs font-semibold text-white shadow-md">Get Started</span>
+          </div>
+        </nav>
+      </div>
+    `,
+    extraStyles: ``
+  },
+  {
+    id: '08',
+    folder: '08-visionos-glass-navbar',
+    repo: 'navbar-visionos-glass',
+    title: 'VisionOS Spatial Glass Dock',
+    tagline: 'Spatial frosted glassmorphism with 3D tilt physics & specular light refraction',
+    badge: 'READY UI #08',
+    accentColor: '#06b6d4',
+    glowGradient: 'radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.45) 0%, rgba(59, 130, 246, 0.22) 45%, transparent 75%)',
+    tags: ['Tailwind CSS', 'VisionOS Glass', '3D Tilt Physics', 'Specular Refraction', 'Control Center'],
+    renderNavbar: `
+      <nav class="vision-dock flex items-center gap-2 px-4 py-2.5 rounded-full select-none">
+        <div class="flex items-center gap-2 pl-1 pr-2 py-0.5 rounded-full whitespace-nowrap">
+          <div class="relative w-8 h-8 rounded-full bg-gradient-to-tr from-cyan-400 to-indigo-400 p-[1.5px]">
+            <div class="w-full h-full rounded-full bg-black/80 backdrop-blur-md flex items-center justify-center text-[10px] font-bold text-white">BM</div>
+            <span class="absolute -bottom-0.5 -right-0.5 w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.9)] border-2 border-black"></span>
+          </div>
+          <div class="flex flex-col text-left">
+            <span class="text-xs font-semibold text-white whitespace-nowrap">Bahaa Mohammed</span>
+            <span class="text-[9px] text-neutral-400 whitespace-nowrap">Spatial UI & Frontend</span>
+          </div>
+        </div>
+
+        <div class="h-4 w-px bg-white/15 mx-1"></div>
+
+        <div class="flex items-center gap-1 p-0.5 rounded-full bg-white/[0.05]">
+          <span class="px-3.5 py-1.5 rounded-full text-xs font-medium text-white bg-white/20 shadow-sm border border-white/20 whitespace-nowrap">Spatial 3D</span>
+          <span class="px-3.5 py-1.5 rounded-full text-xs font-medium text-neutral-400 whitespace-nowrap">Canvas</span>
+          <span class="px-3.5 py-1.5 rounded-full text-xs font-medium text-neutral-400 whitespace-nowrap">Studio</span>
+          <span class="px-3.5 py-1.5 rounded-full text-xs font-medium text-neutral-400 whitespace-nowrap">Experiments</span>
+        </div>
+
+        <div class="h-4 w-px bg-white/15 mx-1"></div>
+
+        <div class="flex items-center gap-2">
+          <div class="px-3 py-1.5 rounded-full bg-white/10 text-xs font-medium text-cyan-300 border border-white/10 flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+            <span>Controls</span>
+          </div>
+          <div class="px-3.5 py-1.5 rounded-full bg-white/15 hover:bg-white/20 border border-white/20 text-xs font-semibold text-white shadow-md">
+            Connect
+          </div>
+        </div>
+      </nav>
+    `,
+    extraStyles: `
+      .vision-dock {
+        background: rgba(255, 255, 255, 0.06);
+        backdrop-filter: blur(40px) saturate(190%);
+        -webkit-backdrop-filter: blur(40px) saturate(190%);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.7),
+                    0 0 25px -5px rgba(6, 182, 212, 0.3),
+                    inset 0 1px 1px 0 rgba(255, 255, 255, 0.3);
+      }
+    `
   }
 ];
 
