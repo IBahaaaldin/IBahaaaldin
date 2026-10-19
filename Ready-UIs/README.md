@@ -27,7 +27,25 @@ Ready-UIs/
 │   │   ├── record.js
 │   │   ├── README.md
 │   │   └── CAPTION.md
-│   └── 02-linear-command-navbar/
+│   ├── 02-linear-command-navbar/
+│   │   ├── index.html
+│   │   ├── screenshot-desktop.png
+│   │   ├── video-desktop.mp4
+│   │   ├── screenshot-mobile.png
+│   │   ├── video-mobile.mp4
+│   │   ├── record.js
+│   │   ├── README.md
+│   │   └── CAPTION.md
+│   ├── 03-dynamic-island-navbar/
+│   │   ├── index.html
+│   │   ├── screenshot-desktop.png
+│   │   ├── video-desktop.mp4
+│   │   ├── screenshot-mobile.png
+│   │   ├── video-mobile.mp4
+│   │   ├── record.js
+│   │   ├── README.md
+│   │   └── CAPTION.md
+│   └── 04-spotlight-border-navbar/
 │       ├── index.html
 │       ├── screenshot-desktop.png
 │       ├── video-desktop.mp4
@@ -47,8 +65,10 @@ Ready-UIs/
 
 | # | Component Name | Desktop Preview | Mobile Preview | Highlights |
 | :-: | :--- | :---: | :---: | :--- |
-| **01** | [**Floating Island Navbar**](navbars/01-floating-island-navbar/) | [Screenshot](navbars/01-floating-island-navbar/screenshot-desktop.png) • [Video](navbars/01-floating-island-navbar/video-desktop.mp4) | [Screenshot](navbars/01-floating-island-navbar/screenshot-mobile.png) • [Video](navbars/01-floating-island-navbar/video-mobile.mp4) | `Centered Dock`, `Magnetic Sliding Pill`, `Dark/Light Switch`, `Mobile Drawer` |
-| **02** | [**Linear Command Navbar**](navbars/02-linear-command-navbar/) | [Screenshot](navbars/02-linear-command-navbar/screenshot-desktop.png) • [Video](navbars/02-linear-command-navbar/video-desktop.mp4) | [Screenshot](navbars/02-linear-command-navbar/screenshot-mobile.png) • [Video](navbars/02-linear-command-navbar/video-mobile.mp4) | `Centered Bar`, `Projects Dropdown`, `⌘K Search Pop-up`, `Dark/Light Switch`, `Mobile Drawer` |
+| **01** | [**Floating Island Navbar**](navbars/01-floating-island-navbar/) | [Screenshot](navbars/01-floating-island-navbar/screenshot-desktop.png) • [Video](navbars/01-floating-island-navbar/video-desktop.mp4) | [Screenshot](navbars/01-floating-island-navbar/screenshot-mobile.png) • [Video](navbars/01-floating-island-navbar/video-mobile.mp4) | `Apple macOS Dock`, `Sliding Pill Capsule`, `Dark/Light Switch`, `Mobile Drawer` |
+| **02** | [**Linear Command Navbar**](navbars/02-linear-command-navbar/) | [Screenshot](navbars/02-linear-command-navbar/screenshot-desktop.png) • [Video](navbars/02-linear-command-navbar/video-desktop.mp4) | [Screenshot](navbars/02-linear-command-navbar/screenshot-mobile.png) • [Video](navbars/02-linear-command-navbar/video-mobile.mp4) | `Linear / Raycast Bar`, `Projects Dropdown`, `⌘K Search Pop-up`, `Mobile Drawer` |
+| **03** | [**Dynamic Island Navbar**](navbars/03-dynamic-island-navbar/) | [Screenshot](navbars/03-dynamic-island-navbar/screenshot-desktop.png) • [Video](navbars/03-dynamic-island-navbar/video-desktop.mp4) | [Screenshot](navbars/03-dynamic-island-navbar/screenshot-mobile.png) • [Video](navbars/03-dynamic-island-navbar/video-mobile.mp4) | `Apple Dynamic Island`, `Soundwave Activity`, `Fluid Spring Expansion`, `Dark/Light Switch` |
+| **04** | [**Spotlight Border Navbar**](navbars/04-spotlight-border-navbar/) | [Screenshot](navbars/04-spotlight-border-navbar/screenshot-desktop.png) • [Video](navbars/04-spotlight-border-navbar/video-desktop.mp4) | [Screenshot](navbars/04-spotlight-border-navbar/screenshot-mobile.png) • [Video](navbars/04-spotlight-border-navbar/video-mobile.mp4) | `Cursor Spotlight Glow`, `Shimmer Badge`, `Iridescent Border Sheen`, `Dark/Light Switch` |
 
 ---
 
