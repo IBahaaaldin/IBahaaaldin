@@ -7,14 +7,41 @@ const items = [
     id: '01',
     folder: '01-project-management-dashboard',
     repo: 'dashboard-project-management',
+    domain: 'donezo.ready-ui.internal',
+    category: 'Task Velocity & Project OS',
     title: 'Donezo — Project Management OS',
     tagline: 'Modern task velocity dashboard with weekly analytics chart, live sprint timer & team collaboration',
     badge: 'DASHBOARD #01',
     episode: 'REEL 13',
     accentColor: '#10b981',
+    pulseColor: 'bg-emerald-400',
+    dotColor: 'bg-emerald-500',
+    borderColor: 'rgba(16, 185, 129, 0.3)',
+    shadowColor: 'rgba(16, 185, 129, 0.25)',
+    categoryBadgeClass: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
     accentGradient: 'from-emerald-400 via-teal-500 to-emerald-700',
     glowGradient: 'radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.35) 0%, rgba(6, 78, 59, 0.22) 45%, transparent 75%)',
     tags: ['Tailwind CSS', 'Project Analytics', 'Time Tracker Engine', 'Team Collaboration', 'Dark / Light']
+  },
+  {
+    id: '02',
+    folder: '02-peymen-fintech-dashboard',
+    repo: 'dashboard-peymen-fintech',
+    domain: 'peymen.ready-ui.internal',
+    category: 'Digital Banking & Fintech OS',
+    title: 'Peymen — Modern Fintech Dashboard',
+    tagline: 'Smart digital banking workspace with luxury titanium card, instant peer-to-peer transfers & cash flow velocity',
+    badge: 'DASHBOARD #02',
+    episode: 'REEL 14',
+    accentColor: '#6366f1',
+    pulseColor: 'bg-indigo-400',
+    dotColor: 'bg-indigo-500',
+    borderColor: 'rgba(99, 102, 241, 0.35)',
+    shadowColor: 'rgba(99, 102, 241, 0.25)',
+    categoryBadgeClass: 'bg-indigo-500/10 text-indigo-400 border-indigo-500/20',
+    accentGradient: 'from-indigo-500 via-purple-500 to-indigo-700',
+    glowGradient: 'radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.38) 0%, rgba(147, 51, 234, 0.2) 45%, transparent 75%)',
+    tags: ['Tailwind CSS', 'Smart Titanium Card', 'Quick Transfer Engine', 'Cash Flow Velocity', 'Dark / Light']
   }
 ];
 
@@ -55,8 +82,8 @@ function buildWidescreenHtml(item, screenshotBase64) {
     }
     .mockup-window {
       background: rgba(14, 18, 27, 0.88);
-      border: 1px solid rgba(16, 185, 129, 0.3);
-      box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.95), 0 0 30px -5px rgba(16, 185, 129, 0.2);
+      border: 1px solid ${item.borderColor};
+      box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.95), 0 0 30px -5px ${item.shadowColor};
       border-radius: 14px;
       overflow: hidden;
     }
@@ -70,7 +97,7 @@ function buildWidescreenHtml(item, screenshotBase64) {
   <header class="relative z-10 flex items-center justify-between w-full">
     <div class="flex items-center gap-3">
       <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.08] border border-white/10 text-xs font-mono font-semibold tracking-wide text-white shadow-lg backdrop-blur-md">
-        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="w-2 h-2 rounded-full ${item.pulseColor} animate-pulse"></span>
         ${item.badge}
       </span>
       <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/5 text-[11px] font-mono text-neutral-400">
@@ -89,9 +116,9 @@ function buildWidescreenHtml(item, screenshotBase64) {
   <main class="relative z-10 grid grid-cols-12 gap-8 items-center my-auto w-full px-2">
     <!-- Left Column: Typography & Tags -->
     <div class="col-span-5 flex flex-col justify-center text-left space-y-3.5">
-      <div class="inline-flex items-center gap-2 text-emerald-400 font-mono text-xs font-semibold uppercase tracking-wider">
-        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-        Task & Velocity Workspace
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full ${item.categoryBadgeClass} border font-mono text-xs font-semibold uppercase tracking-wider">
+        <span class="w-1.5 h-1.5 rounded-full ${item.dotColor}"></span>
+        ${item.category}
       </div>
       <h1 class="text-3xl font-extrabold tracking-tight text-white leading-snug">
         ${item.title}
@@ -120,7 +147,7 @@ function buildWidescreenHtml(item, screenshotBase64) {
             <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80 inline-block"></span>
             <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80 inline-block"></span>
           </div>
-          <span class="font-mono text-[11px] text-neutral-400">donezo.ready-ui.internal</span>
+          <span class="font-mono text-[11px] text-neutral-400">${item.domain}</span>
           <span class="w-8"></span>
         </div>
         <!-- Embedded Preview -->
@@ -134,7 +161,7 @@ function buildWidescreenHtml(item, screenshotBase64) {
   <!-- BOTTOM FOOTER -->
   <footer class="relative z-10 flex items-center justify-between w-full pt-3 border-t border-white/[0.08] text-xs text-neutral-400">
     <div class="flex items-center gap-2">
-      <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+      <span class="w-2 h-2 rounded-full ${item.dotColor}"></span>
       <span class="font-medium text-neutral-300">Free Open-Source Component</span>
       <span class="text-neutral-600">•</span>
       <span class="font-mono text-[11px] text-neutral-400">github.com/IBahaaaldin/${item.repo}</span>
@@ -185,8 +212,8 @@ function buildSquareHtml(item, screenshotBase64) {
     }
     .mockup-window {
       background: rgba(14, 18, 27, 0.92);
-      border: 1px solid rgba(16, 185, 129, 0.3);
-      box-shadow: 0 35px 90px -20px rgba(0, 0, 0, 0.95), 0 0 30px -5px rgba(16, 185, 129, 0.25);
+      border: 1px solid ${item.borderColor};
+      box-shadow: 0 35px 90px -20px rgba(0, 0, 0, 0.95), 0 0 30px -5px ${item.shadowColor};
       border-radius: 16px;
       overflow: hidden;
     }
@@ -200,7 +227,7 @@ function buildSquareHtml(item, screenshotBase64) {
   <header class="relative z-10 flex items-center justify-between w-full">
     <div class="flex items-center gap-3">
       <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.08] border border-white/10 text-xs font-mono font-semibold tracking-wide text-white shadow-lg backdrop-blur-md">
-        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="w-2.5 h-2.5 rounded-full ${item.pulseColor} animate-pulse"></span>
         ${item.badge}
       </span>
       <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/5 text-xs font-mono text-neutral-400">
@@ -219,8 +246,8 @@ function buildSquareHtml(item, screenshotBase64) {
   <main class="relative z-10 flex flex-col items-center justify-center my-auto text-center w-full max-w-4xl mx-auto py-2">
     <!-- Title & Tagline -->
     <div class="flex flex-col items-center mb-6">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-mono font-bold uppercase tracking-wider mb-3">
-        Task Velocity & Project OS
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full ${item.categoryBadgeClass} border text-xs font-mono font-bold uppercase tracking-wider mb-3">
+        ${item.category}
       </div>
       <h1 class="text-4xl font-extrabold tracking-tight text-white mb-2 leading-tight">
         ${item.title}
@@ -239,7 +266,7 @@ function buildSquareHtml(item, screenshotBase64) {
             <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80 inline-block"></span>
             <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80 inline-block"></span>
           </div>
-          <span class="font-mono text-xs text-neutral-400">donezo.ready-ui.internal</span>
+          <span class="font-mono text-xs text-neutral-400">${item.domain}</span>
           <span class="w-8"></span>
         </div>
         <div class="w-full h-[470px] overflow-hidden bg-slate-950">
@@ -261,14 +288,14 @@ function buildSquareHtml(item, screenshotBase64) {
   <!-- BOTTOM FOOTER -->
   <footer class="relative z-10 flex items-center justify-between w-full pt-4 border-t border-white/[0.08] text-xs text-neutral-400">
     <div class="flex items-center gap-2">
-      <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+      <span class="w-2 h-2 rounded-full ${item.dotColor}"></span>
       <span class="font-medium text-neutral-300">Free Open-Source Component</span>
       <span class="text-neutral-600">•</span>
       <span class="font-mono text-[11px] text-neutral-400">github.com/IBahaaaldin/${item.repo}</span>
     </div>
 
     <div class="flex items-center gap-2 font-mono text-[11px] text-neutral-300">
-      <span>Swipe for Video Demo ➡️</span>
+      <span>HTML5 + Tailwind CSS</span>
     </div>
   </footer>
 </body>
@@ -311,7 +338,7 @@ function buildReelHtml(item, screenshotBase64) {
       transform: translate(-50%, -50%);
       width: 900px;
       height: 900px;
-      background: radial-gradient(circle, rgba(16, 185, 129, 0.4) 0%, rgba(6, 78, 59, 0.2) 45%, transparent 75%);
+      background: ${item.glowGradient};
       pointer-events: none;
       filter: blur(40px);
     }
@@ -322,7 +349,7 @@ function buildReelHtml(item, screenshotBase64) {
       transform: translateX(-50%);
       width: 800px;
       height: 500px;
-      background: radial-gradient(circle, rgba(16, 185, 129, 0.3) 0%, transparent 70%);
+      background: radial-gradient(circle, ${item.borderColor} 0%, transparent 70%);
       pointer-events: none;
       filter: blur(60px);
     }
@@ -336,8 +363,8 @@ function buildReelHtml(item, screenshotBase64) {
     }
     .mockup-window {
       background: rgba(14, 18, 27, 0.95);
-      border: 1px solid rgba(16, 185, 129, 0.35);
-      box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.95), 0 0 35px -5px rgba(16, 185, 129, 0.3);
+      border: 1px solid ${item.borderColor};
+      box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.95), 0 0 35px -5px ${item.shadowColor};
       border-radius: 18px;
       overflow: hidden;
     }
@@ -352,7 +379,7 @@ function buildReelHtml(item, screenshotBase64) {
   <header class="relative z-10 w-full px-16 pt-24 flex items-center justify-between">
     <div class="flex items-center gap-3">
       <div class="px-4 py-2 rounded-full bg-white/[0.08] border border-white/10 text-xs font-mono font-semibold tracking-wider text-white backdrop-blur-md flex items-center gap-2">
-        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="w-2.5 h-2.5 rounded-full ${item.pulseColor} animate-pulse"></span>
         <span>${item.episode}</span>
       </div>
       <div class="px-4 py-2 rounded-full bg-white/[0.04] border border-white/5 text-xs font-mono font-medium text-neutral-400">
@@ -372,7 +399,7 @@ function buildReelHtml(item, screenshotBase64) {
     <!-- Top of Safe Zone: Badge & Headline -->
     <div class="flex flex-col items-center w-full mt-2">
       <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/[0.08] border border-white/15 text-xs font-mono font-bold tracking-widest uppercase text-white shadow-xl backdrop-blur-md mb-4">
-        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-[0_0_12px_#10b981]"></span>
+        <span class="w-2.5 h-2.5 rounded-full ${item.pulseColor} shadow-[0_0_12px_${item.accentColor}]"></span>
         <span>${item.badge}</span>
       </div>
 
@@ -394,7 +421,7 @@ function buildReelHtml(item, screenshotBase64) {
             <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80 inline-block"></span>
             <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80 inline-block"></span>
           </div>
-          <span class="font-mono text-xs text-neutral-400">donezo.ready-ui.internal</span>
+          <span class="font-mono text-xs text-neutral-400">${item.domain}</span>
           <span class="w-8"></span>
         </div>
         <div class="w-full h-[460px] overflow-hidden bg-slate-950">
@@ -413,9 +440,9 @@ function buildReelHtml(item, screenshotBase64) {
         `).join('')}
       </div>
 
-      <div class="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-gradient-to-r ${item.accentGradient} text-white text-xs font-mono font-bold tracking-wider uppercase shadow-2xl shadow-emerald-500/30">
+      <div class="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-gradient-to-r ${item.accentGradient} text-white text-xs font-mono font-bold tracking-wider uppercase shadow-2xl">
         <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-        <span>Watch Full Interaction Reel</span>
+        <span>Explore Digital Banking OS</span>
       </div>
     </div>
   </div>
@@ -426,7 +453,7 @@ function buildReelHtml(item, screenshotBase64) {
     
     <div class="flex items-center justify-between w-full max-w-2xl text-neutral-400 text-xs">
       <div class="flex items-center gap-2">
-        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+        <span class="w-2 h-2 rounded-full ${item.dotColor}"></span>
         <span class="font-medium text-neutral-300">Free Open-Source Code</span>
       </div>
       <div class="font-mono text-neutral-300">
@@ -451,6 +478,10 @@ function buildReelHtml(item, screenshotBase64) {
     console.log(`Generating covers for ${item.title}...`);
 
     const screenshotPath = path.join(itemDir, 'screenshot-desktop.png');
+    if (!fs.existsSync(screenshotPath)) {
+      console.log(`Screenshot missing for ${item.folder}, skipping...`);
+      continue;
+    }
     const screenshotBase64 = fs.readFileSync(screenshotPath).toString('base64');
 
     // 1. Desktop / GitHub Widescreen Cover (1280x640 @ 2x -> 2560x1280)
@@ -521,5 +552,5 @@ function buildReelHtml(item, screenshotBase64) {
   }
 
   await browser.close();
-  console.log('✅ All 3 Dashboard covers generated successfully!');
+  console.log('✅ All Dashboard covers generated successfully!');
 })();
