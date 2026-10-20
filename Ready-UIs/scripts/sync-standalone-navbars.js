@@ -6,7 +6,11 @@ const repos = [
   { folder: '05-studio-media-navbar', name: 'navbar-studio-media' },
   { folder: '06-dev-toolbar-navbar', name: 'navbar-dev-toolbar' },
   { folder: '07-fluid-mega-menu-navbar', name: 'navbar-fluid-mega-menu' },
-  { folder: '08-visionos-glass-navbar', name: 'navbar-visionos-glass' }
+  { folder: '08-visionos-glass-navbar', name: 'navbar-visionos-glass' },
+  { folder: '09-cyber-hud-navbar', name: 'navbar-cyber-hud' },
+  { folder: '10-neumorphic-soft-navbar', name: 'navbar-neumorphic-soft' },
+  { folder: '11-swiss-editorial-navbar', name: 'navbar-swiss-editorial' },
+  { folder: '12-chromatic-prism-navbar', name: 'navbar-chromatic-prism' }
 ];
 
 const root = path.resolve(__dirname, '..');

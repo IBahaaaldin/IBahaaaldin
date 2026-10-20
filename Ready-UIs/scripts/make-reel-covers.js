@@ -506,6 +506,200 @@ const items = [
                     inset 0 1px 1px 0 rgba(255, 255, 255, 0.3);
       }
     `
+  },
+  {
+    id: '09',
+    folder: '09-cyber-hud-navbar',
+    repo: 'navbar-cyber-hud',
+    title: 'Cyber Tactical HUD Terminal',
+    subtitle: 'Futuristic HUD navigation with CRT command terminal & live telemetry stream',
+    badge: 'UI COMPONENT #09',
+    episode: 'REEL 09',
+    accentColor: '#00f3ff',
+    accentGradient: 'from-cyan-400 via-teal-400 to-emerald-400',
+    glowGradient: 'radial-gradient(circle at 50% 50%, rgba(0, 243, 255, 0.45) 0%, rgba(0, 255, 102, 0.22) 45%, transparent 75%)',
+    tags: ['Tailwind CSS', 'Cyber HUD', 'CRT Terminal', 'Web Audio API', 'Telemetry'],
+    renderNavbar: `
+      <nav class="cyber-nav px-4 py-2.5 flex items-center gap-3 text-xs font-mono select-none">
+        <div class="flex items-center gap-2.5 pl-1">
+          <div class="w-8 h-8 rounded-sm bg-cyan-950/80 border border-cyan-400/50 flex items-center justify-center text-cyan-300 font-bold text-xs shadow-[0_0_10px_rgba(0,243,255,0.4)]">
+            BM
+          </div>
+          <div class="flex flex-col text-left leading-tight">
+            <span class="text-xs font-bold text-cyan-300 tracking-wider whitespace-nowrap">BAHAA MOHAMMED</span>
+            <span class="text-[9px] text-slate-400 whitespace-nowrap">SYS-ARCH // LVL-04</span>
+          </div>
+        </div>
+
+        <div class="h-4 w-px bg-cyan-500/30 mx-1"></div>
+
+        <div class="flex items-center gap-1">
+          <span class="px-2.5 py-1 rounded bg-cyan-950/60 border border-cyan-500/40 text-cyan-300 font-semibold shadow-[0_0_8px_rgba(0,243,255,0.3)] whitespace-nowrap">01 // DEPLOY</span>
+          <span class="px-2.5 py-1 rounded text-slate-400 whitespace-nowrap">02 // CLUSTER</span>
+          <span class="px-2.5 py-1 rounded text-slate-400 whitespace-nowrap">03 // SECURITY</span>
+        </div>
+
+        <div class="h-4 w-px bg-cyan-500/30 mx-1"></div>
+
+        <div class="flex items-center gap-2">
+          <div class="flex items-center gap-1 px-2.5 py-1 rounded bg-cyan-500/10 border border-cyan-400/40 text-cyan-300 font-semibold">
+            <span class="animate-pulse">_></span>
+            <span>TERMINAL</span>
+          </div>
+          <div class="px-3 py-1 rounded bg-cyan-400 text-black font-bold shadow-[0_0_12px_rgba(0,243,255,0.5)]">
+            UPLINK
+          </div>
+        </div>
+      </nav>
+    `,
+    extraStyles: `
+      .cyber-nav {
+        background: #070c18;
+        border: 1px solid rgba(0, 243, 255, 0.4);
+        clip-path: polygon(10px 0%, calc(100% - 10px) 0%, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0% calc(100% - 10px), 0% 10px);
+        box-shadow: 0 0 25px -5px rgba(0, 243, 255, 0.35), inset 0 0 15px -3px rgba(0, 243, 255, 0.15);
+      }
+    `
+  },
+  {
+    id: '10',
+    folder: '10-neumorphic-soft-navbar',
+    repo: 'navbar-neumorphic-soft',
+    title: 'Tactile Neumorphic Soft-UI',
+    subtitle: 'Modern dual-shadow soft extrusions with mechanical inset depression physics',
+    badge: 'UI COMPONENT #10',
+    episode: 'REEL 10',
+    accentColor: '#6366f1',
+    accentGradient: 'from-indigo-500 via-purple-500 to-sky-500',
+    glowGradient: 'radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.4) 0%, rgba(168, 85, 247, 0.2) 45%, transparent 75%)',
+    tags: ['Tailwind CSS', 'Neumorphism 2.0', 'Spring Pill', 'Haptic Controls', 'Dark / Light'],
+    renderNavbar: `
+      <nav class="neu-card p-2.5 rounded-2xl flex items-center gap-3.5 select-none">
+        <div class="flex items-center gap-2.5 px-3 py-1.5 rounded-xl neu-raised text-white font-bold text-sm tracking-tight">
+          <div class="w-6 h-6 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-extrabold text-xs">
+            N
+          </div>
+          <span>SoftUI</span>
+        </div>
+
+        <div class="h-5 w-px bg-slate-700/40"></div>
+
+        <div class="flex items-center p-1 rounded-xl neu-pressed gap-1">
+          <span class="px-3 py-1 rounded-lg neu-raised text-xs font-semibold text-indigo-400 whitespace-nowrap">Overview</span>
+          <span class="px-3 py-1 text-xs font-semibold text-slate-400 whitespace-nowrap">Tactile</span>
+          <span class="px-3 py-1 text-xs font-semibold text-slate-400 whitespace-nowrap">Components</span>
+          <span class="px-3 py-1 text-xs font-semibold text-slate-400 whitespace-nowrap">Showcase</span>
+        </div>
+
+        <div class="h-5 w-px bg-slate-700/40"></div>
+
+        <div class="flex items-center gap-2">
+          <div class="px-3 py-1.5 rounded-xl neu-raised text-xs font-semibold text-slate-300">
+            Haptics
+          </div>
+          <div class="px-3.5 py-1.5 rounded-xl neu-raised text-xs font-bold text-indigo-400">
+            Connect
+          </div>
+        </div>
+      </nav>
+    `,
+    extraStyles: `
+      .neu-card {
+        background: #181d27;
+        box-shadow: 9px 9px 20px #0e1117, -9px -9px 20px #222937;
+      }
+      .neu-raised {
+        background: #181d27;
+        box-shadow: 4px 4px 10px #0e1117, -4px -4px 10px #222937;
+      }
+      .neu-pressed {
+        background: #151a23;
+        box-shadow: inset 3px 3px 6px #0a0d13, inset -3px -3px 6px #222937;
+      }
+    `
+  },
+  {
+    id: '11',
+    folder: '11-swiss-editorial-navbar',
+    repo: 'navbar-swiss-editorial',
+    title: 'Swiss International Editorial',
+    subtitle: 'Modernist Bauhaus editorial bar with live world clocks & kinetic marquee',
+    badge: 'UI COMPONENT #11',
+    episode: 'REEL 11',
+    accentColor: '#ff3b30',
+    accentGradient: 'from-red-500 via-rose-500 to-blue-600',
+    glowGradient: 'radial-gradient(circle at 50% 50%, rgba(255, 59, 48, 0.4) 0%, rgba(0, 47, 167, 0.22) 45%, transparent 75%)',
+    tags: ['Tailwind CSS', 'Swiss Modernism', 'World Clocks', 'Kinetic Ticker', 'Index Drawer'],
+    renderNavbar: `
+      <nav class="flex flex-col bg-[#16181A] border border-white/10 select-none shadow-xl max-w-xl w-full">
+        <div class="w-full bg-black text-white text-[9px] font-mono tracking-wider py-1 px-3 border-b border-white/10 whitespace-nowrap overflow-hidden">
+          <span>INTERNATIONAL TYPOGRAPHIC STYLE // ISSUE NO. 11 // CURATED BY BAHAA MOHAMMED</span>
+        </div>
+        <div class="flex items-center justify-between p-3 gap-3">
+          <div class="flex items-center gap-2">
+            <span class="px-2 py-0.5 bg-white text-black font-mono font-bold text-xs tracking-tighter">SWISS</span>
+            <span class="font-bold text-sm tracking-tight text-white">ARCHIV</span>
+          </div>
+          <div class="flex items-center gap-1 font-mono text-xs">
+            <span class="px-2.5 py-1 border border-[#FF3B30] bg-[#FF3B30]/10 text-[#FF3B30] font-bold">01 / MANIFESTO</span>
+            <span class="px-2.5 py-1 text-slate-400">02 / CATALOG</span>
+            <span class="px-2.5 py-1 text-slate-400">03 / EDITIONS</span>
+          </div>
+          <div class="flex items-center gap-2 font-mono text-xs">
+            <div class="px-2.5 py-1 border border-white/10 bg-white/5 text-white">INDEX ↓</div>
+            <div class="px-3 py-1 bg-[#FF3B30] text-white font-bold">INQUIRE →</div>
+          </div>
+        </div>
+      </nav>
+    `,
+    extraStyles: ``
+  },
+  {
+    id: '12',
+    folder: '12-chromatic-prism-navbar',
+    repo: 'navbar-chromatic-prism',
+    title: 'Refractive Chromatic Prism Glass',
+    subtitle: 'Refractive crystal glass with cursor-tracking rainbow chromatic dispersion',
+    badge: 'UI COMPONENT #12',
+    episode: 'REEL 12',
+    accentColor: '#d946ef',
+    accentGradient: 'from-fuchsia-500 via-purple-500 to-cyan-400',
+    glowGradient: 'radial-gradient(circle at 50% 50%, rgba(217, 70, 239, 0.45) 0%, rgba(6, 182, 212, 0.25) 45%, transparent 75%)',
+    tags: ['Tailwind CSS', 'Chromatic Prism', '3D Crystal Tilt', 'Spectrum Tuner', 'Refraction'],
+    renderNavbar: `
+      <nav class="prism-cover-dock flex items-center justify-between gap-3 px-4 py-2.5 rounded-2xl select-none relative">
+        <div class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-white font-bold text-sm">
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 via-cyan-300 to-amber-200">PRISM</span>
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-white/10 font-mono text-slate-300">v1.2</span>
+        </div>
+
+        <div class="flex items-center p-1 rounded-xl bg-black/30 border border-white/5 gap-1">
+          <span class="px-3.5 py-1 rounded-lg bg-gradient-to-r from-fuchsia-500/20 via-cyan-500/20 to-purple-500/20 border border-white/20 text-xs font-semibold text-cyan-300 shadow-[0_0_15px_rgba(0,200,255,0.3)] whitespace-nowrap">Refraction</span>
+          <span class="px-3 py-1 text-xs font-semibold text-slate-400 whitespace-nowrap">Dispersion</span>
+          <span class="px-3 py-1 text-xs font-semibold text-slate-400 whitespace-nowrap">Spectrum</span>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <div class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-xs font-semibold text-slate-300 flex items-center gap-1.5">
+            <span class="text-cyan-400">⚡</span>
+            <span>Tuner</span>
+          </div>
+          <div class="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-fuchsia-500 via-purple-500 to-cyan-500 text-xs font-bold text-white shadow-[0_0_15px_rgba(255,0,128,0.4)]">
+            Connect
+          </div>
+        </div>
+      </nav>
+    `,
+    extraStyles: `
+      .prism-cover-dock {
+        background: rgba(15, 17, 26, 0.75);
+        backdrop-filter: blur(24px) saturate(180%);
+        border: 1.5px solid transparent;
+        border-image: linear-gradient(135deg, #ff0055, #ffdd00, #00ff88, #00ccff, #7700ff) 1;
+        border-radius: 1rem;
+        box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.6), 0 0 25px -5px rgba(217, 70, 239, 0.3);
+      }
+    `
   }
 ];
 

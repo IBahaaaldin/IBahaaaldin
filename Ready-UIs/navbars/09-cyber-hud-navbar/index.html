@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyber Tactical HUD Terminal Navbar • Ready-UIs</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            mono: ['JetBrains Mono', 'Fira Code', 'Courier New', 'monospace'],
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+          },
+          colors: {
+            cyber: {
+              cyan: '#00f3ff',
+              green: '#00ff66',
+              amber: '#ffb703',
+              pink: '#ff0055',
+              dark: '#050811',
+              grid: '#0d1527',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+    body {
+      font-family: 'Inter', sans-serif;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* Sci-Fi Chamfer Cutout */
+    .hud-chamfer {
+      clip-path: polygon(
+        12px 0%, calc(100% - 12px) 0%, 
+        100% 12px, 100% calc(100% - 12px), 
+        calc(100% - 12px) 100%, 12px 100%, 
+        0% calc(100% - 12px), 0% 12px
+      );
+    }
+
+    .hud-border {
+      background: linear-gradient(135deg, rgba(0, 243, 255, 0.4) 0%, rgba(0, 255, 102, 0.2) 50%, rgba(0, 243, 255, 0.4) 100%);
+      padding: 1px;
+    }
+
+    html:not(.dark) .hud-border {
+      background: linear-gradient(135deg, rgba(0, 140, 255, 0.6) 0%, rgba(13, 148, 136, 0.4) 50%, rgba(0, 140, 255, 0.6) 100%);
+    }
+
+    /* Subtle CRT Scanline overlay */
+    .scanlines {
+      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+      background-size: 100% 3px, 6px 100%;
+      pointer-events: none;
+    }
+
+    /* Glitch Animation */
+    @keyframes glitch {
+      0% { transform: translate(0) }
+      20% { transform: translate(-2px, 2px) }
+      40% { transform: translate(-2px, -2px) }
+      60% { transform: translate(2px, 2px) }
+      80% { transform: translate(2px, -2px) }
+      100% { transform: translate(0) }
+    }
+
+    .glitch-hover:hover {
+      animation: glitch 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+    }
+
+    /* Cyber Glow Filter */
+    .cyber-glow {
+      box-shadow: 0 0 25px -5px rgba(0, 243, 255, 0.35), inset 0 0 15px -3px rgba(0, 243, 255, 0.15);
+    }
+
+    html:not(.dark) .cyber-glow {
+      box-shadow: 0 0 25px -5px rgba(0, 100, 255, 0.2), inset 0 0 15px -3px rgba(0, 100, 255, 0.05);
+    }
+
+    /* Corner Target Reticles */
+    .reticle-corner {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-color: #00f3ff;
+    }
+  </style>
+</head>
+<body class="bg-[#050811] text-slate-100 min-h-screen flex items-center justify-center p-4 sm:p-8 relative overflow-x-hidden transition-colors duration-300">
+
+  <!-- BACKGROUND CYBER GRID -->
+  <div class="fixed inset-0 pointer-events-none opacity-20 dark:opacity-30 bg-[radial-gradient(#00f3ff_1px,transparent_1px)] [background-size:24px_24px] z-0"></div>
+  <div id="scanlinesOverlay" class="fixed inset-0 scanlines z-10 opacity-70 pointer-events-none transition-opacity duration-300"></div>
+
+  <!-- MAIN WRAPPER: HORIZONTALLY & VERTICALLY CENTERED -->
+  <div class="w-full max-w-4xl mx-auto flex flex-col items-center justify-center relative z-20">
+    <header class="w-full relative">
+
+      <!-- DESKTOP NAVBAR (Centered HUD Capsule) -->
+      <div class="hud-border hud-chamfer shadow-2xl relative w-full">
+        <nav class="bg-[#070c18]/90 dark:bg-[#070c18]/95 bg-opacity-95 backdrop-blur-xl px-4 py-2.5 flex items-center justify-between gap-3 text-sm hud-chamfer cyber-glow transition-colors duration-300">
+          
+          <!-- BRAND / PILOT AVATAR -->
+          <div class="flex items-center gap-2.5 pl-1 shrink-0">
+            <div class="relative flex items-center justify-center">
+              <div class="w-8 h-8 rounded-sm bg-cyan-950/80 border border-cyan-400/50 flex items-center justify-center text-cyan-300 font-mono font-bold text-xs relative overflow-hidden shadow-[0_0_10px_rgba(0,243,255,0.4)]">
+                <span class="z-10 tracking-widest">BM</span>
+                <div class="absolute inset-0 bg-cyan-400/10 animate-pulse"></div>
+              </div>
+              <span class="absolute -top-1 -right-1 w-2 h-2 bg-emerald-400 rounded-full animate-ping"></span>
+              <span class="absolute -top-1 -right-1 w-2 h-2 bg-emerald-400 rounded-full"></span>
+            </div>
+
+            <div class="flex flex-col text-left leading-tight overflow-hidden">
+              <div class="flex items-center gap-1.5 whitespace-nowrap">
+                <span class="text-xs font-mono font-bold tracking-wider text-cyan-400 dark:text-cyan-300 whitespace-nowrap glitch-hover cursor-pointer">BAHAA MOHAMMED</span>
+                <span class="px-1 py-0.2 bg-cyan-500/10 border border-cyan-500/30 text-[9px] font-mono text-cyan-400 rounded whitespace-nowrap">v3.4</span>
+              </div>
+              <span class="text-[10px] text-slate-400 font-mono whitespace-nowrap">SYS-ARCH // LVL-04</span>
+            </div>
+          </div>
+
+          <!-- DESKTOP TELEMETRY STATS PILL -->
+          <div class="hidden xl:flex items-center gap-2 px-2.5 py-1 bg-black/40 border border-cyan-500/20 rounded font-mono text-[10px] text-slate-300 shrink-0">
+            <div class="flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+              <span class="text-slate-400">NET:</span>
+              <span id="hudPing" class="text-emerald-400 font-semibold">14ms</span>
+            </div>
+            <span class="text-slate-600">|</span>
+            <div class="flex items-center gap-1">
+              <span class="text-slate-400">FPS:</span>
+              <span id="hudFps" class="text-amber-400 font-semibold">60</span>
+            </div>
+          </div>
+
+          <!-- DESKTOP NAVIGATION TABS -->
+          <div class="hidden md:flex items-center gap-1 font-mono text-xs shrink-0">
+            <button class="nav-tab active px-2.5 py-1.5 rounded text-cyan-300 bg-cyan-950/60 border border-cyan-500/40 shadow-[0_0_8px_rgba(0,243,255,0.3)] whitespace-nowrap transition-all duration-200" data-tab="deploy">
+              01 // DEPLOY
+            </button>
+            <button class="nav-tab px-2.5 py-1.5 rounded text-slate-300 hover:text-cyan-300 hover:bg-cyan-950/30 border border-transparent hover:border-cyan-500/20 whitespace-nowrap transition-all duration-200" data-tab="cluster">
+              02 // CLUSTER
+            </button>
+            <button class="nav-tab px-2.5 py-1.5 rounded text-slate-300 hover:text-cyan-300 hover:bg-cyan-950/30 border border-transparent hover:border-cyan-500/20 whitespace-nowrap transition-all duration-200" data-tab="security">
+              03 // SECURITY
+            </button>
+          </div>
+
+          <!-- ACTION CONTROLS & TERMINAL TOGGLE -->
+          <div class="flex items-center gap-2">
+            <!-- TERMINAL TOGGLE BUTTON -->
+            <button id="terminalToggleBtn" class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-400/40 text-cyan-300 font-mono text-xs font-semibold transition-all shadow-[0_0_10px_rgba(0,243,255,0.2)] active:scale-95">
+              <span class="animate-pulse">_></span>
+              <span class="whitespace-nowrap">TERMINAL</span>
+            </button>
+
+            <!-- SOUND FX TOGGLE -->
+            <button id="audioToggleBtn" title="Toggle Tactical Audio Blips" class="w-8 h-8 rounded border border-cyan-500/30 bg-black/30 flex items-center justify-center text-cyan-400 hover:text-cyan-200 transition-colors">
+              <svg id="audioIcon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072M18.364 5.636a9 9 0 010 12.728M11 5L6 9H2v6h4l5 4V5z"/>
+              </svg>
+            </button>
+
+            <!-- DARK / LIGHT THEME TOGGLE -->
+            <button id="themeToggleBtn" title="Toggle Theme" class="w-8 h-8 rounded border border-cyan-500/30 bg-black/30 flex items-center justify-center text-cyan-400 hover:text-cyan-200 transition-colors">
+              <svg id="sunIcon" class="w-4 h-4 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="5" stroke-width="2"/>
+                <path stroke-width="2" stroke-linecap="round" d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+              </svg>
+              <svg id="moonIcon" class="w-4 h-4 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+              </svg>
+            </button>
+
+            <!-- MOBILE HAMBURGER BUTTON (Hidden on Desktop) -->
+            <button id="mobileMenuBtn" class="md:hidden w-8 h-8 rounded border border-cyan-500/40 bg-cyan-950/40 flex items-center justify-center text-cyan-300">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+              </svg>
+            </button>
+          </div>
+        </nav>
+      </div>
+
+      <!-- INTERACTIVE POPUP CRT TERMINAL (Drops down smoothly below the navbar) -->
+      <div id="terminalDropdown" class="hidden absolute top-full left-0 right-0 mt-3 hud-border hud-chamfer shadow-2xl z-30 transition-all duration-300 transform scale-95 opacity-0">
+        <div class="bg-[#040711] p-4 text-xs font-mono text-cyan-300 border border-cyan-500/30 hud-chamfer relative overflow-hidden">
+          <div class="flex items-center justify-between pb-2 mb-3 border-b border-cyan-500/20 text-[10px] text-slate-400">
+            <span class="flex items-center gap-1.5 text-cyan-400">
+              <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+              MAINFRAME TACTICAL TERMINAL // READY-UI OS v3.4
+            </span>
+            <span>TYPE 'help' FOR COMMANDS</span>
+          </div>
+
+          <!-- TERMINAL OUTPUT -->
+          <div id="terminalOutput" class="space-y-1.5 max-h-48 overflow-y-auto mb-3 font-mono leading-relaxed pr-2">
+            <div class="text-slate-400">[SYSTEM] Connection established to DXB-NODE-01. Protocol 802.3ad.</div>
+            <div class="text-emerald-400">[ONLINE] Real-time neural telemetry stream active. All sub-clusters synchronized.</div>
+            <div class="text-cyan-300">[INFO] Welcome Bahaa Mohammed. Type 'help', 'ping', 'status', or 'matrix'.</div>
+          </div>
+
+          <!-- TERMINAL INPUT LINE -->
+          <div class="flex items-center gap-2 bg-black/60 px-3 py-2 border border-cyan-500/30 rounded">
+            <span class="text-cyan-400 font-bold">root@bahaa-node:~#</span>
+            <input id="terminalInput" type="text" placeholder="type command here..." class="bg-transparent text-cyan-200 outline-none flex-1 font-mono text-xs placeholder-slate-600">
+            <button id="sendCmdBtn" class="px-2 py-0.5 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-300 border border-cyan-500/40 text-[10px] rounded">RUN</button>
+          </div>
+        </div>
+      </div>
+
+    </header>
+  </div>
+
+  <!-- MOBILE BACKDROP -->
+  <div id="mobileBackdrop" class="fixed inset-0 bg-black/70 backdrop-blur-md z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+
+  <!-- MOBILE SLIDE-IN SIDEBAR SHEET -->
+  <aside id="mobileSidebar" class="fixed inset-y-0 right-0 w-80 max-w-[85vw] bg-[#070c18] border-l border-cyan-500/30 shadow-2xl z-50 flex flex-col justify-between p-6 transform translate-x-full transition-transform duration-300 ease-out overflow-y-auto font-mono">
+    <div>
+      <!-- Header -->
+      <div class="flex items-center justify-between pb-5 border-b border-cyan-500/20">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded bg-cyan-950 border border-cyan-400/50 flex items-center justify-center text-cyan-300 font-bold text-xs shadow-[0_0_10px_rgba(0,243,255,0.4)]">
+            BM
+          </div>
+          <div class="flex flex-col text-left leading-tight">
+            <span class="text-xs font-bold text-cyan-300 whitespace-nowrap">Bahaa Mohammed</span>
+            <span class="text-[10px] text-slate-400 whitespace-nowrap">Tactical HUD UI</span>
+          </div>
+        </div>
+        <button id="closeSidebarBtn" class="w-8 h-8 rounded border border-cyan-500/30 flex items-center justify-center text-slate-400 hover:text-white">
+          ✕
+        </button>
+      </div>
+
+      <!-- Mobile Telemetry Dashboard -->
+      <div class="mt-6 p-3 bg-black/40 border border-cyan-500/20 rounded space-y-2 text-xs">
+        <div class="text-[10px] text-slate-400 uppercase tracking-widest pb-1 border-b border-cyan-500/10">Active Telemetry</div>
+        <div class="flex justify-between items-center text-slate-300">
+          <span>LATENCY:</span>
+          <span class="text-emerald-400 font-semibold">12ms (Optimal)</span>
+        </div>
+        <div class="flex justify-between items-center text-slate-300">
+          <span>FPS REFRESH:</span>
+          <span class="text-amber-400 font-semibold">60.0 FPS</span>
+        </div>
+        <div class="flex justify-between items-center text-slate-300">
+          <span>KERNEL:</span>
+          <span class="text-cyan-300 font-semibold">Darwin ARM64</span>
+        </div>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="mt-6 space-y-2">
+        <a href="#deploy" class="sidebar-link flex items-center justify-between p-3 rounded bg-cyan-950/40 border border-cyan-500/30 text-cyan-300 hover:bg-cyan-900/30 transition-colors">
+          <span>[01] DEPLOYMENTS</span>
+          <span class="text-xs text-slate-500">→</span>
+        </a>
+        <a href="#cluster" class="sidebar-link flex items-center justify-between p-3 rounded bg-cyan-950/20 border border-cyan-500/10 text-slate-300 hover:text-cyan-300 hover:bg-cyan-950/40 transition-colors">
+          <span>[02] MESH CLUSTER</span>
+          <span class="text-xs text-slate-500">→</span>
+        </a>
+        <a href="#security" class="sidebar-link flex items-center justify-between p-3 rounded bg-cyan-950/20 border border-cyan-500/10 text-slate-300 hover:text-cyan-300 hover:bg-cyan-950/40 transition-colors">
+          <span>[03] ZERO-TRUST VAULT</span>
+          <span class="text-xs text-slate-500">→</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Sidebar Footer -->
+    <div class="pt-6 border-t border-cyan-500/20 flex flex-col gap-3">
+      <div class="flex items-center justify-between text-xs text-slate-400">
+        <span>THEME CANVAS:</span>
+        <button id="mobileThemeToggle" class="px-2.5 py-1 rounded border border-cyan-500/30 text-cyan-300 text-xs">
+          TOGGLE
+        </button>
+      </div>
+      <a href="https://github.com/IBahaaaldin" target="_blank" class="w-full py-2.5 bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-400 text-cyan-300 text-center font-bold text-xs rounded tracking-wider shadow-[0_0_15px_rgba(0,243,255,0.3)]">
+        GITHUB @IBAHAALDIN
+      </a>
+    </div>
+  </aside>
+
+  <script>
+    // ==========================================
+    // AUDIO BLIP SYNTHESIZER (WEB AUDIO API)
+    // ==========================================
+    let audioEnabled = true;
+    let audioCtx = null;
+
+    function playBeep(freq = 880, duration = 0.05, type = 'sine') {
+      if (!audioEnabled) return;
+      try {
+        if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+        gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + duration);
+      } catch (e) {}
+    }
+
+    const audioToggleBtn = document.getElementById('audioToggleBtn');
+    audioToggleBtn?.addEventListener('click', () => {
+      audioEnabled = !audioEnabled;
+      audioToggleBtn.classList.toggle('opacity-50', !audioEnabled);
+      if (audioEnabled) playBeep(1200, 0.08);
+    });
+
+    // ==========================================
+    // TELEMETRY SIMULATOR
+    // ==========================================
+    const hudPing = document.getElementById('hudPing');
+    setInterval(() => {
+      if (hudPing) {
+        const ping = Math.floor(10 + Math.random() * 8);
+        hudPing.textContent = ping + 'ms';
+      }
+    }, 2000);
+
+    // ==========================================
+    // THEME TOGGLE
+    // ==========================================
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+    const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+
+    function toggleTheme() {
+      const isDark = document.documentElement.classList.toggle('dark');
+      playBeep(isDark ? 600 : 1200, 0.06);
+    }
+
+    themeToggleBtn?.addEventListener('click', toggleTheme);
+    mobileThemeToggle?.addEventListener('click', toggleTheme);
+
+    // ==========================================
+    // INTERACTIVE CRT TERMINAL DROPDOWN
+    // ==========================================
+    const terminalToggleBtn = document.getElementById('terminalToggleBtn');
+    const terminalDropdown = document.getElementById('terminalDropdown');
+    const terminalInput = document.getElementById('terminalInput');
+    const terminalOutput = document.getElementById('terminalOutput');
+    const sendCmdBtn = document.getElementById('sendCmdBtn');
+    let terminalOpen = false;
+
+    function toggleTerminal() {
+      terminalOpen = !terminalOpen;
+      playBeep(terminalOpen ? 950 : 450, 0.07);
+      if (terminalOpen) {
+        terminalDropdown.classList.remove('hidden');
+        setTimeout(() => {
+          terminalDropdown.classList.remove('scale-95', 'opacity-0');
+          terminalDropdown.classList.add('scale-100', 'opacity-100');
+          terminalInput?.focus();
+        }, 10);
+      } else {
+        terminalDropdown.classList.add('scale-95', 'opacity-0');
+        terminalDropdown.classList.remove('scale-100', 'opacity-100');
+        setTimeout(() => terminalDropdown.classList.add('hidden'), 250);
+      }
+    }
+
+    terminalToggleBtn?.addEventListener('click', toggleTerminal);
+
+    function runCommand() {
+      const val = terminalInput.value.trim().toLowerCase();
+      if (!val) return;
+      playBeep(1100, 0.04);
+
+      const cmdLine = document.createElement('div');
+      cmdLine.className = 'text-cyan-300 font-bold';
+      cmdLine.textContent = '> ' + val;
+      terminalOutput.appendChild(cmdLine);
+
+      const respLine = document.createElement('div');
+      respLine.className = 'text-slate-300 pl-2';
+
+      switch (val) {
+        case 'help':
+          respLine.innerHTML = "Available commands: <span class='text-cyan-400'>help</span>, <span class='text-cyan-400'>status</span>, <span class='text-cyan-400'>ping</span>, <span class='text-cyan-400'>matrix</span>, <span class='text-cyan-400'>clear</span>";
+          break;
+        case 'status':
+          respLine.innerHTML = "<span class='text-emerald-400'>[OK]</span> All clusters operational. Load 14%. Core temp 38°C.";
+          break;
+        case 'ping':
+          respLine.innerHTML = "64 bytes from dxb.edge.net: icmp_seq=1 ttl=118 time=8.42 ms";
+          break;
+        case 'matrix':
+          respLine.innerHTML = "<span class='text-emerald-400 font-mono'>01000010 01000001 01001000 01000001 01000001 // SYSTEM INTEGRATED</span>";
+          break;
+        case 'clear':
+          terminalOutput.innerHTML = '';
+          terminalInput.value = '';
+          return;
+        default:
+          respLine.innerHTML = "<span class='text-rose-400'>[ERROR]</span> Command not recognized: '" + val + "'. Type 'help'.";
+      }
+
+      terminalOutput.appendChild(respLine);
+      terminalOutput.scrollTop = terminalOutput.scrollHeight;
+      terminalInput.value = '';
+    }
+
+    sendCmdBtn?.addEventListener('click', runCommand);
+    terminalInput?.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') runCommand();
+    });
+
+    // ==========================================
+    // NAV TABS SWITCHER
+    // ==========================================
+    const navTabs = document.querySelectorAll('.nav-tab');
+    navTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        playBeep(750, 0.05);
+        navTabs.forEach(t => {
+          t.classList.remove('active', 'text-cyan-300', 'bg-cyan-950/60', 'border-cyan-500/40', 'shadow-[0_0_8px_rgba(0,243,255,0.3)]');
+          t.classList.add('text-slate-300', 'border-transparent');
+        });
+        tab.classList.add('active', 'text-cyan-300', 'bg-cyan-950/60', 'border-cyan-500/40', 'shadow-[0_0_8px_rgba(0,243,255,0.3)]');
+        tab.classList.remove('text-slate-300', 'border-transparent');
+      });
+    });
+
+    // ==========================================
+    // MOBILE SLIDE-IN SIDEBAR SHEET
+    // ==========================================
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const closeSidebarBtn = document.getElementById('closeSidebarBtn');
+    const mobileBackdrop = document.getElementById('mobileBackdrop');
+    const mobileSidebar = document.getElementById('mobileSidebar');
+    const sidebarLinks = document.querySelectorAll('.sidebar-link');
+
+    function openSidebar() {
+      playBeep(800, 0.05);
+      mobileBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+      mobileBackdrop.classList.add('opacity-100', 'pointer-events-auto');
+      mobileSidebar.classList.remove('translate-x-full');
+      mobileSidebar.classList.add('translate-x-0');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeSidebar() {
+      playBeep(500, 0.05);
+      mobileBackdrop.classList.add('opacity-0', 'pointer-events-none');
+      mobileBackdrop.classList.remove('opacity-100', 'pointer-events-auto');
+      mobileSidebar.classList.add('translate-x-full');
+      mobileSidebar.classList.remove('translate-x-0');
+      document.body.style.overflow = '';
+    }
+
+    mobileMenuBtn?.addEventListener('click', openSidebar);
+    closeSidebarBtn?.addEventListener('click', closeSidebar);
+    mobileBackdrop?.addEventListener('click', closeSidebar);
+    sidebarLinks.forEach(link => link.addEventListener('click', closeSidebar));
+  </script>
+</body>
+</html>

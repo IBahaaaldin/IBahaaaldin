@@ -1,0 +1,19 @@
+Ready UI #08: VisionOS Spatial Glass Navbar 🥽💎
+
+Watch the video to see the 3D perspective tilt & specular lighting in action! An Apple VisionOS-inspired floating spatial glass pill crafted with real-time cursor-tracking perspective, holographic reflections, and live telemetry.
+
+🔥 Micro-interactions & details:
+• 3D spatial perspective tilt tracking mouse coordinates across the canvas
+• Specular glass illumination with chromatic border reflections
+• Monogram avatar badge with live battery & spatial status indicator
+• Native slide-in mobile sidebar sheet with spatial controls & quick navigation
+• Dead-center floating pill responsiveness for mobile & desktop
+• One-click Dark 🌙 / Light ☀️ canvas switcher
+• 100% self-contained code (HTML + Tailwind + inline SVGs)
+
+👇 VisionOS spatial glass or clean flat minimalism: Are you excited for spatial computing interfaces? Let me know below!
+
+💾 Save this post for your next project!
+🔗 Code & files are live in my repository: Ready-UIs
+
+—

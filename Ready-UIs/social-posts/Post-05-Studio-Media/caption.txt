@@ -1,0 +1,19 @@
+Ready UI #05: Studio & Media Player Navbar 🎵📻
+
+Watch the video to see the live vinyl spin & audio equalizer in action! An ultra-smooth, dark glass media dock with an interactive lofi audio player, track timeline scrubber, and soundwave visualization.
+
+🔥 Micro-interactions & details:
+• Interactive spinning vinyl record with live play/pause animations
+• Animated real-time equalizer bars reacting to playback state
+• Draggable audio timeline scrubber with live timecode display
+• Smooth slide-in mobile sheet with full media controls & quick links
+• Clean dead-center floating pill responsiveness
+• One-click Dark 🌙 / Light ☀️ canvas switcher
+• 100% self-contained code (HTML + Tailwind + inline SVGs)
+
+👇 Vinyl dock or Minimal pill: Which music/media navbar would you use in your next web app? Let me know below!
+
+💾 Save this post for your next project!
+🔗 Code & files are live in my repository: Ready-UIs
+
+—

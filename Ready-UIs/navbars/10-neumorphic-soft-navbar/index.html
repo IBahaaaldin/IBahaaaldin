@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tactile Neumorphic Soft Navbar - Ready-UIs #10</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            clay: {
+              50: '#f6f8fb',
+              100: '#edf2f7',
+              200: '#e2e8f0',
+              300: '#cbd5e1',
+              700: '#2b3240',
+              800: '#1e2430',
+              850: '#181d27',
+              900: '#12161f',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Neumorphic Shadow Tokens */
+    .dark .neu-flat {
+      background: #181d27;
+      box-shadow: 9px 9px 20px #0e1117, -9px -9px 20px #222937;
+    }
+    .neu-flat {
+      background: #edf2f7;
+      box-shadow: 9px 9px 20px #cad3df, -9px -9px 20px #ffffff;
+    }
+
+    .dark .neu-raised {
+      background: #181d27;
+      box-shadow: 6px 6px 14px #0e1117, -6px -6px 14px #222937;
+    }
+    .neu-raised {
+      background: #edf2f7;
+      box-shadow: 6px 6px 14px #cbd5e1, -6px -6px 14px #ffffff;
+    }
+
+    .dark .neu-raised-sm {
+      background: #181d27;
+      box-shadow: 3px 3px 8px #0e1117, -3px -3px 8px #222937;
+    }
+    .neu-raised-sm {
+      background: #edf2f7;
+      box-shadow: 3px 3px 8px #cad3df, -3px -3px 8px #ffffff;
+    }
+
+    .dark .neu-pressed {
+      background: #151a23 !important;
+      box-shadow: inset 4px 4px 8px #0a0d13, inset -4px -4px 8px #222937 !important;
+    }
+    .neu-pressed {
+      background: #e4ebf3 !important;
+      box-shadow: inset 4px 4px 8px #c2cddc, inset -4px -4px 8px #ffffff !important;
+    }
+
+    .dark .neu-pressed-sm {
+      box-shadow: inset 2px 2px 5px #0a0d13, inset -2px -2px 5px #222937 !important;
+    }
+    .neu-pressed-sm {
+      box-shadow: inset 2px 2px 5px #c2cddc, inset -2px -2px 5px #ffffff !important;
+    }
+
+    /* Spring Pill Movement */
+    #tabPill {
+      transition: transform 380ms cubic-bezier(0.34, 1.56, 0.64, 1), width 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    /* Mobile Sheet Drawer */
+    #mobileSidebar {
+      transition: transform 350ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    #mobileBackdrop {
+      transition: opacity 300ms ease;
+    }
+  </style>
+</head>
+<body class="bg-clay-100 dark:bg-clay-900 text-slate-800 dark:text-slate-100 min-h-screen flex flex-col justify-between p-4 md:p-8 transition-colors duration-300 font-sans selection:bg-indigo-500 selection:text-white">
+
+  <!-- TOP HEADER (STRICT SINGLE ROW, CENTERED) -->
+  <header class="w-full max-w-[800px] mx-auto flex items-center justify-between gap-3 text-xs md:text-sm py-2 px-1">
+    <div class="flex items-center gap-3 min-w-0">
+      <div class="w-8 h-8 rounded-full neu-raised flex items-center justify-center font-bold text-indigo-500 shrink-0">
+        B
+      </div>
+      <div class="flex items-center gap-2 overflow-hidden whitespace-nowrap">
+        <span class="font-bold tracking-tight text-slate-900 dark:text-white whitespace-nowrap">Bahaa Mohammed</span>
+        <span class="text-slate-400 dark:text-slate-500">•</span>
+        <span class="text-slate-500 dark:text-slate-400 text-xs hidden sm:inline whitespace-nowrap">Tactile Neumorphic 2.0</span>
+      </div>
+    </div>
+    <div class="flex items-center gap-3 shrink-0">
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full neu-raised-sm text-xs font-medium text-emerald-600 dark:text-emerald-400 whitespace-nowrap">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span>Ready-UIs #10</span>
+      </span>
+      <!-- Dark / Light Mode Button -->
+      <button id="themeToggleBtn" aria-label="Toggle Theme" class="w-9 h-9 rounded-xl neu-raised flex items-center justify-center text-slate-600 dark:text-slate-300 active:scale-95 transition-all duration-150">
+        <svg id="sunIcon" class="w-4 h-4 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
+        <svg id="moonIcon" class="w-4 h-4 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN CANVAS (CENTERED HERO & NAVBAR) -->
+  <main class="w-full max-w-[800px] mx-auto my-auto flex flex-col items-center justify-center py-6 md:py-10">
+
+    <!-- DESKTOP NAVBAR CONTAINER -->
+    <nav class="hidden md:flex w-full items-center justify-between p-2.5 rounded-2xl neu-flat relative select-none">
+      
+      <!-- Brand Pill -->
+      <a href="#" class="flex items-center gap-2.5 px-3 py-1.5 rounded-xl neu-raised text-slate-800 dark:text-white font-bold text-sm tracking-tight hover:scale-[1.02] active:scale-95 transition-transform duration-150">
+        <div class="w-6 h-6 rounded-lg bg-indigo-500/10 dark:bg-indigo-500/20 text-indigo-500 flex items-center justify-center font-extrabold text-xs">
+          N
+        </div>
+        <span>SoftUI</span>
+      </a>
+
+      <!-- Center Tabs with Tactile Sliding Pill -->
+      <div id="tabContainer" class="relative flex items-center p-1 rounded-xl neu-pressed">
+        <!-- Floating Spring Indicator Pill -->
+        <div id="tabPill" class="absolute top-1 bottom-1 rounded-lg neu-raised pointer-events-none transition-all"></div>
+
+        <button data-tab="overview" class="tab-btn relative z-10 px-4 py-1.5 text-xs font-semibold rounded-lg text-indigo-600 dark:text-indigo-400 transition-colors">
+          Overview
+        </button>
+        <button data-tab="tactile" class="tab-btn relative z-10 px-4 py-1.5 text-xs font-semibold rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
+          Tactile
+        </button>
+        <button data-tab="components" class="tab-btn relative z-10 px-4 py-1.5 text-xs font-semibold rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
+          Components
+        </button>
+        <button data-tab="showcase" class="tab-btn relative z-10 px-4 py-1.5 text-xs font-semibold rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
+          Showcase
+        </button>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-2.5">
+        <!-- Tactile Control Panel Dropdown Trigger -->
+        <button id="hapticPanelToggle" class="px-3 py-1.5 rounded-xl neu-raised text-xs font-semibold text-slate-700 dark:text-slate-300 hover:text-indigo-500 dark:hover:text-indigo-400 flex items-center gap-1.5 active:scale-95 transition-all">
+          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+          </svg>
+          <span>Haptics</span>
+        </button>
+
+        <!-- Connect Copy Button -->
+        <button id="copyEmailBtn" class="px-3.5 py-1.5 rounded-xl neu-raised text-xs font-bold text-slate-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center gap-1.5 active:scale-95 transition-all">
+          <svg id="copyIcon" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+          </svg>
+          <svg id="checkIcon" class="w-3.5 h-3.5 text-emerald-500 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+          </svg>
+          <span id="copyBtnText">Connect</span>
+        </button>
+      </div>
+
+      <!-- Tactile Haptics Popover Card -->
+      <div id="hapticsPopover" class="hidden absolute right-0 top-full mt-3 w-72 p-4 rounded-2xl neu-flat z-30 transition-all origin-top-right">
+        <div class="flex items-center justify-between pb-2 mb-3 border-b border-slate-300 dark:border-slate-800">
+          <span class="text-xs font-bold text-slate-800 dark:text-slate-200">Tactile Engine</span>
+          <span class="text-[10px] font-mono uppercase px-1.5 py-0.5 rounded bg-indigo-500/10 text-indigo-500">v2.4 Active</span>
+        </div>
+        
+        <div class="space-y-3 text-xs">
+          <div>
+            <div class="flex justify-between text-slate-600 dark:text-slate-400 mb-1">
+              <span>Haptic Depth</span>
+              <span id="depthVal" class="font-mono text-indigo-500">8px</span>
+            </div>
+            <input type="range" id="depthSlider" min="2" max="16" value="8" class="w-full accent-indigo-500 cursor-pointer">
+          </div>
+
+          <div class="flex items-center justify-between pt-1">
+            <span class="text-slate-600 dark:text-slate-400">Acoustic Feedback</span>
+            <button id="soundToggleBtn" class="w-10 h-6 rounded-full neu-pressed relative transition-colors p-0.5 flex items-center">
+              <div id="soundToggleThumb" class="w-5 h-5 rounded-full neu-raised translate-x-4 bg-indigo-500 transition-transform"></div>
+            </button>
+          </div>
+
+          <button id="tactileDemoBtn" class="w-full py-2 rounded-xl neu-raised text-center font-bold text-slate-800 dark:text-slate-200 hover:text-indigo-500 active:scale-95 transition-all">
+            Press Me (Tactile Click)
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- MOBILE NAVBAR BAR (CENTERED, CLEAN) -->
+    <div class="flex md:hidden w-full items-center justify-between p-3 rounded-2xl neu-flat">
+      <div class="flex items-center gap-2.5">
+        <div class="w-8 h-8 rounded-xl neu-raised flex items-center justify-center font-bold text-indigo-500 text-xs">
+          N
+        </div>
+        <span class="font-bold text-sm text-slate-900 dark:text-white whitespace-nowrap">SoftUI Nav</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <button id="mobileCopyBtn" class="px-3 py-1.5 rounded-xl neu-raised text-xs font-bold text-indigo-500 active:scale-95 transition-transform whitespace-nowrap">
+          Connect
+        </button>
+        <button id="mobileMenuOpenBtn" class="w-9 h-9 rounded-xl neu-raised flex items-center justify-center text-slate-700 dark:text-slate-200 active:scale-95 transition-transform" aria-label="Open Menu">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- HERO DISPLAY CARD (SHOWCASE NEUMORPHIC DEPTH) -->
+    <div class="w-full mt-8 p-6 md:p-8 rounded-3xl neu-flat flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="space-y-3 text-center md:text-left">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full neu-pressed-sm text-xs font-mono text-indigo-500">
+          <span class="w-2 h-2 rounded-full bg-indigo-500"></span>
+          <span>Dual Soft Extrusions</span>
+        </div>
+        <h1 class="text-2xl md:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          Tactile Neumorphism 2.0
+        </h1>
+        <p class="text-xs md:text-sm text-slate-600 dark:text-slate-400 max-w-md leading-relaxed">
+          Soft clay surfaces sculpted with ambient light coordinates, spring-loaded active pill transitions, and realistic mechanical depression physics.
+        </p>
+      </div>
+
+      <!-- Interactive Micro-Pad Demo -->
+      <div class="grid grid-cols-2 gap-3 w-full md:w-auto shrink-0">
+        <button class="neu-btn px-4 py-3 rounded-2xl neu-raised flex flex-col items-center gap-1 text-slate-700 dark:text-slate-300 font-semibold text-xs active:scale-95 transition-all">
+          <span class="text-base">🎛️</span>
+          <span>Controls</span>
+        </button>
+        <button class="neu-btn px-4 py-3 rounded-2xl neu-raised flex flex-col items-center gap-1 text-slate-700 dark:text-slate-300 font-semibold text-xs active:scale-95 transition-all">
+          <span class="text-base">⚡</span>
+          <span>Tactile</span>
+        </button>
+        <button class="neu-btn px-4 py-3 rounded-2xl neu-raised flex flex-col items-center gap-1 text-slate-700 dark:text-slate-300 font-semibold text-xs active:scale-95 transition-all">
+          <span class="text-base">🔮</span>
+          <span>Shadows</span>
+        </button>
+        <button class="neu-btn px-4 py-3 rounded-2xl neu-raised flex flex-col items-center gap-1 text-slate-700 dark:text-slate-300 font-semibold text-xs active:scale-95 transition-all">
+          <span class="text-base">✨</span>
+          <span>Surfaces</span>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- MOBILE SLIDE-IN SIDEBAR SHEET & BACKDROP -->
+  <div id="mobileBackdrop" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-40 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+
+  <aside id="mobileSidebar" class="fixed top-0 right-0 bottom-0 w-[290px] max-w-[85vw] neu-flat z-50 p-6 flex flex-col justify-between translate-x-full shadow-2xl overflow-y-auto">
+    <div class="space-y-6">
+      <!-- Mobile Sheet Header -->
+      <div class="flex items-center justify-between pb-4 border-b border-slate-300 dark:border-slate-800">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-xl neu-raised flex items-center justify-center font-bold text-indigo-500 text-xs">
+            N
+          </div>
+          <span class="font-bold text-sm text-slate-900 dark:text-white whitespace-nowrap">Tactile SoftUI</span>
+        </div>
+        <button id="mobileMenuCloseBtn" class="w-8 h-8 rounded-xl neu-raised flex items-center justify-center text-slate-600 dark:text-slate-300 active:scale-95 transition-transform" aria-label="Close Menu">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation Links -->
+      <div class="space-y-2">
+        <button class="mobile-tab-btn w-full px-4 py-2.5 rounded-xl neu-pressed text-left text-xs font-bold text-indigo-500 flex items-center justify-between">
+          <span>Overview</span>
+          <span>→</span>
+        </button>
+        <button class="mobile-tab-btn w-full px-4 py-2.5 rounded-xl neu-raised text-left text-xs font-semibold text-slate-700 dark:text-slate-300 hover:text-indigo-500 flex items-center justify-between">
+          <span>Tactile Engine</span>
+          <span>→</span>
+        </button>
+        <button class="mobile-tab-btn w-full px-4 py-2.5 rounded-xl neu-raised text-left text-xs font-semibold text-slate-700 dark:text-slate-300 hover:text-indigo-500 flex items-center justify-between">
+          <span>Components</span>
+          <span>→</span>
+        </button>
+        <button class="mobile-tab-btn w-full px-4 py-2.5 rounded-xl neu-raised text-left text-xs font-semibold text-slate-700 dark:text-slate-300 hover:text-indigo-500 flex items-center justify-between">
+          <span>Showcase</span>
+          <span>→</span>
+        </button>
+      </div>
+
+      <!-- Haptics Setting Inside Sheet -->
+      <div class="p-4 rounded-xl neu-pressed space-y-3">
+        <div class="text-xs font-bold text-slate-900 dark:text-white flex items-center justify-between">
+          <span>Physical Haptics</span>
+          <span class="text-[10px] text-emerald-500 font-mono">ON</span>
+        </div>
+        <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-normal">
+          Sculpted 3D soft shadows dynamically shift based on device orientation.
+        </p>
+      </div>
+    </div>
+
+    <!-- Mobile Footer Info -->
+    <div class="pt-6 border-t border-slate-300 dark:border-slate-800 space-y-3">
+      <div class="flex items-center gap-2">
+        <div class="w-7 h-7 rounded-full neu-raised flex items-center justify-center font-bold text-xs text-indigo-500">
+          B
+        </div>
+        <div class="overflow-hidden">
+          <div class="text-xs font-bold text-slate-900 dark:text-white whitespace-nowrap">Bahaa Mohammed</div>
+          <div class="text-[10px] text-slate-500 dark:text-slate-400 whitespace-nowrap">Full-Stack Engineer</div>
+        </div>
+      </div>
+      <button id="mobileSheetCopyBtn" class="w-full py-2.5 rounded-xl neu-raised text-center text-xs font-bold text-indigo-600 dark:text-indigo-400 active:scale-95 transition-all">
+        Connect: bahaam.coding@gmail.com
+      </button>
+    </div>
+  </aside>
+
+  <!-- FOOTER -->
+  <footer class="w-full max-w-[800px] mx-auto flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 py-3 border-t border-slate-300 dark:border-slate-800/80">
+    <div class="flex items-center gap-2 whitespace-nowrap">
+      <span>Crafted by</span>
+      <a href="https://github.com/IBahaaaldin" target="_blank" class="font-bold text-slate-800 dark:text-slate-200 hover:text-indigo-500 transition-colors whitespace-nowrap">Bahaa Mohammed</a>
+    </div>
+    <div class="flex items-center gap-4 text-xs">
+      <a href="https://www.instagram.com/ibahaaaldincoding" target="_blank" class="hover:text-indigo-500 transition-colors whitespace-nowrap">@ibahaaaldincoding</a>
+      <span class="hidden sm:inline">•</span>
+      <span class="hidden sm:inline font-mono">Ready-UIs #10</span>
+    </div>
+  </footer>
+
+  <script>
+    // --- Audio Feedback Synthesizer ---
+    let audioCtx = null;
+    let soundEnabled = true;
+
+    function playTactileClick(freq = 320, type = 'sine', duration = 0.04) {
+      if (!soundEnabled) return;
+      try {
+        if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(120, audioCtx.currentTime + duration);
+        gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + duration);
+      } catch (e) {}
+    }
+
+    // --- Tab Indicator Sliding Pill ---
+    const tabContainer = document.getElementById('tabContainer');
+    const tabPill = document.getElementById('tabPill');
+    const tabButtons = document.querySelectorAll('.tab-btn');
+
+    function updatePillPosition(activeBtn) {
+      if (!activeBtn || !tabPill || !tabContainer) return;
+      const containerRect = tabContainer.getBoundingClientRect();
+      const btnRect = activeBtn.getBoundingClientRect();
+      const left = btnRect.left - containerRect.left;
+      const width = btnRect.width;
+
+      tabPill.style.transform = `translateX(${left}px)`;
+      tabPill.style.width = `${width}px`;
+
+      tabButtons.forEach(btn => {
+        if (btn === activeBtn) {
+          btn.classList.add('text-indigo-600', 'dark:text-indigo-400');
+          btn.classList.remove('text-slate-600', 'dark:text-slate-400');
+        } else {
+          btn.classList.remove('text-indigo-600', 'dark:text-indigo-400');
+          btn.classList.add('text-slate-600', 'dark:text-slate-400');
+        }
+      });
+    }
+
+    // Initialize pill position on first active tab
+    const initialActive = tabButtons[0];
+    if (initialActive) {
+      setTimeout(() => updatePillPosition(initialActive), 50);
+    }
+
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        playTactileClick(420, 'sine', 0.05);
+        updatePillPosition(btn);
+      });
+    });
+
+    window.addEventListener('resize', () => {
+      const active = document.querySelector('.tab-btn.text-indigo-600') || tabButtons[0];
+      if (active) updatePillPosition(active);
+    });
+
+    // --- Tactile Micro-Pad Buttons Inset Depress ---
+    document.querySelectorAll('.neu-btn').forEach(btn => {
+      btn.addEventListener('mousedown', () => {
+        btn.classList.add('neu-pressed');
+        playTactileClick(280, 'triangle', 0.04);
+      });
+      window.addEventListener('mouseup', () => {
+        btn.classList.remove('neu-pressed');
+      });
+    });
+
+    // --- Haptics Popover ---
+    const hapticPanelToggle = document.getElementById('hapticPanelToggle');
+    const hapticsPopover = document.getElementById('hapticsPopover');
+    const depthSlider = document.getElementById('depthSlider');
+    const depthVal = document.getElementById('depthVal');
+    const soundToggleBtn = document.getElementById('soundToggleBtn');
+    const soundToggleThumb = document.getElementById('soundToggleThumb');
+    const tactileDemoBtn = document.getElementById('tactileDemoBtn');
+
+    if (hapticPanelToggle && hapticsPopover) {
+      hapticPanelToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        playTactileClick(350, 'sine', 0.03);
+        hapticsPopover.classList.toggle('hidden');
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!hapticsPopover.contains(e.target) && e.target !== hapticPanelToggle) {
+          hapticsPopover.classList.add('hidden');
+        }
+      });
+    }
+
+    if (depthSlider && depthVal) {
+      depthSlider.addEventListener('input', (e) => {
+        depthVal.textContent = `${e.target.value}px`;
+      });
+    }
+
+    if (soundToggleBtn && soundToggleThumb) {
+      soundToggleBtn.addEventListener('click', () => {
+        soundEnabled = !soundEnabled;
+        if (soundEnabled) {
+          soundToggleThumb.classList.add('translate-x-4', 'bg-indigo-500');
+          soundToggleThumb.classList.remove('translate-x-0', 'bg-slate-400');
+          playTactileClick(500, 'sine', 0.04);
+        } else {
+          soundToggleThumb.classList.remove('translate-x-4', 'bg-indigo-500');
+          soundToggleThumb.classList.add('translate-x-0', 'bg-slate-400');
+        }
+      });
+    }
+
+    if (tactileDemoBtn) {
+      tactileDemoBtn.addEventListener('click', () => {
+        playTactileClick(220, 'square', 0.06);
+        tactileDemoBtn.classList.add('neu-pressed');
+        setTimeout(() => tactileDemoBtn.classList.remove('neu-pressed'), 180);
+      });
+    }
+
+    // --- Theme Toggle ---
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+    const htmlEl = document.documentElement;
+
+    if (themeToggleBtn) {
+      themeToggleBtn.addEventListener('click', () => {
+        playTactileClick(400, 'sine', 0.04);
+        htmlEl.classList.toggle('dark');
+        setTimeout(() => {
+          const active = document.querySelector('.tab-btn.text-indigo-600') || tabButtons[0];
+          if (active) updatePillPosition(active);
+        }, 80);
+      });
+    }
+
+    // --- Connect / Copy Email ---
+    const copyEmailBtn = document.getElementById('copyEmailBtn');
+    const copyIcon = document.getElementById('copyIcon');
+    const checkIcon = document.getElementById('checkIcon');
+    const copyBtnText = document.getElementById('copyBtnText');
+
+    function triggerCopy(btn, textEl) {
+      playTactileClick(520, 'sine', 0.05);
+      navigator.clipboard?.writeText('bahaam.coding@gmail.com');
+      if (copyIcon) copyIcon.classList.add('hidden');
+      if (checkIcon) checkIcon.classList.remove('hidden');
+      if (textEl) textEl.textContent = 'Copied! ✨';
+
+      setTimeout(() => {
+        if (copyIcon) copyIcon.classList.remove('hidden');
+        if (checkIcon) checkIcon.classList.add('hidden');
+        if (textEl) textEl.textContent = 'Connect';
+      }, 2200);
+    }
+
+    if (copyEmailBtn) {
+      copyEmailBtn.addEventListener('click', () => triggerCopy(copyEmailBtn, copyBtnText));
+    }
+
+    const mobileCopyBtn = document.getElementById('mobileCopyBtn');
+    if (mobileCopyBtn) {
+      mobileCopyBtn.addEventListener('click', () => {
+        playTactileClick(520, 'sine', 0.05);
+        navigator.clipboard?.writeText('bahaam.coding@gmail.com');
+        mobileCopyBtn.textContent = 'Copied! ✨';
+        setTimeout(() => mobileCopyBtn.textContent = 'Connect', 2200);
+      });
+    }
+
+    const mobileSheetCopyBtn = document.getElementById('mobileSheetCopyBtn');
+    if (mobileSheetCopyBtn) {
+      mobileSheetCopyBtn.addEventListener('click', () => {
+        playTactileClick(520, 'sine', 0.05);
+        navigator.clipboard?.writeText('bahaam.coding@gmail.com');
+        mobileSheetCopyBtn.textContent = 'Email Copied! ✨';
+        setTimeout(() => mobileSheetCopyBtn.textContent = 'Connect: bahaam.coding@gmail.com', 2200);
+      });
+    }
+
+    // --- Mobile Sidebar Sheet Drawer ---
+    const mobileMenuOpenBtn = document.getElementById('mobileMenuOpenBtn');
+    const mobileMenuCloseBtn = document.getElementById('mobileMenuCloseBtn');
+    const mobileSidebar = document.getElementById('mobileSidebar');
+    const mobileBackdrop = document.getElementById('mobileBackdrop');
+
+    function openMobileMenu() {
+      playTactileClick(380, 'sine', 0.03);
+      mobileSidebar.classList.remove('translate-x-full');
+      mobileBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+    }
+
+    function closeMobileMenu() {
+      playTactileClick(300, 'sine', 0.03);
+      mobileSidebar.classList.add('translate-x-full');
+      mobileBackdrop.classList.add('opacity-0', 'pointer-events-none');
+    }
+
+    if (mobileMenuOpenBtn) mobileMenuOpenBtn.addEventListener('click', openMobileMenu);
+    if (mobileMenuCloseBtn) mobileMenuCloseBtn.addEventListener('click', closeMobileMenu);
+    if (mobileBackdrop) mobileBackdrop.addEventListener('click', closeMobileMenu);
+
+    document.querySelectorAll('.mobile-tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        playTactileClick(420, 'sine', 0.04);
+        document.querySelectorAll('.mobile-tab-btn').forEach(b => {
+          b.classList.remove('neu-pressed', 'text-indigo-500');
+          b.classList.add('neu-raised', 'text-slate-700', 'dark:text-slate-300');
+        });
+        btn.classList.add('neu-pressed', 'text-indigo-500');
+        btn.classList.remove('neu-raised', 'text-slate-700', 'dark:text-slate-300');
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+Ready UI #06: Developer Toolbar Navbar ⚡🛠️
+
+Watch the video to see the interactive branch switcher & live deployment telemetry in action! A Vercel/Next.js-inspired floating developer toolbar engineered with interactive Git status badges, quick email actions, and real-time feedback.
+
+🔥 Micro-interactions & details:
+• Interactive Git branch switcher dropdown with real-time selection
+• Live deployment health indicator with pulsing latency status badge
+• Quick-copy email button with instant animated tooltip feedback
+• Native slide-in mobile sidebar sheet with branch telemetry & links
+• Iridescent dark glass border highlights and hover physics
+• One-click Dark 🌙 / Light ☀️ canvas switcher
+• 100% self-contained code (HTML + Tailwind + inline SVGs)
+
+👇 Would you like your dev portfolio or SaaS to have an interactive live toolbar like this? Drop your thoughts below!
+
+💾 Save this post for your next project!
+🔗 Code & files are live in my repository: Ready-UIs
+
+—

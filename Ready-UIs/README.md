@@ -103,7 +103,55 @@ Ready-UIs/
 │   │   ├── record.js
 │   │   ├── README.md
 │   │   └── CAPTION.md
-│   └── 08-visionos-glass-navbar/
+│   ├── 08-visionos-glass-navbar/
+│   │   ├── index.html
+│   │   ├── cover.png
+│   │   ├── cover-instagram.png
+│   │   ├── cover-reel.png
+│   │   ├── screenshot-desktop.png
+│   │   ├── video-desktop.mp4
+│   │   ├── screenshot-mobile.png
+│   │   ├── video-mobile.mp4
+│   │   ├── record.js
+│   │   ├── README.md
+│   │   └── CAPTION.md
+│   ├── 09-cyber-hud-navbar/
+│   │   ├── index.html
+│   │   ├── cover.png
+│   │   ├── cover-instagram.png
+│   │   ├── cover-reel.png
+│   │   ├── screenshot-desktop.png
+│   │   ├── video-desktop.mp4
+│   │   ├── screenshot-mobile.png
+│   │   ├── video-mobile.mp4
+│   │   ├── record.js
+│   │   ├── README.md
+│   │   └── CAPTION.md
+│   ├── 10-neumorphic-soft-navbar/
+│   │   ├── index.html
+│   │   ├── cover.png
+│   │   ├── cover-instagram.png
+│   │   ├── cover-reel.png
+│   │   ├── screenshot-desktop.png
+│   │   ├── video-desktop.mp4
+│   │   ├── screenshot-mobile.png
+│   │   ├── video-mobile.mp4
+│   │   ├── record.js
+│   │   ├── README.md
+│   │   └── CAPTION.md
+│   ├── 11-swiss-editorial-navbar/
+│   │   ├── index.html
+│   │   ├── cover.png
+│   │   ├── cover-instagram.png
+│   │   ├── cover-reel.png
+│   │   ├── screenshot-desktop.png
+│   │   ├── video-desktop.mp4
+│   │   ├── screenshot-mobile.png
+│   │   ├── video-mobile.mp4
+│   │   ├── record.js
+│   │   ├── README.md
+│   │   └── CAPTION.md
+│   └── 12-chromatic-prism-navbar/
 │       ├── index.html
 │       ├── cover.png
 │       ├── cover-instagram.png
@@ -134,6 +182,10 @@ Ready-UIs/
 | **06** | [**Developer Toolbar Navbar**](navbars/06-dev-toolbar-navbar/) | [![Cover](navbars/06-dev-toolbar-navbar/cover.png)](navbars/06-dev-toolbar-navbar/) | [GitHub Repo](https://github.com/IBahaaaldin/navbar-dev-toolbar) | [Live Demo](https://IBahaaaldin.github.io/navbar-dev-toolbar/) | `Vercel Toolbar`, `Git Branch Switcher`, `Live 98ms Metric`, `Copy Email` |
 | **07** | [**Fluid Morphing Mega-Menu**](navbars/07-fluid-mega-menu-navbar/) | [![Cover](navbars/07-fluid-mega-menu-navbar/cover.png)](navbars/07-fluid-mega-menu-navbar/) | [GitHub Repo](https://github.com/IBahaaaldin/navbar-fluid-mega-menu) | [Live Demo](https://IBahaaaldin.github.io/navbar-fluid-mega-menu/) | `Stripe Mega-Menu`, `Morphing Container`, `Sliding Arrow`, `Spring Physics` |
 | **08** | [**VisionOS Spatial Glass Dock**](navbars/08-visionos-glass-navbar/) | [![Cover](navbars/08-visionos-glass-navbar/cover.png)](navbars/08-visionos-glass-navbar/) | [GitHub Repo](https://github.com/IBahaaaldin/navbar-visionos-glass) | [Live Demo](https://IBahaaaldin.github.io/navbar-visionos-glass/) | `VisionOS Glass`, `3D Perspective Tilt`, `Specular Refraction`, `Control Center` |
+| **09** | [**Cyber Tactical HUD Navbar**](navbars/09-cyber-hud-navbar/) | [![Cover](navbars/09-cyber-hud-navbar/cover.png)](navbars/09-cyber-hud-navbar/) | [GitHub Repo](https://github.com/IBahaaaldin/navbar-cyber-hud) | [Live Demo](https://IBahaaaldin.github.io/navbar-cyber-hud/) | `Cyberpunk Chamfers`, `CRT Terminal`, `Web Audio API`, `Live Telemetry` |
+| **10** | [**Tactile Neumorphic Soft-UI**](navbars/10-neumorphic-soft-navbar/) | [![Cover](navbars/10-neumorphic-soft-navbar/cover.png)](navbars/10-neumorphic-soft-navbar/) | [GitHub Repo](https://github.com/IBahaaaldin/navbar-neumorphic-soft) | [Live Demo](https://IBahaaaldin.github.io/navbar-neumorphic-soft/) | `Neumorphism 2.0`, `Dual Extrusions`, `Mechanical Inset`, `Spring Pill` |
+| **11** | [**Swiss Modernist Editorial**](navbars/11-swiss-editorial-navbar/) | [![Cover](navbars/11-swiss-editorial-navbar/cover.png)](navbars/11-swiss-editorial-navbar/) | [GitHub Repo](https://github.com/IBahaaaldin/navbar-swiss-editorial) | [Live Demo](https://IBahaaaldin.github.io/navbar-swiss-editorial/) | `Swiss Typography`, `Live World Clocks`, `Kinetic Ticker`, `Index Drawer` |
+| **12** | [**Refractive Chromatic Prism**](navbars/12-chromatic-prism-navbar/) | [![Cover](navbars/12-chromatic-prism-navbar/cover.png)](navbars/12-chromatic-prism-navbar/) | [GitHub Repo](https://github.com/IBahaaaldin/navbar-chromatic-prism) | [Live Demo](https://IBahaaaldin.github.io/navbar-chromatic-prism/) | `Cursor Dispersion`, `3D Crystal Tilt`, `Spectrum Tuner`, `Rainbow Sheen` |
 
 ---
 
