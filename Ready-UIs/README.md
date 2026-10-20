@@ -163,6 +163,19 @@ Ready-UIs/
 │       ├── record.js
 │       ├── README.md
 │       └── CAPTION.md
+├── dashboards/
+│   └── 01-ai-compute-cluster-dashboard/
+│       ├── index.html
+│       ├── cover.png
+│       ├── cover-instagram.png
+│       ├── cover-reel.png
+│       ├── screenshot-desktop.png
+│       ├── video-desktop.mp4
+│       ├── screenshot-mobile.png
+│       ├── video-mobile.mp4
+│       ├── record.js
+│       ├── README.md
+│       └── CAPTION.md
 └── ...
 ```
 
@@ -186,6 +199,12 @@ Ready-UIs/
 | **10** | [**Tactile Neumorphic Soft-UI**](navbars/10-neumorphic-soft-navbar/) | [![Cover](navbars/10-neumorphic-soft-navbar/cover.png)](navbars/10-neumorphic-soft-navbar/) | [GitHub Repo](https://github.com/IBahaaaldin/navbar-neumorphic-soft) | [Live Demo](https://IBahaaaldin.github.io/navbar-neumorphic-soft/) | `Neumorphism 2.0`, `Dual Extrusions`, `Mechanical Inset`, `Spring Pill` |
 | **11** | [**Swiss Modernist Editorial**](navbars/11-swiss-editorial-navbar/) | [![Cover](navbars/11-swiss-editorial-navbar/cover.png)](navbars/11-swiss-editorial-navbar/) | [GitHub Repo](https://github.com/IBahaaaldin/navbar-swiss-editorial) | [Live Demo](https://IBahaaaldin.github.io/navbar-swiss-editorial/) | `Swiss Typography`, `Live World Clocks`, `Kinetic Ticker`, `Index Drawer` |
 | **12** | [**Refractive Chromatic Prism**](navbars/12-chromatic-prism-navbar/) | [![Cover](navbars/12-chromatic-prism-navbar/cover.png)](navbars/12-chromatic-prism-navbar/) | [GitHub Repo](https://github.com/IBahaaaldin/navbar-chromatic-prism) | [Live Demo](https://IBahaaaldin.github.io/navbar-chromatic-prism/) | `Cursor Dispersion`, `3D Crystal Tilt`, `Spectrum Tuner`, `Rainbow Sheen` |
+
+### 📊 Dashboards
+
+| # | Component Name | Cover Preview | Standalone Repository | Live Demo | Highlights |
+| :-: | :--- | :--- | :--- | :--- | :--- |
+| **01** | [**AI Compute & Cloud Infrastructure**](dashboards/01-ai-compute-cluster-dashboard/) | [![Cover](dashboards/01-ai-compute-cluster-dashboard/cover.png)](dashboards/01-ai-compute-cluster-dashboard/) | [GitHub Repo](https://github.com/IBahaaaldin/dashboard-ai-compute-cluster) | [Live Demo](https://IBahaaaldin.github.io/dashboard-ai-compute-cluster/) | `8x H100 Node Matrix`, `Streaming Tok/s Sparkline`, `Dynamic Pod Scaler`, `Web Audio API` |
 
 ---
 
