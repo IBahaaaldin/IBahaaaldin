@@ -55,8 +55,8 @@ function buildWidescreenHtml(item, screenshotBase64) {
     }
     .mockup-window {
       background: rgba(14, 18, 27, 0.88);
-      border: 1px solid rgba(6, 182, 212, 0.3);
-      box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.95), 0 0 30px -5px rgba(6, 182, 212, 0.2);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.95), 0 0 30px -5px rgba(16, 185, 129, 0.2);
       border-radius: 14px;
       overflow: hidden;
     }
@@ -70,7 +70,7 @@ function buildWidescreenHtml(item, screenshotBase64) {
   <header class="relative z-10 flex items-center justify-between w-full">
     <div class="flex items-center gap-3">
       <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.08] border border-white/10 text-xs font-mono font-semibold tracking-wide text-white shadow-lg backdrop-blur-md">
-        <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
         ${item.badge}
       </span>
       <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/5 text-[11px] font-mono text-neutral-400">
@@ -134,7 +134,7 @@ function buildWidescreenHtml(item, screenshotBase64) {
   <!-- BOTTOM FOOTER -->
   <footer class="relative z-10 flex items-center justify-between w-full pt-3 border-t border-white/[0.08] text-xs text-neutral-400">
     <div class="flex items-center gap-2">
-      <span class="w-2 h-2 rounded-full bg-cyan-500"></span>
+      <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
       <span class="font-medium text-neutral-300">Free Open-Source Component</span>
       <span class="text-neutral-600">•</span>
       <span class="font-mono text-[11px] text-neutral-400">github.com/IBahaaaldin/${item.repo}</span>
@@ -180,13 +180,13 @@ function buildSquareHtml(item, screenshotBase64) {
     .ambient-glow {
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.35) 0%, rgba(99, 102, 241, 0.18) 50%, transparent 75%);
+      background: ${item.glowGradient};
       pointer-events: none;
     }
     .mockup-window {
       background: rgba(14, 18, 27, 0.92);
-      border: 1px solid rgba(6, 182, 212, 0.3);
-      box-shadow: 0 35px 90px -20px rgba(0, 0, 0, 0.95), 0 0 30px -5px rgba(6, 182, 212, 0.25);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      box-shadow: 0 35px 90px -20px rgba(0, 0, 0, 0.95), 0 0 30px -5px rgba(16, 185, 129, 0.25);
       border-radius: 16px;
       overflow: hidden;
     }
@@ -200,7 +200,7 @@ function buildSquareHtml(item, screenshotBase64) {
   <header class="relative z-10 flex items-center justify-between w-full">
     <div class="flex items-center gap-3">
       <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.08] border border-white/10 text-xs font-mono font-semibold tracking-wide text-white shadow-lg backdrop-blur-md">
-        <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse"></span>
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
         ${item.badge}
       </span>
       <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/5 text-xs font-mono text-neutral-400">
@@ -261,7 +261,7 @@ function buildSquareHtml(item, screenshotBase64) {
   <!-- BOTTOM FOOTER -->
   <footer class="relative z-10 flex items-center justify-between w-full pt-4 border-t border-white/[0.08] text-xs text-neutral-400">
     <div class="flex items-center gap-2">
-      <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+      <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
       <span class="font-medium text-neutral-300">Free Open-Source Component</span>
       <span class="text-neutral-600">•</span>
       <span class="font-mono text-[11px] text-neutral-400">github.com/IBahaaaldin/${item.repo}</span>
@@ -311,7 +311,7 @@ function buildReelHtml(item, screenshotBase64) {
       transform: translate(-50%, -50%);
       width: 900px;
       height: 900px;
-      background: radial-gradient(circle, rgba(6, 182, 212, 0.4) 0%, rgba(99, 102, 241, 0.2) 45%, transparent 75%);
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.4) 0%, rgba(6, 78, 59, 0.2) 45%, transparent 75%);
       pointer-events: none;
       filter: blur(40px);
     }
@@ -322,7 +322,7 @@ function buildReelHtml(item, screenshotBase64) {
       transform: translateX(-50%);
       width: 800px;
       height: 500px;
-      background: radial-gradient(circle, rgba(6, 182, 212, 0.3) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.3) 0%, transparent 70%);
       pointer-events: none;
       filter: blur(60px);
     }
@@ -336,8 +336,8 @@ function buildReelHtml(item, screenshotBase64) {
     }
     .mockup-window {
       background: rgba(14, 18, 27, 0.95);
-      border: 1px solid rgba(6, 182, 212, 0.35);
-      box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.95), 0 0 35px -5px rgba(6, 182, 212, 0.3);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.95), 0 0 35px -5px rgba(16, 185, 129, 0.3);
       border-radius: 18px;
       overflow: hidden;
     }
@@ -352,7 +352,7 @@ function buildReelHtml(item, screenshotBase64) {
   <header class="relative z-10 w-full px-16 pt-24 flex items-center justify-between">
     <div class="flex items-center gap-3">
       <div class="px-4 py-2 rounded-full bg-white/[0.08] border border-white/10 text-xs font-mono font-semibold tracking-wider text-white backdrop-blur-md flex items-center gap-2">
-        <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse"></span>
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
         <span>${item.episode}</span>
       </div>
       <div class="px-4 py-2 rounded-full bg-white/[0.04] border border-white/5 text-xs font-mono font-medium text-neutral-400">
@@ -372,7 +372,7 @@ function buildReelHtml(item, screenshotBase64) {
     <!-- Top of Safe Zone: Badge & Headline -->
     <div class="flex flex-col items-center w-full mt-2">
       <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/[0.08] border border-white/15 text-xs font-mono font-bold tracking-widest uppercase text-white shadow-xl backdrop-blur-md mb-4">
-        <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_12px_#06b6d4]"></span>
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-[0_0_12px_#10b981]"></span>
         <span>${item.badge}</span>
       </div>
 
@@ -413,7 +413,7 @@ function buildReelHtml(item, screenshotBase64) {
         `).join('')}
       </div>
 
-      <div class="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-gradient-to-r ${item.accentGradient} text-white text-xs font-mono font-bold tracking-wider uppercase shadow-2xl shadow-cyan-500/30">
+      <div class="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-gradient-to-r ${item.accentGradient} text-white text-xs font-mono font-bold tracking-wider uppercase shadow-2xl shadow-emerald-500/30">
         <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
         <span>Watch Full Interaction Reel</span>
       </div>
@@ -426,7 +426,7 @@ function buildReelHtml(item, screenshotBase64) {
     
     <div class="flex items-center justify-between w-full max-w-2xl text-neutral-400 text-xs">
       <div class="flex items-center gap-2">
-        <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
         <span class="font-medium text-neutral-300">Free Open-Source Code</span>
       </div>
       <div class="font-mono text-neutral-300">
