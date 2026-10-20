@@ -24,9 +24,9 @@ const { execSync } = require('child_process');
           top: 0; left: 0;
           width: 20px; height: 20px;
           border-radius: 50%;
-          background: rgba(6, 182, 212, 0.45);
+          background: rgba(16, 185, 129, 0.45);
           border: 2px solid rgba(255, 255, 255, 0.95);
-          box-shadow: 0 0 16px rgba(6, 182, 212, 0.8), 0 0 24px rgba(99, 102, 241, 0.5);
+          box-shadow: 0 0 16px rgba(16, 185, 129, 0.8), 0 0 24px rgba(6, 78, 59, 0.5);
           pointer-events: none;
           z-index: 999999;
           transform: translate(-50%, -50%);
@@ -34,7 +34,7 @@ const { execSync } = require('child_process');
         }
         .custom-cursor.clicking {
           transform: translate(-50%, -50%) scale(0.75);
-          background: rgba(99, 102, 241, 0.9);
+          background: rgba(6, 78, 59, 0.9);
         }
       `
     });
@@ -65,8 +65,9 @@ const { execSync } = require('child_process');
   });
 
   const dPage = await desktopContext.newPage();
-  await dPage.goto(fileUrl, { waitUntil: 'domcontentloaded' });
-  await dPage.waitForTimeout(1000);
+  await dPage.goto(fileUrl, { waitUntil: 'commit' });
+  await dPage.waitForSelector('#timeTrackerDisplay', { timeout: 10000 });
+  await dPage.waitForTimeout(800);
 
   // Take Desktop Screenshot (2400x1800 @ 2x)
   await dPage.screenshot({ path: path.join(dir, 'screenshot-desktop.png') });
@@ -76,31 +77,53 @@ const { execSync } = require('child_process');
   await dPage.mouse.move(600, 450);
   await dPage.waitForTimeout(300);
 
-  // Hover over Key Metric Cards (Card 1, 2, 3)
-  await dPage.mouse.move(300, 150, { steps: 12 });
-  await dPage.waitForTimeout(350);
-  await dPage.mouse.move(600, 150, { steps: 12 });
-  await dPage.waitForTimeout(350);
-  await dPage.mouse.move(900, 150, { steps: 12 });
-  await dPage.waitForTimeout(350);
-
-  // Hover across Node Topology Matrix
-  const nodeCards = await dPage.$$('.node-card');
-  for (let i = 0; i < Math.min(4, nodeCards.length); i++) {
-    const box = await nodeCards[i].boundingBox();
+  // Hover over Top 4 Metric Cards
+  const cards = await dPage.$$('.bento-card');
+  for (let i = 0; i < Math.min(4, cards.length); i++) {
+    const box = await cards[i].boundingBox();
     if (box) {
       await dPage.mouse.move(box.x + box.width / 2, box.y + box.height / 2, { steps: 10 });
-      await dPage.waitForTimeout(180);
+      await dPage.waitForTimeout(220);
     }
   }
 
-  // Click Sync / Refresh Cluster Button
-  const refreshBtn = await dPage.$('#refreshClusterBtn');
-  if (refreshBtn) {
-    const rBox = await refreshBtn.boundingBox();
-    if (rBox) {
-      await dPage.mouse.move(rBox.x + rBox.width / 2, rBox.y + rBox.height / 2, { steps: 12 });
+  // Hover across Analytics Bar Chart days (S, M, T, W, T, F, S)
+  const barElements = await dPage.$$('[data-val]');
+  for (const bar of barElements) {
+    const bBox = await bar.boundingBox();
+    if (bBox) {
+      await dPage.mouse.move(bBox.x + bBox.width / 2, bBox.y + bBox.height / 2, { steps: 8 });
       await dPage.waitForTimeout(200);
+    }
+  }
+
+  // Click "Start Meeting"
+  const meetingBtn = await dPage.$('#startMeetingBtn');
+  if (meetingBtn) {
+    const mBox = await meetingBtn.boundingBox();
+    if (mBox) {
+      await dPage.mouse.move(mBox.x + mBox.width / 2, mBox.y + mBox.height / 2, { steps: 12 });
+      await dPage.waitForTimeout(150);
+      await dPage.mouse.down();
+      await dPage.waitForTimeout(100);
+      await dPage.mouse.up();
+      await dPage.waitForTimeout(600);
+    }
+  }
+
+  // Interact with Time Tracker: Click Pause, then Play
+  const timerToggleBtn = await dPage.$('#timerToggleBtn');
+  if (timerToggleBtn) {
+    const tBox = await timerToggleBtn.boundingBox();
+    if (tBox) {
+      await dPage.mouse.move(tBox.x + tBox.width / 2, tBox.y + tBox.height / 2, { steps: 12 });
+      await dPage.waitForTimeout(150);
+      await dPage.mouse.down();
+      await dPage.waitForTimeout(100);
+      await dPage.mouse.up();
+      await dPage.waitForTimeout(400);
+
+      // Click Resume
       await dPage.mouse.down();
       await dPage.waitForTimeout(100);
       await dPage.mouse.up();
@@ -108,52 +131,25 @@ const { execSync } = require('child_process');
     }
   }
 
-  // Drag Cluster Auto-Scaling Slider
-  const slider = await dPage.$('#scaleSlider');
-  if (slider) {
-    const sBox = await slider.boundingBox();
-    if (sBox) {
-      await dPage.mouse.move(sBox.x + sBox.width / 2, sBox.y + sBox.height / 2, { steps: 12 });
-      await dPage.mouse.down();
-      await dPage.mouse.move(sBox.x + sBox.width * 0.85, sBox.y + sBox.height / 2, { steps: 16 });
-      await dPage.mouse.up();
-      await dPage.waitForTimeout(400);
-    }
-  }
-
-  // Click Copy API Key
-  const copyBtn = await dPage.$('#copyApiKeyBtn');
-  if (copyBtn) {
-    const cBox = await copyBtn.boundingBox();
-    if (cBox) {
-      await dPage.mouse.move(cBox.x + cBox.width / 2, cBox.y + cBox.height / 2, { steps: 12 });
-      await dPage.waitForTimeout(200);
-      await dPage.mouse.down();
-      await dPage.waitForTimeout(100);
-      await dPage.mouse.up();
-      await dPage.waitForTimeout(1000); // Display "Copied! ✨"
-    }
-  }
-
-  // Toggle Theme (Switch to Light Mode)
+  // Toggle Theme (Switch to Dark Obsidian Mode)
   const themeBtn = await dPage.$('#themeToggleBtn');
   if (themeBtn) {
-    const tBox = await themeBtn.boundingBox();
-    if (tBox) {
-      await dPage.mouse.move(tBox.x + tBox.width / 2, tBox.y + tBox.height / 2, { steps: 12 });
-      await dPage.waitForTimeout(200);
+    const thBox = await themeBtn.boundingBox();
+    if (thBox) {
+      await dPage.mouse.move(thBox.x + thBox.width / 2, thBox.y + thBox.height / 2, { steps: 12 });
+      await dPage.waitForTimeout(150);
       await dPage.mouse.down();
       await dPage.waitForTimeout(100);
       await dPage.mouse.up();
-      await dPage.waitForTimeout(800); // Admire light mode
+      await dPage.waitForTimeout(800); // Admire dark mode
     }
   }
 
-  // Switch back to Dark Mode
+  // Switch back to Light Mode
   if (themeBtn) {
-    const tBox = await themeBtn.boundingBox();
-    if (tBox) {
-      await dPage.mouse.move(tBox.x + tBox.width / 2, tBox.y + tBox.height / 2, { steps: 10 });
+    const thBox = await themeBtn.boundingBox();
+    if (thBox) {
+      await dPage.mouse.move(thBox.x + thBox.width / 2, thBox.y + thBox.height / 2, { steps: 10 });
       await dPage.mouse.down();
       await dPage.waitForTimeout(100);
       await dPage.mouse.up();
@@ -199,9 +195,9 @@ const { execSync } = require('child_process');
   await mPage.mouse.move(195, 200);
   await mPage.waitForTimeout(300);
 
-  // Scroll slightly down on mobile to view topology & metrics
-  await mPage.evaluate(() => window.scrollBy({ top: 180, behavior: 'smooth' }));
-  await mPage.waitForTimeout(500);
+  // Scroll down slightly to view metric cards and widgets
+  await mPage.evaluate(() => window.scrollBy({ top: 220, behavior: 'smooth' }));
+  await mPage.waitForTimeout(600);
 
   // Open Mobile Slide-in Sidebar Sheet
   const mMenuBtn = await mPage.$('#mobileMenuOpenBtn');
@@ -209,7 +205,7 @@ const { execSync } = require('child_process');
     const box = await mMenuBtn.boundingBox();
     if (box) {
       await mPage.mouse.move(box.x + box.width / 2, box.y + box.height / 2, { steps: 12 });
-      await mPage.waitForTimeout(200);
+      await mPage.waitForTimeout(150);
       await mPage.mouse.down();
       await mPage.waitForTimeout(100);
       await mPage.mouse.up();

@@ -164,7 +164,7 @@ Ready-UIs/
 │       ├── README.md
 │       └── CAPTION.md
 ├── dashboards/
-│   └── 01-ai-compute-cluster-dashboard/
+│   └── 01-project-management-dashboard/
 │       ├── index.html
 │       ├── cover.png
 │       ├── cover-instagram.png
@@ -204,7 +204,7 @@ Ready-UIs/
 
 | # | Component Name | Cover Preview | Standalone Repository | Live Demo | Highlights |
 | :-: | :--- | :--- | :--- | :--- | :--- |
-| **01** | [**AI Compute & Cloud Infrastructure**](dashboards/01-ai-compute-cluster-dashboard/) | [![Cover](dashboards/01-ai-compute-cluster-dashboard/cover.png)](dashboards/01-ai-compute-cluster-dashboard/) | [GitHub Repo](https://github.com/IBahaaaldin/dashboard-ai-compute-cluster) | [Live Demo](https://IBahaaaldin.github.io/dashboard-ai-compute-cluster/) | `8x H100 Node Matrix`, `Streaming Tok/s Sparkline`, `Dynamic Pod Scaler`, `Web Audio API` |
+| **01** | [**Donezo — Project Management**](dashboards/01-project-management-dashboard/) | [![Cover](dashboards/01-project-management-dashboard/cover.png)](dashboards/01-project-management-dashboard/) | [GitHub Repo](https://github.com/IBahaaaldin/dashboard-project-management) | [Live Demo](https://IBahaaaldin.github.io/dashboard-project-management/) | `Dribbble Canvas`, `Project Velocity Chart`, `Live Sprint Timer`, `Progress Arc Gauge` |
 
 ---
 

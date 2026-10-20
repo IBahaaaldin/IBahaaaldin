@@ -5,16 +5,16 @@ const fs = require('fs');
 const items = [
   {
     id: '01',
-    folder: '01-ai-compute-cluster-dashboard',
-    repo: 'dashboard-ai-compute-cluster',
-    title: 'AI Compute & Cluster Dashboard',
-    tagline: 'Ultra-low latency GPU cluster telemetry with live node topology & streaming token throughput',
+    folder: '01-project-management-dashboard',
+    repo: 'dashboard-project-management',
+    title: 'Donezo — Project Management OS',
+    tagline: 'Modern task velocity dashboard with weekly analytics chart, live sprint timer & team collaboration',
     badge: 'DASHBOARD #01',
     episode: 'REEL 13',
-    accentColor: '#06b6d4',
-    accentGradient: 'from-cyan-400 via-indigo-500 to-purple-600',
-    glowGradient: 'radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.35) 0%, rgba(99, 102, 241, 0.18) 45%, transparent 75%)',
-    tags: ['Tailwind CSS', '8x H100 GPU Matrix', 'Live Tok/s Sparkline', 'Auto-Scale Pods', 'Dark / Light']
+    accentColor: '#10b981',
+    accentGradient: 'from-emerald-400 via-teal-500 to-emerald-700',
+    glowGradient: 'radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.35) 0%, rgba(6, 78, 59, 0.22) 45%, transparent 75%)',
+    tags: ['Tailwind CSS', 'Project Analytics', 'Time Tracker Engine', 'Team Collaboration', 'Dark / Light']
   }
 ];
 
@@ -89,9 +89,9 @@ function buildWidescreenHtml(item, screenshotBase64) {
   <main class="relative z-10 grid grid-cols-12 gap-8 items-center my-auto w-full px-2">
     <!-- Left Column: Typography & Tags -->
     <div class="col-span-5 flex flex-col justify-center text-left space-y-3.5">
-      <div class="inline-flex items-center gap-2 text-cyan-400 font-mono text-xs font-semibold uppercase tracking-wider">
-        <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
-        Telemetry OS & Infrastructure
+      <div class="inline-flex items-center gap-2 text-emerald-400 font-mono text-xs font-semibold uppercase tracking-wider">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+        Task & Velocity Workspace
       </div>
       <h1 class="text-3xl font-extrabold tracking-tight text-white leading-snug">
         ${item.title}
@@ -120,7 +120,7 @@ function buildWidescreenHtml(item, screenshotBase64) {
             <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80 inline-block"></span>
             <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80 inline-block"></span>
           </div>
-          <span class="font-mono text-[11px] text-neutral-400">cluster.ready-ui.internal</span>
+          <span class="font-mono text-[11px] text-neutral-400">donezo.ready-ui.internal</span>
           <span class="w-8"></span>
         </div>
         <!-- Embedded Preview -->
@@ -219,8 +219,8 @@ function buildSquareHtml(item, screenshotBase64) {
   <main class="relative z-10 flex flex-col items-center justify-center my-auto text-center w-full max-w-4xl mx-auto py-2">
     <!-- Title & Tagline -->
     <div class="flex flex-col items-center mb-6">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 text-xs font-mono font-bold uppercase tracking-wider mb-3">
-        8x H100 GPU Cluster Telemetry
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-mono font-bold uppercase tracking-wider mb-3">
+        Task Velocity & Project OS
       </div>
       <h1 class="text-4xl font-extrabold tracking-tight text-white mb-2 leading-tight">
         ${item.title}
@@ -239,7 +239,7 @@ function buildSquareHtml(item, screenshotBase64) {
             <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80 inline-block"></span>
             <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80 inline-block"></span>
           </div>
-          <span class="font-mono text-xs text-neutral-400">cluster.ready-ui.internal</span>
+          <span class="font-mono text-xs text-neutral-400">donezo.ready-ui.internal</span>
           <span class="w-8"></span>
         </div>
         <div class="w-full h-[470px] overflow-hidden bg-slate-950">
@@ -394,7 +394,7 @@ function buildReelHtml(item, screenshotBase64) {
             <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80 inline-block"></span>
             <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80 inline-block"></span>
           </div>
-          <span class="font-mono text-xs text-neutral-400">cluster.ready-ui.internal</span>
+          <span class="font-mono text-xs text-neutral-400">donezo.ready-ui.internal</span>
           <span class="w-8"></span>
         </div>
         <div class="w-full h-[460px] overflow-hidden bg-slate-950">
