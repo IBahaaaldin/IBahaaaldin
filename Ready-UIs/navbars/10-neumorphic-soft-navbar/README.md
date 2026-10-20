@@ -1,12 +1,25 @@
 # 🎛️ Tactile Neumorphic Soft-UI Navbar
 
-A tactile, modern Neumorphic Soft-UI 2.0 navigation bar featuring realistic dual-shadow light extrusions, physical inset depression physics, dynamic spring-loaded active pill indicators, interactive tactile haptic controls, and acoustic audio synthesis.
+> Tactile, modern Neumorphic Soft-UI 2.0 navigation bar featuring realistic dual-shadow light extrusions, physical inset depression physics, dynamic spring-loaded active pill, and acoustic feedback.
 
-Crafted by **Bahaa Mohammed** ([@ibahaaaldincoding](https://www.instagram.com/ibahaaaldincoding)).
+![Cover Preview](cover.png)
+
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Visit_Website-0066cc?style=for-the-badge&logo=googlechrome&logoColor=white)](https://IBahaaaldin.github.io/navbar-neumorphic-soft/)
+[![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-Active-success?style=for-the-badge&logo=github)](https://IBahaaaldin.github.io/navbar-neumorphic-soft/)
 
 ---
 
-## ✨ Features & Motion Mechanics
+## 🌐 Visual Previews
+
+| Desktop Showcase (1200x900) | Mobile Showcase (390x844) | Post Cover (1080x1080) | Reel Cover (1080x1920) |
+| :---: | :---: | :---: | :---: |
+| ![Desktop Preview](screenshot-desktop.png) | <img src="screenshot-mobile.png" width="160" alt="Mobile Preview" /> | <img src="cover-instagram.png" width="160" alt="Instagram Post Cover" /> | <img src="cover-reel.png" width="160" alt="Instagram Reel Cover" /> |
+
+*(Includes full interaction videos: `video-desktop.mp4` and `video-mobile.mp4`)*
+
+---
+
+## ✨ Features & Micro-Interactions
 
 - **Neumorphism 2.0 Sculpted Surfaces**: Ambient dual soft shadows mapped to directional light coordinates (`9px 9px 20px #... , -9px -9px 20px #...`).
 - **Physical Inset Depression**: Interactive buttons and pills physically depress inwards with realistic inset shadows and scaling on mouse down.
@@ -21,30 +34,48 @@ Crafted by **Bahaa Mohammed** ([@ibahaaaldincoding](https://www.instagram.com/ib
 
 ---
 
-## 📸 Media Preview
+## 📁 Repository Structure
 
-| Desktop Preview | Mobile View |
-| :---: | :---: |
-| ![Desktop](screenshot-desktop.png) | ![Mobile](screenshot-mobile.png) |
+```text
+├── index.html              # Standalone production navbar component
+├── cover.png               # Widescreen cover banner (1280x640)
+├── cover-instagram.png     # Square post cover for Instagram (@ibahaaaldincoding) (1080x1080)
+├── cover-reel.png          # 9:16 vertical cover for Instagram Reels (1080x1920)
+├── screenshot-desktop.png  # Desktop visual preview (1200x900)
+├── video-desktop.mp4       # Desktop interaction recording (MP4)
+├── screenshot-mobile.png   # Mobile visual preview (390x844)
+├── video-mobile.mp4        # Mobile interaction recording (MP4)
+├── record.js               # Playwright automation script used to record all 4 assets
+├── README.md               # Documentation & setup notes
+└── CAPTION.md              # Ready-to-copy Instagram caption for @ibahaaaldincoding
+```
 
 ---
 
 ## 🚀 Quick Start
 
+### 1. View Locally
+Simply open `index.html` in your browser:
 ```bash
-git clone https://github.com/IBahaaaldin/navbar-neumorphic-soft.git
-cd navbar-neumorphic-soft
 open index.html
+```
+
+### 2. Re-record Assets
+To re-record desktop & mobile screenshots and videos:
+```bash
+node record.js
 ```
 
 ---
 
-## 🛠 Tech Stack
+## 👤 Author & Connect
 
-- **HTML5 & Modern CSS3** (Neumorphic dual-shadow extrusions & spring cubic-beziers)
-- **Tailwind CSS (v3 CDN)**
-- **Vanilla JavaScript** (Spring pill physics, tactile slider & Web Audio synthesizer)
-- **Playwright & FFmpeg** (Automated video and asset generation)
+**Bahaa Mohammed**
+Creative Developer & Software Engineer
+- 📸 **Instagram**: [@ibahaaaldincoding](https://www.instagram.com/ibahaaaldincoding)
+- 🐙 **GitHub**: [@IBahaaaldin](https://github.com/IBahaaaldin)
+- 💼 **LinkedIn**: [Bahaa Mohammed](https://www.linkedin.com/in/bahaa-mohammed-371259369)
+- 📧 **Email**: bahaam.coding@gmail.com
 
 ---
 

@@ -1,12 +1,25 @@
 # ⚡ Cyber Tactical HUD Terminal Navbar
 
-An ultra-futuristic, high-tech tactical HUD navigation bar featuring chamfered cyber angles, real-time telemetry (Ping, FPS, Sys Status), a live CRT command terminal dropdown, audio synthesizer blips, and an authentic CRT scanline toggle. Inspired by Cyberpunk 2077 and sci-fi tactical interfaces.
+> An ultra-futuristic, high-tech tactical HUD navigation bar featuring chamfered cyber angles, real-time telemetry, a live CRT command terminal dropdown, audio synthesizer blips, and an authentic CRT scanline toggle.
 
-Crafted by **Bahaa Mohammed** ([@ibahaaaldincoding](https://www.instagram.com/ibahaaaldincoding)).
+![Cover Preview](cover.png)
+
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Visit_Website-0066cc?style=for-the-badge&logo=googlechrome&logoColor=white)](https://IBahaaaldin.github.io/navbar-cyber-hud/)
+[![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-Active-success?style=for-the-badge&logo=github)](https://IBahaaaldin.github.io/navbar-cyber-hud/)
 
 ---
 
-## ✨ Features & Motion Mechanics
+## 🌐 Visual Previews
+
+| Desktop Showcase (1200x900) | Mobile Showcase (390x844) | Post Cover (1080x1080) | Reel Cover (1080x1920) |
+| :---: | :---: | :---: | :---: |
+| ![Desktop Preview](screenshot-desktop.png) | <img src="screenshot-mobile.png" width="160" alt="Mobile Preview" /> | <img src="cover-instagram.png" width="160" alt="Instagram Post Cover" /> | <img src="cover-reel.png" width="160" alt="Instagram Reel Cover" /> |
+
+*(Includes full interaction videos: `video-desktop.mp4` and `video-mobile.mp4`)*
+
+---
+
+## ✨ Features & Micro-Interactions
 
 - **Cyber Tactical Chamfered Geometry**: Angular clip-path cutouts with neon cyan (`#00f0ff`) and acid yellow-green (`#39ff14`) glowing borders.
 - **Live HUD Telemetry**: Real-time interactive FPS counter, simulated network latency (ping ms), and system status diagnostics with active pulsing indicators.
@@ -21,30 +34,48 @@ Crafted by **Bahaa Mohammed** ([@ibahaaaldincoding](https://www.instagram.com/ib
 
 ---
 
-## 📸 Media Preview
+## 📁 Repository Structure
 
-| Desktop Preview | Mobile View |
-| :---: | :---: |
-| ![Desktop](screenshot-desktop.png) | ![Mobile](screenshot-mobile.png) |
+```text
+├── index.html              # Standalone production navbar component
+├── cover.png               # Widescreen cover banner (1280x640)
+├── cover-instagram.png     # Square post cover for Instagram (@ibahaaaldincoding) (1080x1080)
+├── cover-reel.png          # 9:16 vertical cover for Instagram Reels (1080x1920)
+├── screenshot-desktop.png  # Desktop visual preview (1200x900)
+├── video-desktop.mp4       # Desktop interaction recording (MP4)
+├── screenshot-mobile.png   # Mobile visual preview (390x844)
+├── video-mobile.mp4        # Mobile interaction recording (MP4)
+├── record.js               # Playwright automation script used to record all 4 assets
+├── README.md               # Documentation & setup notes
+└── CAPTION.md              # Ready-to-copy Instagram caption for @ibahaaaldincoding
+```
 
 ---
 
 ## 🚀 Quick Start
 
+### 1. View Locally
+Simply open `index.html` in your browser:
 ```bash
-git clone https://github.com/IBahaaaldin/navbar-cyber-hud.git
-cd navbar-cyber-hud
 open index.html
+```
+
+### 2. Re-record Assets
+To re-record desktop & mobile screenshots and videos:
+```bash
+node record.js
 ```
 
 ---
 
-## 🛠 Tech Stack
+## 👤 Author & Connect
 
-- **HTML5 & Modern CSS3** (Custom SVG filters & clip-path chamfers)
-- **Tailwind CSS (v3 CDN)**
-- **Vanilla JavaScript** (HUD telemetry simulation, terminal REPL & Web Audio API)
-- **Playwright & FFmpeg** (Automated video and asset generation)
+**Bahaa Mohammed**
+Creative Developer & Software Engineer
+- 📸 **Instagram**: [@ibahaaaldincoding](https://www.instagram.com/ibahaaaldincoding)
+- 🐙 **GitHub**: [@IBahaaaldin](https://github.com/IBahaaaldin)
+- 💼 **LinkedIn**: [Bahaa Mohammed](https://www.linkedin.com/in/bahaa-mohammed-371259369)
+- 📧 **Email**: bahaam.coding@gmail.com
 
 ---
 
