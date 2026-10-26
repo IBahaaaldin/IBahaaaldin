@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clean TV OS Launcher — Apple TV Style UI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #000000;
+      color: #ffffff;
+      overflow: hidden;
+      user-select: none;
+    }
+    .font-arabic {
+      font-family: 'Noto Naskh Arabic', sans-serif;
+    }
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .dock-glass {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(28px);
+      -webkit-backdrop-filter: blur(28px);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    }
+    .tile-glow {
+      transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .tile-focused {
+      transform: scale(1.08) translateY(-6px);
+      box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.9), 0 0 0 3px rgba(255, 255, 255, 0.95);
+    }
+    .top-button {
+      background: rgba(255, 255, 255, 0.09);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(16px);
+      transition: all 0.2s ease;
+    }
+    .top-button-focused {
+      background: rgba(255, 255, 255, 0.95);
+      color: #000000 !important;
+      transform: scale(1.05);
+      box-shadow: 0 0 24px rgba(255, 255, 255, 0.4);
+    }
+    .ambient-radial {
+      transition: background 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+  </style>
+</head>
+<body class="w-screen h-screen flex flex-col justify-between p-8 md:p-14 relative bg-black">
+
+  <!-- DYNAMIC AMBIENT HORIZON GLOW -->
+  <div id="ambientGlow" class="ambient-radial absolute inset-0 pointer-events-none opacity-45"
+       style="background: radial-gradient(ellipse 80% 50% at 50% 65%, rgba(212, 175, 55, 0.45) 0%, rgba(139, 90, 0, 0.15) 50%, transparent 80%);"></div>
+
+  <!-- TOP HEADER ROW -->
+  <header class="relative z-20 flex items-start justify-between w-full">
+    
+    <!-- TOP LEFT: Settings & Wi-Fi -->
+    <div id="topButtonsGroup" class="flex items-center gap-3">
+      <button id="btnWifi" onclick="focusTopBtn(0)" class="top-button flex items-center gap-2.5 px-4 py-2.5 rounded-full text-sm font-medium text-white/90">
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+          <path d="M12 3C7.58 3 3.63 4.54.54 7.12l1.42 1.42C4.54 6.25 8.08 4.88 12 4.88c3.92 0 7.46 1.37 10.04 3.66l1.42-1.42C20.37 4.54 16.42 3 12 3zm0 4.24c-3.23 0-6.14 1.15-8.42 3.06l1.42 1.42C6.98 10.22 9.38 9.12 12 9.12s5.02 1.1 7 2.6l1.42-1.42C18.14 8.39 15.23 7.24 12 7.24zm0 4.24c-2.01 0-3.83.74-5.26 1.98l1.42 1.42C9.09 13.88 10.49 13.36 12 13.36s2.91.52 3.84 1.52l1.42-1.42C15.83 12.22 14.01 11.48 12 11.48zm0 4.24c-.88 0-1.68.35-2.26.92L12 18.88l2.26-2.24c-.58-.57-1.38-.92-2.26-.92z"/>
+        </svg>
+        <span class="font-arabic text-sm">واي فاي</span>
+      </button>
+
+      <button id="btnSettings" onclick="focusTopBtn(1)" class="top-button flex items-center gap-2.5 px-4 py-2.5 rounded-full text-sm font-medium text-white/90">
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+          <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
+        </svg>
+        <span class="font-arabic text-sm">الإعدادات</span>
+      </button>
+    </div>
+
+    <!-- TOP RIGHT: Athkar + Date & English Timing -->
+    <div class="flex flex-col items-end text-right">
+      <!-- Athkar rotating line -->
+      <div id="athkarText" class="font-arabic text-white/90 text-sm font-medium tracking-wide mb-1 transition-opacity duration-300">
+        ﴿ أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ ﴾
+      </div>
+
+      <!-- Timing row -->
+      <div class="flex items-baseline gap-3">
+        <!-- Date column on LEFT of timing -->
+        <div class="flex flex-col items-end text-right">
+          <span id="gregorianDate" class="font-arabic text-white/70 text-xs tracking-wider uppercase font-medium">الاثنين ٢٦ أكتوبر</span>
+          <span id="hijriDate" class="font-arabic text-white/50 text-[11px] tracking-wide mt-0.5">15 جمادى الأولى 1448 هـ</span>
+        </div>
+
+        <!-- Vertical divider -->
+        <div class="w-[1px] h-6 bg-white/20 self-end mb-1 mx-1"></div>
+
+        <!-- Clock on the RIGHT in English digits -->
+        <div class="flex items-baseline gap-1.5">
+          <span id="clockDigits" class="text-5xl font-light text-white tracking-tight">11:10</span>
+          <span id="clockAmPm" class="text-sm font-semibold text-white/70 tracking-wider">PM</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- CENTER: DYNAMIC FOCUSED APP TITLE -->
+  <main class="relative z-10 flex flex-col justify-center my-auto pl-4">
+    <h1 id="appTitle" class="text-4xl md:text-5xl font-extrabold tracking-tight text-white uppercase drop-shadow-md transition-all duration-200">
+      VULTURE NOW
+    </h1>
+    <p id="appSubtitle" class="text-neutral-400 font-medium text-sm mt-1 tracking-wide">
+      Live Sports & Premium Streaming Platform
+    </p>
+  </main>
+
+  <!-- BOTTOM: FROSTED GLASS DOCK ROW -->
+  <footer class="relative z-20 flex flex-col items-center">
+    <div class="dock-glass p-3.5 rounded-3xl flex items-center gap-4">
+      
+      <!-- APP 1: VULTURE NOW -->
+      <div id="tile-0" onclick="selectTile(0)" class="tile-glow tile-focused relative w-36 h-22 md:w-44 md:h-26 rounded-2xl overflow-hidden cursor-pointer bg-gradient-to-br from-[#121622] to-[#1c2438] border border-amber-500/30 flex flex-col items-center justify-center p-3">
+        <div class="text-amber-400 text-2xl mb-1">🦅</div>
+        <span class="font-arabic text-amber-300 font-bold text-sm tracking-wide">فولتشــر</span>
+        <span class="text-[10px] font-bold text-amber-400/80 tracking-widest uppercase">VULTURE</span>
+      </div>
+
+      <!-- APP 2: YOUTUBE -->
+      <div id="tile-1" onclick="selectTile(1)" class="tile-glow relative w-36 h-22 md:w-44 md:h-26 rounded-2xl overflow-hidden cursor-pointer bg-white border border-white/20 flex flex-col items-center justify-center p-3">
+        <svg class="w-10 h-7 fill-[#FF0000]" viewBox="0 0 24 24">
+          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+        <span class="text-xs font-black text-black tracking-tighter mt-1">YouTube</span>
+      </div>
+
+      <!-- APP 3: NETFLIX -->
+      <div id="tile-2" onclick="selectTile(2)" class="tile-glow relative w-36 h-22 md:w-44 md:h-26 rounded-2xl overflow-hidden cursor-pointer bg-[#141414] border border-white/10 flex flex-col items-center justify-center p-3">
+        <span class="text-4xl font-black text-[#E50914] tracking-tight scale-y-110">N</span>
+        <span class="text-[10px] font-semibold text-neutral-400 mt-0.5">Netflix</span>
+      </div>
+
+      <!-- APP 4: SHAHID MBC -->
+      <div id="tile-3" onclick="selectTile(3)" class="tile-glow relative w-36 h-22 md:w-44 md:h-26 rounded-2xl overflow-hidden cursor-pointer bg-gradient-to-r from-[#00D06C] to-[#009FE3] border border-emerald-400/30 flex flex-col items-center justify-center p-3">
+        <span class="text-2xl font-black text-white tracking-widest">mbc•••</span>
+        <span class="font-arabic text-xs font-bold text-white/90">شاهد VIP</span>
+      </div>
+
+    </div>
+
+    <!-- KEYBOARD CONTROLS BADGE -->
+    <div class="mt-4 flex items-center gap-3 text-xs font-mono text-neutral-400/80 bg-white/[0.04] px-4 py-1.5 rounded-full border border-white/5">
+      <span><kbd class="text-white bg-white/10 px-1.5 py-0.5 rounded">◄ ►</kbd> Navigate Dock</span>
+      <span>•</span>
+      <span><kbd class="text-white bg-white/10 px-1.5 py-0.5 rounded">▲ ▼</kbd> Header / Dock</span>
+      <span>•</span>
+      <span><kbd class="text-white bg-white/10 px-1.5 py-0.5 rounded">↵</kbd> Launch</span>
+      <span>•</span>
+      <span><kbd class="text-white bg-white/10 px-1.5 py-0.5 rounded">S</kbd> Screensaver</span>
+    </div>
+  </footer>
+
+  <!-- FULLSCREEN SCREENSAVER OVERLAY -->
+  <div id="screensaverOverlay" class="fixed inset-0 bg-black z-50 flex flex-col justify-center items-center opacity-0 pointer-events-none transition-opacity duration-700">
+    <div id="screensaverGlow" class="absolute inset-0 pointer-events-none"
+         style="background: radial-gradient(circle at 65% 55%, rgba(65, 105, 225, 0.35) 0%, rgba(20, 20, 50, 0.15) 50%, transparent 80%);"></div>
+
+    <div class="relative z-10 flex flex-col items-center text-center p-8">
+      <div id="ssAthkar" class="font-arabic text-white/90 text-2xl font-medium tracking-wide mb-3 drop-shadow">
+        ﴿ أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ ﴾
+      </div>
+
+      <div class="flex items-baseline gap-3 my-2">
+        <span id="ssClockDigits" class="text-8xl md:text-9xl font-light text-white tracking-tight drop-shadow-2xl">11:10</span>
+        <span id="ssClockAmPm" class="text-2xl font-semibold text-white/70 tracking-wider">PM</span>
+      </div>
+
+      <div id="ssDateText" class="font-arabic text-white/60 text-lg tracking-wide mt-2">
+        الاثنين ، 26 أكتوبر · 15 جمادى الأولى 1448 هـ
+      </div>
+
+      <div class="mt-8 text-xs font-mono text-white/30">
+        Press any key to wake TV
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const apps = [
+      {
+        name: "VULTURE NOW",
+        subtitle: "Live Sports & Premium Streaming Platform",
+        glow: "radial-gradient(ellipse 80% 50% at 50% 65%, rgba(212, 175, 55, 0.45) 0%, rgba(139, 90, 0, 0.15) 50%, transparent 80%)"
+      },
+      {
+        name: "YOUTUBE",
+        subtitle: "Watch Trending Videos, Music, Channels & Podcasts",
+        glow: "radial-gradient(ellipse 80% 50% at 50% 65%, rgba(255, 0, 0, 0.45) 0%, rgba(120, 0, 0, 0.15) 50%, transparent 80%)"
+      },
+      {
+        name: "NETFLIX",
+        subtitle: "Movies, TV Series, Originals & Blockbusters",
+        glow: "radial-gradient(ellipse 80% 50% at 50% 65%, rgba(229, 9, 20, 0.45) 0%, rgba(80, 0, 0, 0.15) 50%, transparent 80%)"
+      },
+      {
+        name: "SHAHID VIP",
+        subtitle: "Arabic Cinema, Exclusives, Live Channels & Originals",
+        glow: "radial-gradient(ellipse 80% 50% at 50% 65%, rgba(0, 208, 108, 0.45) 0%, rgba(0, 159, 227, 0.2) 50%, transparent 80%)"
+      }
+    ];
+
+    const athkarList = [
+      "﴿ أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ ﴾",
+      "﴿ سُبْحَانَ اللَّهِ وَبِحَمْدِهِ ﴾",
+      "﴿ سُبْحَانَ اللَّهِ الْعَظِيمِ ﴾",
+      "﴿ لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ ﴾",
+      "﴿ لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ ﴾",
+      "﴿ أَسْتَغْفِرُ اللَّهَ الْعَظِيمَ وَأَتُوبُ إِلَيْهِ ﴾",
+      "﴿ اللَّهُمَّ صَلِّ وَسَلِّمْ عَلَى نَبِيِّنَا مُحَمَّدٍ ﴾",
+      "﴿ الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ ﴾"
+    ];
+
+    let currentTile = 0;
+    let focusArea = 'dock'; // 'dock' or 'top'
+    let topBtnIndex = 0;
+    let isScreensaver = false;
+
+    function selectTile(index) {
+      if (isScreensaver) { closeScreensaver(); return; }
+      focusArea = 'dock';
+      currentTile = index;
+      
+      // Update tiles styles
+      for (let i = 0; i < apps.length; i++) {
+        const el = document.getElementById(`tile-${i}`);
+        if (i === index) {
+          el.classList.add('tile-focused');
+        } else {
+          el.classList.remove('tile-focused');
+        }
+      }
+
+      // Remove top button focus
+      document.getElementById('btnWifi').classList.remove('top-button-focused');
+      document.getElementById('btnSettings').classList.remove('top-button-focused');
+
+      // Update titles & ambient glow
+      document.getElementById('appTitle').textContent = apps[index].name;
+      document.getElementById('appSubtitle').textContent = apps[index].subtitle;
+      document.getElementById('ambientGlow').style.background = apps[index].glow;
+    }
+
+    function focusTopBtn(index) {
+      if (isScreensaver) { closeScreensaver(); return; }
+      focusArea = 'top';
+      topBtnIndex = index;
+
+      // Remove dock focus
+      for (let i = 0; i < apps.length; i++) {
+        document.getElementById(`tile-${i}`).classList.remove('tile-focused');
+      }
+
+      const btnWifi = document.getElementById('btnWifi');
+      const btnSettings = document.getElementById('btnSettings');
+      if (index === 0) {
+        btnWifi.classList.add('top-button-focused');
+        btnSettings.classList.remove('top-button-focused');
+      } else {
+        btnSettings.classList.add('top-button-focused');
+        btnWifi.classList.remove('top-button-focused');
+      }
+    }
+
+    function openScreensaver() {
+      isScreensaver = true;
+      const overlay = document.getElementById('screensaverOverlay');
+      overlay.classList.remove('opacity-0', 'pointer-events-none');
+      overlay.classList.add('opacity-100');
+    }
+
+    function closeScreensaver() {
+      isScreensaver = false;
+      const overlay = document.getElementById('screensaverOverlay');
+      overlay.classList.add('opacity-0', 'pointer-events-none');
+      overlay.classList.remove('opacity-100');
+    }
+
+    // Keyboard Controller
+    window.addEventListener('keydown', (e) => {
+      if (isScreensaver) {
+        closeScreensaver();
+        return;
+      }
+
+      if (e.key === 'ArrowRight') {
+        if (focusArea === 'dock') {
+          selectTile((currentTile + 1) % apps.length);
+        } else {
+          focusTopBtn((topBtnIndex + 1) % 2);
+        }
+      } else if (e.key === 'ArrowLeft') {
+        if (focusArea === 'dock') {
+          selectTile((currentTile - 1 + apps.length) % apps.length);
+        } else {
+          focusTopBtn((topBtnIndex - 1 + 2) % 2);
+        }
+      } else if (e.key === 'ArrowUp') {
+        focusTopBtn(0);
+      } else if (e.key === 'ArrowDown') {
+        selectTile(currentTile);
+      } else if (e.key === 'Enter') {
+        if (focusArea === 'dock') {
+          const tile = document.getElementById(`tile-${currentTile}`);
+          tile.style.transform = 'scale(0.95)';
+          setTimeout(() => { tile.style.transform = ''; }, 150);
+        }
+      } else if (e.key.toLowerCase() === 's' || e.code === 'Space') {
+        openScreensaver();
+      }
+    });
+
+    // Clock and Athkar live update
+    function updateLiveHeader() {
+      const now = new Date();
+      let hours = now.getHours();
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const ampm = hours >= 12 ? 'PM' : 'AM';
+      hours = hours % 12;
+      hours = hours ? hours : 12;
+      const timeStr = `${hours}:${minutes}`;
+
+      document.getElementById('clockDigits').textContent = timeStr;
+      document.getElementById('clockAmPm').textContent = ampm;
+      document.getElementById('ssClockDigits').textContent = timeStr;
+      document.getElementById('ssClockAmPm').textContent = ampm;
+
+      // Rotating Athkar
+      const athkarIdx = Math.floor(now.getTime() / 60000) % athkarList.length;
+      document.getElementById('athkarText').textContent = athkarList[athkarIdx];
+      document.getElementById('ssAthkar').textContent = athkarList[athkarIdx];
+    }
+
+    updateLiveHeader();
+    setInterval(updateLiveHeader, 1000);
+  </script>
+</body>
+</html>

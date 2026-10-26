@@ -1,0 +1,32 @@
+# Allwinner H_BOX Debloat List
+# Telemetry, factory test, and adware packages
+com.abupdate.fota_demo_iot
+com.softwinner.agingdragonbox
+com.softwinner.dragonbox
+com.softwinner.awlogsettings
+com.softwinner.settingsassist
+com.rockchip.devicetest
+com.hcy.myapplication
+com.hcy.remoteAceess
+com.hcy.remoteAceessdesk
+com.charon.rocketfly
+com.android.app.cus.aging
+com.android.smart.terminal
+com.example.a
+cm.aptoidetv.pt
+com.apkpure.aegon
+
+# Recommendation and ad banners
+com.google.android.tvrecommendations
+com.google.android.leanbacklauncher.recommendations
+com.droidlogic.launcher.provider
+com.google.android.partnersetup
+
+# Unused extras and printing services
+com.amazon.amazonvideo.livingroom
+com.google.android.katniss
+com.android.printspooler
+com.android.bips
+com.android.printservice.recommendation
+com.android.providers.calendar
+com.android.providers.contacts

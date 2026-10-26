@@ -207,6 +207,12 @@ Ready-UIs/
 | **01** | [**Donezo — Project Management**](dashboards/01-project-management-dashboard/) | [![Cover](dashboards/01-project-management-dashboard/cover.png)](dashboards/01-project-management-dashboard/) | [GitHub Repo](https://github.com/IBahaaaldin/dashboard-project-management) | [Live Demo](https://IBahaaaldin.github.io/dashboard-project-management/) | `Full-Page Layout`, `Project Velocity Chart`, `Live Sprint Timer`, `Progress Arc Gauge` |
 | **02** | [**Peymen — Fintech & Digital Banking**](dashboards/02-peymen-fintech-dashboard/) | [![Cover](dashboards/02-peymen-fintech-dashboard/cover.png)](dashboards/02-peymen-fintech-dashboard/) | [GitHub Repo](https://github.com/IBahaaaldin/dashboard-peymen-fintech) | [Live Demo](https://IBahaaaldin.github.io/dashboard-peymen-fintech/) | `Titanium Virtual Card`, `P2P Quick Transfer`, `Cash Flow Velocity`, `Financial Targets` |
 
+### 📺 TV Launchers & OS
+
+| # | Component Name | Cover Preview | Standalone Repository | Live Demo | Highlights |
+| :-: | :--- | :--- | :--- | :--- | :--- |
+| **01** | [**Clean TV OS — Apple TV Launcher**](tv-launchers/01-apple-tv-os-launcher/) | [![Cover](tv-launchers/01-apple-tv-os-launcher/cover.png)](tv-launchers/01-apple-tv-os-launcher/) | [GitHub Repo](https://github.com/IBahaaaldin/apple-tv-os-launcher) | [Live Demo](https://IBahaaaldin.github.io/apple-tv-os-launcher/) | `Apple tvOS Glass Dock`, `Quranic Athkar`, `UAE Time & Hijri`, `AdGuard Private DNS`, `Zero Bloat`, `Instant 0.5x Scale` |
+
 ---
 
 ## 🛠 Tech Stack & Design Principles
