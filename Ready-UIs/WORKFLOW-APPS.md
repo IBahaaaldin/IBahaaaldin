@@ -106,6 +106,10 @@ The distribution `.dmg` must be built using `package_dmg.sh`:
 
 ## 👤 Author & Brand Standard
 
-All app releases and social assets are branded under:
-* **Creator**: Bahaa Mohammed (`@ibahaaaldincoding`)
+All app releases, documentation, and social assets are branded under:
+* **Creator**: Bahaa Mohammed
+* **Instagram**: [@ibahaaaldincoding](https://www.instagram.com/ibahaaaldincoding)
+* **GitHub**: [@IBahaaaldin](https://github.com/IBahaaaldin)
+* **LinkedIn**: [Bahaa Mohammed](https://www.linkedin.com/in/bahaa-mohammed-371259369)
+* **Email**: bahaam.coding@gmail.com
 * **Design Language**: Dark matte squircle (`#0D0D10`), clean typography, macOS Sonoma/Sequoia native styling.
